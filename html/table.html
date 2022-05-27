@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>표 태그</title>
+</head>
+<body>
+<figure>
+    <figcaption>
+        <p>비상연락망</p>
+    </figcaption>
+    <table border="1">
+        <tr id="title">
+            <th>성명</th>
+            <th colspan="2">연락처</th>
+            <!--<th>주소</th>-->
+        </tr>
+        <tr>
+            <td>김철수</td>
+            <td>010-1234-55555</td>
+            <td>서울시 중구</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td rowspan="2">010-0000-55555</td>
+            <td>서울시 용산구</td>
+        </tr>
+        <tr>
+            <td>김제니</td>
+            <!--<td>010-3333-8888</td>-->
+            <td>서울시 영등포구</td>
+        </tr>
+        <tr>
+            <td>제임스</td>
+            <td>010-2345-1111</td>
+            <td>서울시 용산구</td>
+        </tr>
+    </table>
+</figure>
+    <h2>주간 식단표</h2>
+    <table border="1">
+        <caption>
+            <strong>주간 식단표</strong>
+        </caption>
+            <tr id="day">
+                <thead>
+                <th>시간</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>비고</th>            
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th>아침</th>
+                <td>김치찌개</td>
+                <td>비빔밥</td>
+                <td>김치찌개</td>
+                <td>된장찌개</td>
+                <td>부대찌개</td>
+                <td rowspan="3">시간엄수</td>
+            </tr>
+            <tr>
+                <th>점심</th>
+                <td>칼국수</td>
+                <td colspan="3">라면</td>
+                <td rowspan="2">제육볶음</td>
+            </tr>
+            <tr>
+                <th>저녁</th>
+                <td>순대국</td>
+                <td>콩나물국</td>
+                <td>칼국수</td>
+                <td>비빔밥</td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7">※ 배식 시간은 12시부터 1시까지입니다.</td>
+                    <!--colspan 열을 합침-->
+                </tr>
+            </tfoot>
+    </table>
+</body>
+</html>
