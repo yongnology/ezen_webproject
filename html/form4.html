@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그들4</title>
+</head>
+<body>
+    <form action"search.jsp" method="get">
+        검색 <input type="search"><br>
+        URL <input type="url"> <br><!--http:// 를 입력하지 않으면 반응하지 않는다.-->
+        이메일<input type="email"> <br>
+        휴대폰<input type="tel" pattern="\d{3}-\d{3,4}-\d{4}"> <br>
+        <label>수량(최대5개)</label>
+        수량<input type="number" value="1" min="1" max="20" step="2"> <br> <!--spinbox가 표시된다.-->
+                <!--최소1, 최대 20, 최초 값은 1, 단계는 2씩-->
+        주문개수<input type="range" min="1" max="10" value="5"> <br>
+        색상<input type="color">
+        <input type="submit" value="로그인">
+    </form>
+    <form>
+        <fieldset>
+            <p>올해 과 티(T)를 만들려고 합니다. 원하는 색상을 추천해 주세요</p>
+            <label>
+                선호색상<input type="color" value="#00ff00"
+            </label>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그들</title>
+    <script>
+        function popup() {
+            k=window.open("popup.html","KBS","width=500, height=300");
+            // 팝업창 이름, 창의 이름, 창의 넓이
+        }
+        //alert("20"+"30");
+    </script>
+</head>
+<body>
+    <form action="login.jsp" method="post" autocomplete="off">
+        <fieldset>
+            <legend>로그인</legend>
+            <p>
+                <label for="id">아이디</label>
+                <input type="text" name="id" id="id" maxlength="10" placeholder="아이디" autofocus required  />
+            </p>
+            <p>
+                <label for="pass">비밀번호</label>
+                <input type="password" name="pass" id="pass"/>
+            </p>
+        </fieldset>
+        <br>
+        <!--
+        <input type="image" src="images/login.png" alt="login">
+        -->
+        <input type="submit" value="로그인">
+        <input type="reset" value="다시입력">
+    </form>
+    <input type="button" value="광고보기" onclick="popup();"><br><br>
+    <label>첨부파일<input type="file">
+    </label>
+</body>
+</html>
