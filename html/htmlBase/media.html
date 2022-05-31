@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티미디어</title>
+</head>
+<body>
+    <h1>길동이의 홈</h1>
+    <audio controls>
+        <!--여러 소스를 나열하고 순서대로 하나라도 진행되면 아랫걸은 실행되지 않음-->
+        <source src="images/da.mp3" type="audio/mp3">
+        <source src="images/da.ogg" type="audio/ogg">
+    </audio><br>
+
+    <!--<video src="images/cross.mp4" controls></video>-->
+
+    <video controls poster="images/Penguins.jpg" width="500" height="300">
+        <!--poster를 넣으면 재생되기 전에 미디오 화면 대신 이미지를 보여줌-->
+        <source src="images/cross.mp4" type="video/mp4">
+        <source src="images/cross.webm" type="video/webm">
+        <source src="images/cross.ogv" type="video/ogv">
+        <track src="cross.vtt" srclang="ko" label="korean">
+    </video>
+</body>
+</html>
+
+<!--controls 재생 바가 생김-->
+<!--autoplay 자동 재생이 실행. 하지만 최근 버전의 브라우저이면 실행 x-->

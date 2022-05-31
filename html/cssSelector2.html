@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자2</title>
+    <style>
+        .co {
+            color: red;
+        }       
+        #btext {
+            color: green;
+        }
+        p {
+            color: blue/*만약 !important 를 적으면 우선순위가 올라간다.*/;
+        }
+    </style>
+</head>
+<body>
+    <p>6월 1일 <span class="co">지방선거일</span>과 6월 6일 <span>현충일</span>은 휴일입니다.</p>
+    <p>프론트엔드 수업시작</p>
+    <p id="btext">html 수업 - 홈페이지 뼈대</p>
+</body>
+</html>
