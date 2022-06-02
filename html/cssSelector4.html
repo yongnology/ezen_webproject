@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자식선택자, 후손선택자</title>
+    <style>
+        #area > p {
+            color: blue;
+        }
+        #area p {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        <h2>css 선택자 수업</h2>
+        <p>프론트엔드 수업시작</p>
+        <p>html 수업 - 홈페이지 뼈대</p>
+        <p id>css 수업 - 디자인, 레이아웃</p>
+        <ul>
+            <li>페이지 구상</li>
+            <li>와이어프레임</li>
+            <li>html 제작</li>
+            <li>css 작업</li>
+        </ul>
+        <div id="inner">
+            <p>나는 내부 영역입니다.</p>
+        </div>
+    </div>
+    <p>코로나 떠나시오!!!</p>
+</body>
+</html>
