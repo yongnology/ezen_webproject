@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 관련 스타일/</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        a:hover {   /* 마우스를 얹혀놓으면 */
+            text-decoration: underline; /*밑줄*/
+        }
+        p > span:hover {
+            text-decoration: line-through;
+        }
+        .eng {
+            font:bold 30px Times;   /*폰트 굵게, 30px싸이즈, Times글꼴*/
+            text-transform: capitalize; /*단어 첫번째 글자 대문자*/
+        }
+h1 {
+    font-size: 50px;
+    /* 그림자 효과*/
+    /*
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.4);
+
+    /* 입체적인 효과 */
+    /*
+    color: #fff;
+    text-shadow: 7px -7px 5px red;   /*가로거리, 세로거리, 번짐정도, 색상*/
+}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">현재상영작</a></li>
+        <li><a href="#">상영예정작</a></li>
+    </ul>
+    <p>
+        <span>정상가격 : 50,000원</span> ☞ 할인가격 45,000원
+    </p>
+    <p class="eng">have a nice day</p>
+    <h1>SHADOW</h1>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style>
+        img {
+            width: 200px;
+            height: 300px;
+        }
+        img[src$=png] {
+            border: 3px solid red;
+        }
+        img[src$=jpg] {
+            border: 3px solid green;
+        }
+        img[src$=gif] {
+            border: 3px solid blue;
+        }
+        p {
+            background-color: yellow;
+            width: 300px;
+            height: 200px;
+        }
+        span {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        오늘은 금요일
+    </p>
+    
+    <img src="images/jajq.png" alt="" />
+    <img src="images/node.jpg" alt="" />
+    <img src="images/ux.gif" alt="" />
+    <br>
+    <span>대한민국</span>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성선택자</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            display: inline;    /*가로로 나열*/
+            margin: 10px;
+            float: left;
+        }
+        li > a {
+            text-decoration: none;
+            color: blue;
+            font-size: 14px;
+        }
+        a[title ^= "en"] {
+            background: url(images/us.png) no-repeat left;
+            padding: 5px 25px;
+        }
+        a[title ^= "ja"] {
+            background: url(images/jp.png) no-repeat left;
+            padding: 5px 25px;
+        }
+        a[title ^= "ch"] {
+            background: url(images/ch.png) no-repeat left;
+            padding: 5px 25px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>외국어 서비스 : </li>
+        <li><a href="#" title="english">영어</a></li>
+        <li><a href="#" title="japenese">일본어</a></li>
+        <li><a href="#" title="chinese">중국어</a></li>
+    </ul>
+</body>
+</html>

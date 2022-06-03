@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스 선택자(링크선택자)</title>
+    <style>
+        header {
+            height: 280px;
+            background-image: url(images/header-bg.png);
+            background-repeat: no-repeat;
+        }
+        nav {
+            height: 60px;
+            padding-top: 280px; /*부모 nav만 위에 280 padding*/
+            width: 967px;
+        }
+        nav ul {
+            list-style: none;   /*왼쪽가운데 점 없에기*/
+            height: 40px;
+            padding-bottom: 5px;
+            background-color: #000;
+            margin-top: 0px;
+        }
+        nav li {
+            display: inline;    /*가로로 만들기*/
+            float: left;
+        }
+        nav a:link, nav a:visited { /* nav 후손중에 a:link 와 nav a:visited*/
+            text-decoration: none;
+            color: white;   /*#fff*/
+            padding: 10px 5px 5px 35px;     /*안쪽 여백*/
+            display: block;
+            width: 150px;
+        }
+        nav a:hover, nav a:focus {
+            text-shadow: 0px 2px 2px #000;
+            color: yellow;
+        }
+        nav a:active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">이용안내</a></li>
+                    <li><a href="#">객실안내</a></li>
+                    <li><a href="#">예약 방법 및 요금</a></li>
+                    <li><a href="#">예약하기</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>    
+</body>
+</html>
