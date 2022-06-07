@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+    <style>
+        #navi li {
+            list-style-type: none;
+            display: inline-block;
+        }
+        #navi a {
+            display: inline-block;
+            background-color: brown;
+            color: #fff;
+            width: 100px;
+            height: 35px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 35px; /*height 랑 동일하게 주면 가운데로 온다.*/
+        }
+        #navi a:hover{  /*커서가 갔을 때 변화*/
+            text-decoration: underline;
+            background-color: #369;
+        }
+        .hi {
+            background-color: bisque;
+            padding: 10px;
+            height: 100px;
+        }
+        .valign1{
+            line-height: 100px;
+        }
+        .valign2{
+            vertical-align: middle;
+        }
+        .valign3 {
+            /*하나의 셀로본다.*/
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .hid {
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+        #box {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="navi">
+        <li><a href='#'>회사소개</a></li>
+        <li><a href='#'>제품소개</a></li>
+        <li><a href='#'>커뮤니티</a></li>
+        <li><a href='#'>자료실</a></li>
+        <li><a href='#'>찾아오시는길</a></li>
+    </ul>
+    <p class="valign1 hi">Lorem ipsum dolor sit amet</p>
+    <p class="valign2 hi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, vitae soluta odio repellendus quibusdam, totam consectetur asperiores magni porro hic nihil autem deleniti. Dolor adipisci molestiae illo, nam dolore quae.</p>
+    <p class="valign3 hi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, vitae soluta odio repellendus quibusdam, totam consectetur asperiores magni porro hic nihil autem deleniti. Dolor adipisci molestiae illo, nam dolore quae.</p>
+    <div id="box" class="hid">
+        <p>오늘은 화요일 ( 1 )</p>
+        <p>CSS 속성 배우는 중...</p>
+    </div>
+    <div id="box2" class="hid">
+        <p>오늘은 화요일 ( 2 )</p>
+        <p>CSS 속성 배우는 중...</p>
+    </div>
+</body>
+</html>

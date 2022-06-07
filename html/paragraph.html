@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문단스타일</title>
+    <style>
+        /* ltr(left to right rtl(rigtht to left*/
+        /* 아래는 오른쪽 정렬
+        p {
+            direction: rtl;
+        }
+        */
+        p:first-child {
+            /* 가운데 정렬 */
+            text-align: center;
+        }
+        p:last-child{
+            /* 오른쪽 정렬 */
+            text-align: right;
+        }
+        p:nth-child(2){
+            /* 왼쪽 정렬 */
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <p>대한민국</p>
+    <p>일본</p>
+    <p>중국</p>
+    <!--
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum quo, corrupti libero dolorem quisquam perspiciatis. Delectus, voluptate dolore incidunt suscipit ex aspernatur modi hic inventore, sed fugiat asperiores, eius quisquam.</p>
+    -->
+</body>
+</html>

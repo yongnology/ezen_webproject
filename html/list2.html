@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록스타일2</title>
+    <style>
+        #navi {
+            overflow: hidden;
+        }
+        #navi > li {
+            /* 가운데점 없애기*/
+            list-style-type: none;
+            /* 가로정렬 */
+            float: left;
+            background-color: orange;
+            /*안쪽 여백*/
+            padding: 15px;
+        }
+        #navi >li:hover {
+            background-color: yellow;
+        }
+        a {
+            text-decoration: none;
+        }
+        ol {
+            /* ol 기본값 list-style-type: decimal*/
+            /* 숫자앞에 0을 붙여 자리수를 맞춤*/
+            list-style-type: decimal-leading-zero;
+            list-style-type: hangul;
+            /* 마커를 안쪽으로 이동*/
+            list-style-position: inside;
+            /* 마커를 바깥쪽으로 이동*/
+            list-style-position: outside;
+        }
+        p::selection {
+            color: red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul id="navi">
+        <li><a href='#'>회사소개</a></li>
+        <li><a href='#'>제품소개</a></li>
+        <li>커뮤니티</li>
+        <li>자료실</li>
+        <li>찾아오시는길</li>
+    </ul>
+    
+    <h2>프론트엔드</h2>
+    <ol>
+        <li>html</li>
+        <li>CSS</li>
+        <li>javascript</li>
+        <li>jquery</li>
+        <li>node.js</li>
+    </ol>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolores, maiores neque deleniti explicabo accusamus accusantium nobis ipsa. Corrupti natus quod quaerat harum ullam inventore magni repellendus soluta sequi vel!</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문단 스타일</title>
+    <style>
+        .text {
+            /* 양쪽 정렬 */
+            text-align: justify;
+            /* 들여쓰기 */
+            text-indent: 1em;
+            /* 줄간격 */
+            line-height: 2em;
+        }
+        .valign img {
+            /* 상하 정렬중 가운데 */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <p>기본값 글</p>
+    <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta nihil similique molestias velit ullam minus vel doloribus, quidem voluptatibus quod. Aspernatur, assumenda molestias vitae eveniet adipisci eligendi quidem voluptas iure.</p>
+    <p class="free">
+        나는 자유다.
+        <img src="images/car_purple.jpg" alt="자동차">
+    </p>
+    <p class="valign">
+        나는 자유다.
+        <img src="images/car_green.jpg" alt="자동차">
+    </p>
+</body>
+</html>
