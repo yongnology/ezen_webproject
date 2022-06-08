@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색과 이미지</title>
+    <style>
+        .back {
+            height: 150px;
+            background: #677582 url(images/umbrella.jpg) no-repeat;
+            /* background 색상 이미지주소 반복여부 */
+            margin-bottom: 10px;
+        }
+        .back1{
+            background-size: 100px 200px;
+        }
+        .back2{
+            background-size: auto;
+        }
+        .back3 {
+            background-size: 80% 100%;
+        }
+        .bakc4 {
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="back back1"></div>
+    <div class="back back2"></div>
+    <div class="back back3"></div>
+    <div class="back back4"></div>
+    <div class="back back5"></div>
+</body>
+</html>

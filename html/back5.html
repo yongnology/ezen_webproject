@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색과 이미지</title>
+    <style>
+        #target {
+            width: 600px;
+            height: 400px;
+            border: 1px solid;
+            /*
+            background: url(images/송해.jpg) no-repeat 0 0,
+                        url(images/형돈.jpg) no-repeat 100% 0,
+                        url(images/호동.jpg) no-repeat 0 100%,
+                        url(images/우는사람.png) no-repeat 100% 100%,
+                        url(images/x.jpg) no-repeat 50% 50%*/
+            background: url(images/1.png);
+            background-clip: content-box;
+            background-origin: content-box;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>영역배경</h2>
+    <div id="target">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis facere repudiandae beatae omnis placeat nihil ut vitae ratione nam quibusdam esse tempora iusto, eveniet, est soluta, explicabo harum earum voluptatem!</p>
+    </div>
+</body>
+</html>
