@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>전환(transition) 효과</title>
+    <Style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /*
+            transition-property: width height;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in;
+            */
+            transition: width 1s;
+        }
+        #box:hover {
+            width: 200px;
+        }
+    </Style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+</html>

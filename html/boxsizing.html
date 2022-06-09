@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>박스모델</title>
+    <Style>
+        .box1 {
+            box-sizing: content-box; /*기본값*/
+            width: 300px;
+            height: 150px;
+            background-color: yellow;
+            border: 2px solid red;
+            padding: 30px;
+        }
+        .box2 {
+            box-sizing: border-box; /* 무슨 효과를 넣어도 너비,높이 고정*/
+            width: 300px;
+            height: 150px;
+            background-color: yellowgreen;
+            border: 2px solid red;
+            padding: 30px;
+        }
+    </Style>
+</head>
+<body>
+    <div class="box1">
+        <p>콘텐츠 박스(content-box)로 구성</p>
+    </div>
+    <div class="box2">
+        <p>보더 박스(border-box)로 구성</p>
+    </div>
+</body>
+</html>

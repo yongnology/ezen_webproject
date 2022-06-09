@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변형(transform)</title>
+    <Style>
+        .tran1 {
+            transition: transform 1s;
+        }
+        .tran1:hover {
+            transform: translate(300px, 100px); /*x축 y축*/
+        }
+        .tran2 {
+            transition: transform 1s;
+        }
+        .tran2:hover {
+            transform: scale(0.5, 1.5);
+        }
+    </Style>
+</head>
+<body>
+    <img class="tran1" src="images/car_green.jpg" alt="">
+    <br>
+    <img class="tran2" src="images/car_red.jpg" alt="">
+</body>
+</html>

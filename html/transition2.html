@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>전환(transition) 효과(2)</title>
+    <Style>
+        .menu {
+            list-style: none;
+        }
+        .menu a {
+            display: block;
+            width: 300px;
+            height: 20px;
+            padding: 10px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            background-color: #abc;
+            color: #fff;
+            border: 1px solid black;
+            transition: width 0.5s, color 0.5s, border 0.5s;
+        }
+        .menu a:hover{
+            background-color: yellow;
+            color: red;
+            width: 500px;
+            border: 5px dotted yellow;
+        }
+        img {
+            opacity: 0.1;
+            transition: opacity 0.5s;
+        }
+        img:hover{
+            opacity: 1;
+        }
+    </Style>
+</head>
+<body>
+    <h3>움직이는 메뉴</h3>
+    <ul class="menu">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">서비스</a></li>
+        <li><a href="#">커뮤니티</a></li>
+        <li><a href="#">자료실</a></li>
+    </ul>
+    <img src="images/girl.jpg">
+
+</body>
+</html>
