@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>애니메이션2</title>
+    <Style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            animation-name: bg;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes bg {
+            0% {
+                background-color: blue;
+            }
+            25% {
+                background-color: green;
+                transform: translate(30px, 30px);
+            }
+            50% {
+                background-color: red;
+            }
+            100% {
+                background-color: yellow;
+            }
+        }
+    </Style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변형에 관련된 속성들1</title>
+    <Style>
+        div {
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            border: 1px solid;
+            padding-top: 100px;
+        }
+        div img {
+            /* 기준점 설정 */
+            transform-origin: left top;
+            transition: transform 1s;
+        }
+        div img:hover {
+            transform: rotate(360deg);
+        }
+    </Style>
+</head>
+<body>
+    <div>
+        <img src="images/car_purple.jpg" alt="">
+    </div>
+</body>
+</html>

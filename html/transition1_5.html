@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>전환(transition) 효과</title>
+    <Style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 1px solid red;
+            /*
+            transition-property: width height;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in;
+            */
+            transition: all 1s;
+            /* all을 사용해서 모두 사용한다는 의미를 쓸 수 있다.*/
+        }
+        #box:hover {
+            width: 200px;
+            height: 200px;
+            border: 5px dotted yello;
+        }
+    </Style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+</html>

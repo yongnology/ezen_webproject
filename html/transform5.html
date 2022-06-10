@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변형에 관련된 속성들2</title>
+    <Style>
+        div {
+            position: relative;
+            display: inline-block;
+            width: 250px;
+            height: 240px;
+            border: 1px solid;
+            margin-right:20px;
+            perspective: 300px;
+        }
+        .rotatex {
+            transform: rotateX(50deg);
+        }
+        #pef {
+            position: absolute;
+            perspective: 300px;
+        }
+    </Style>
+</head>
+<body>
+    <div>
+        <img src="images/girl.jpg" alt="">
+    </div>
+    <div id="nop">
+        <div class="rotatex">
+            <img src="images/girl.jpg" alt="">
+        </div>
+    </div>
+    <div id="per">
+        <div class="rotatex">
+            <img src="images/girl.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변형 함수</title>
+    <Style>
+        img {
+            transition: transform 1s;
+        }
+        img:hover {
+            /* transform: rotate(720deg);*/
+            /* transform: rotate3d(2.5, 1.2, -1.5, 45deg); */
+            /* transform: skew(30deg, 30deg); */ /*비틀기*/
+
+            transform: matrix(2, -0.1, 0,1,0,0)
+            /* matrix(scaleX, skewY, skewX, sacleY, translateX, translateY) */
+        }
+    </Style>
+</head>
+<body>
+    <img src="images/girl.jpg" alt="">
+</body>
+</html>

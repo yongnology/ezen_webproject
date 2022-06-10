@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>변형에 관련된 속성들3</title>
+    <Style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .container {
+            border: 1px solid;
+            display: inline-block;
+            margin-top: 100px;
+            margin-left: 100px;
+            perspective: 300px;
+        }
+        .box {
+            background-color: #82cbd8;
+            transform: rotateY(45deg);
+        }
+        .inBox {
+            background-color: #0d6097;
+            transform-origin: left top;
+            transform: rotateX(45deg)
+        }
+        #tr1 {
+            transform-style: flat;
+        }
+        #tr2{
+            transform-style: flat;
+        }
+        #tr2:hover {
+            transform-style: preserve-3d;
+        }
+    </Style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="tr1">
+            <div class="inBox"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box" id="tr2">
+            <div class="inBox"></div>
+        </div>
+    </div>
+
+</body>
+</html>
