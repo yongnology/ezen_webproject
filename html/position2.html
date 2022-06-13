@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>배치 방법 지정</title>
+    <Style>
+        #parentArea {
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .area {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        #box1 {
+            background-color: red;
+            left: 0px;
+            top: 0px;
+            z-index: 30;
+        }
+        #box2 {
+            background-color: green;
+            right: 0px;
+            top: 0px;
+            z-index: 40;
+        }
+        #box3 {
+            background-color: blue;
+            left: 0;
+            bottom: 0;
+            z-index: 310;
+        }
+    </Style>
+</head>
+<body>
+    <div id="parentArea">
+        <div id="box1" class="area">
+            박스1
+        </div>
+        <div id="box2" class="area">
+            박스2
+        </div>
+        <div id="box3" class="area">
+            박스3
+        </div>
+    </div>
+    
+</body>
+</html>
