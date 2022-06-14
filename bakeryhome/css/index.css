@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: "맑은 고딕", sans-serif;
+    width: 960px;
+    margin: 0 auto;
+}
+/* 헤더 영역 */
+header {
+    height: 150px;
+}
+header > .logo {
+    float: left;
+    padding-top: 30px;
+    height: 100px;
+}
+header > .logo img {
+    width: 250px;
+}
+
+header > nav {
+    float: right;
+    padding-top: 70px;
+}
+nav > ul {
+    width: 600px;
+}
+nav li.dropdown {
+    float: left;
+    width: 200px;
+
+}
+nav li.dropdown > a {
+    display: block; /*글자부분만 선택가능한것 방지하기 위해*/
+    padding: 14px 16px;
+    text-align: center;
+    transition: all 0.3s;
+}
+nav li.dropdown:hover ul.dropdown_content{
+    display: block;
+}
+
+nav li.dropdown > a:hover, nav li.dropdown:hover .dropbtn {
+    background-color: #7b422e;
+    color: #fff;
+}
+/*nav > ul > li.dropdown > ul.dropdown_content */
+nav ul.dropdown_content {
+    display: none;
+    width: 200px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+nav ul.dropdown_content a {
+    display: block; /*글자부분만 선택가능한것 방지하기 위해*/
+    padding: 14px 16px;
+    text-align: center;
+}
+nav ul.dropdown_content a:hover{
+    background-color: #bb692d;
+    color: #fff;
+    transition: all 0.2s;
+}
