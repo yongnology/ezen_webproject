@@ -62,6 +62,7 @@ nav ul.dropdown_content {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* 위로 오게끔 한다*/
 }
 nav ul.dropdown_content a {
     display: block; /*글자부분만 선택가능한것 방지하기 위해*/
@@ -72,4 +73,132 @@ nav ul.dropdown_content a:hover{
     background-color: #bb692d;
     color: #fff;
     transition: all 0.2s;
+}
+/* 메인 이미지 영역 */
+#main_image {
+    height: 400px;
+    position: relative;
+}
+#main_image > .img {
+    height: 400px;
+    position: absolute;
+}
+#main_image > .welcome {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin: -50px 0 0 -150px; /* height 100이니 50,width300의 반 150 */
+    border-radius: 10px;
+    line-height: 50px;
+     /*베이커리 카페와 세상에 하나뿐인 베이커리. 두줄을 2등분하게끔함*/
+}
+#main_image > .welcome > h1 {
+    color: #bb692d;
+}
+#main_image > .welcome > h2 {
+    color: #6a6a6a;
+    font-size: 1.3em;
+}
+/* 콘텐츠 영역 */
+
+/* 공지사항 영역 */
+#contents > .notice {
+    width: 480px;
+    float: left;
+    margin-top: 20px;
+}
+#contents > .notice > h2 {
+    text-align: center;
+    border-bottom: 1px solid #6a6a6a;
+    padding-bottom: 10px;
+}
+#contents > .notice > table {
+    font-size: 0.9em;
+    color: #666;
+    width: 430px;
+    margin-left: 20px;
+    border-collapse: separate;
+}
+#contents > .notice > table tr > th {
+    padding: 5px 0;
+}
+#contents > .notice > table tr > td {
+    padding: 5px;
+}
+#contents > .notice > table tr:nth-child(2n) {
+    background-color: rgba(153, 153, 102, 0.5);
+}
+/* 파트너 영역 */
+#contents > .partner {
+    width: 480px;
+    float: right;
+    margin-top: 20px;
+}
+
+#contents > .partner > h2 {
+    text-align: center;
+}
+#contents > .partner > .partner_info {
+    margin-top: 10px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+/* 아이콘 콘텐츠 제작 영역 */
+#contents > .icons {
+    clear: both;
+    text-align: center;
+    margin-top: 20px;
+}
+#contents > .icons> .icon {
+    display: inline-block;
+    width: 160px;
+    margin: 0 20px; /* 좌우 20px 마진 */
+}
+#contents > .icons > .icon > img {
+    width: 150px;
+}
+#contents > .icons > .icon > button {
+    background-color: #bb692d;
+    padding: 10px;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#contents > .icons > .icon > button:hover{
+    background-color: #99cc66;
+}
+
+/* --- 콘텐츠 영역 끝 ---*/
+
+/* 푸터 영역*/
+footer {
+    background-color: #bb692d;
+    height: 150px;
+    color: #fff;
+    margin-top: 30px;
+    padding: 20px;
+}
+footer ul {
+    float: left;
+}
+footer ul li {
+    float: left;
+    padding-top: 30px;
+    padding-right: 20px;
+}
+footer ul li a {
+    color: #fff;
+}
+footer address {
+    float: right;
+    font-size: 0.9em;
+    font-style: normal;
+     /* adress태그는 이텔릭이기 때문에 normal로 정상으로 만듬 */
+    padding-right: 120px;
 }
