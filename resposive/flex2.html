@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 레이아웃(항목배치)</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 150px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+        .box1 {
+            justify-content: flex-start;
+        }
+        .box2 {
+            justify-content: flex-end;
+        }
+        .box3 {
+            justify-content: centert;
+        }
+        .box4 {
+            justify-content: space-between;
+        }
+        .box5 {
+            justify-content: space-around;
+        }
+        h1, p {
+            text-align: center;
+        }
+        .box div {
+            width: 100px;
+            border: 2px solid black;
+            background: gray;
+        }
+        .box11 {
+            align-content: flex-start;
+        }
+        .box22 {
+            align-content: flex-end;
+        }
+        .box33 {
+            align-content: centert;
+        }
+        .box44 {
+            align-content: space-between;
+        }
+        .box55 {
+            align-content: space-around;
+        }
+    .red {
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <h1 class="red">한줄일 때</h1>
+    <h1>1) 주축을 기준으로 배치(flex-start)</h1>
+    <div class="box box1">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+    <h1>2) 주축을 끝점으로 배치(flex-end)</h1>
+    <div class="box box2">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+    <h1>3) 주축을 중앙을 기준으로 배치(center)</h1>
+    <div class="box box3">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+    <h1>4) 주축의 시작점에서 같은 간격으로 배치(space-between)</h1>
+    <div class="box box4">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+    <h1>5) 같은 간격으로 배치(space-around)</h1>
+    <div class="box box5">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+
+    <h1 class="red">여러줄일 때</h1>
+
+    <h1>1(space-around)</h1>
+    <div class="box box11">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+    <h1>2(flex-end)</h1>
+    <div class="box box22">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+    <h1>3(center)</h1>
+    <div class="box box33">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+    <h1>4(space-between)</h1>
+    <div class="box box44">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+    <h1>5(space-around)</h1>
+    <div class="box box55">
+        <div><p>1</p></div>
+        <div><p>2</p></div>
+        <div><p>3</p></div>
+    </div>
+</body>
+</html>

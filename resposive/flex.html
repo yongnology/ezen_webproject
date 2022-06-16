@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스(flex) 레이아웃</title>
+    <style>
+        .flexbox {
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            /*flex-direction: column-reverse;*/
+             /* direction 방향의 기본값은 row(세로)
+                                colum; 가로
+                                colum-reverse; 역순*/
+            flex-wrap: wrap;
+            
+            background: #ccc;
+        }
+        .flexbox > div {
+            -webkit-flex: 1;
+            -moz-flex:1;
+            -ms-flex: 1;    
+            /*flex: 1;  /* flex: 1 0 0 */  
+            /* 부모 영역을 균등하게 나눈다.*/
+            
+            /* flex: 1 0 100px; */
+            /* flex-grow: 1; /* 늘이는 것*/
+            /* flex-shrink: 0; /* 줄일 값 */
+            /* flex-basis: 200px; /* 기본값 */
+            
+            background: lightcoral;
+            margin: 10px;
+        }
+        .flexbox .box1 {
+           /* flex: 1 1 0;*/
+           order: 2; /*순서 정하기(2번쨰 라는 의미)*/
+        }
+        .flexbox .box2 {
+            /* flex: 2 2 0; */
+            order: 3; /*순서 정하기(3번쨰 라는 의미)*/
+        }
+        .flexbox .box3 {
+            order:1; /*순서 정하기(1번쨰 라는 의미)*/
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <div class="box1">1
+            <img src="images/car1.jpg">
+        </div>
+        <div class="box2">2
+            <img src="images/car2.jpg"></div>
+        <div class="box3">3
+            <img src="images/car3.jpg">
+        </div>
+    </div>
+</body>
+</html>

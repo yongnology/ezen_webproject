@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오르세미술관</title>
+    <style>
+        /* 초기화 작업 */
+        h1, h2, ul, li, p, div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+        .clear::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        a {
+            line-height: 1.5;
+            color: #333;
+        }
+        /* 모바일용 css 작업 */
+        body {
+            background: #f1f1f1;
+            font-size: 13px;
+        }
+        header{
+            background: coral;
+        }
+        header h1 {
+            font-size: 25px;
+            color: #fff;
+            padding: 10px;
+        }
+        #container .lnb li {
+            margin: 10px;
+            padding: 10px;
+            background: lightgreen;
+        }
+        #container .content {
+            padding: 20px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        aside .ext {
+            margin: 10px;
+            padding: 20px;
+            background: lightgreen;
+        }
+        footer {
+            padding: 10px;
+            background: #aaa;
+        }
+        /* 미디어쿼리 테블릿용 css 작업 */
+        @media all and (min-width:768px) and (max-width:1024px) {
+            #container .lnb{
+                float: left;
+                width: 25%;
+            }
+            #container .content {
+                float: left;
+                width: 75%;
+            }
+            #container aside {
+                clear: both;
+            }
+        }
+        /* 미디어쿼리 PC용 css 작업 */
+        @media all and (min-width:1025px) {
+            #wrap {
+                max-width: 1280px;
+                margin: 0 auto;
+            }
+            #container .lnb {
+                float: left;
+                width: 20%;
+            }
+            #container .content {
+                float: left;
+                width: 50%;
+            }
+            #container aside {
+                float: right;
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>Musee d'Orsay</h1>
+        </header>
+        <div id="container" class="clear">
+            <div class="lnb"> <!--local navigation bar-->
+                <ul>
+                    <li><a href="#">작가의 작품</a></li>
+                    <li><a href="#">작가의 시대</a></li>
+                    <li><a href="#">작가의 일생</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>PICTURES</h2>
+                <p><a href="#">피리부는 소년</a><br>
+                   <a href="#">고희의 방</a><br>
+                   <a href="#">황생 그리스도가 있는 화가의 자화상</a><br>
+                   <a href="#">오페라좌의 관현악단</a><br>
+                   <a href="#">만종</a><br>
+                   <a href="#">제비꽃 장식을 단 베르트모리조</a><br>
+                   <a href="#">피리부는 소년</a><br>
+                   <a href="#">고희의 방</a><br>
+                   <a href="#">황생 그리스도가 있는 화가의 자화상</a><br>
+                   <a href="#">오페라좌의 관현악단</a><br>
+                   <a href="#">만종</a><br>
+                   <a href="#">제비꽃 장식을 단 베르트모리조</a><br>
+                </p>
+            </div>
+            <aside>
+                <ul class="ext">
+                    <li>
+                        <h2>Workshop Go</h2>
+                        <a href="#">Life drawing Workshop</a>
+                    </li>
+                    <li>
+                        <h2>Summer Exhibition</h2>
+                        <a href="#">A-level Summer Exibition online 2022</a>
+                    </li>
+                    <li>
+                        <h2>RA Collection</h2>
+                        <a href="#">RA Collection</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <footer>
+            <p>&copy;2022 Les Amis du Musee d'Orsay. All right reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
