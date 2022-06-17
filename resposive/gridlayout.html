@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 레이아웃</title>
+    <style>
+        #wrap {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 100px 300px 100px;
+        }
+        #wrap > div {
+            margin: 2px;
+            padding: 10px;
+        }
+        .grid1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background: cornflowerblue;
+        }
+        .grid2 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            background: orange;
+        }
+        .grid3 {    /* content*/
+            grid-column-start: 2;
+            grid-column-end: 3;
+            background: lightgreen;
+        }
+        .grid4 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="grid1">header</div>
+        <div class="grid2">sidemenu</div>
+        <div class="grid3">content</div>
+        <div class="grid4">footer</div>
+    </div>
+</body>
+</html>
