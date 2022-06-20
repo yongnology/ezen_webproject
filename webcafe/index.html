@@ -10,7 +10,9 @@
 
     <title>WebCafe</title>
     <link rel="shortcut icon" href="images/common/webcafe.ico" />
-
+    <link rel="stylesheet" href="css/normalize.css"> <!--스타일 초기화-->
+    <link rel="stylesheet" href="css/common.css"> <!--공통으로 쓸 부분의 스타일-->
+    <link rel="stylesheet" href="css/index.css">
     <style>
         /*
         .hidden {
@@ -70,7 +72,7 @@
                             </ul>
                         </li>
                         <li><a href="#">웹 표준</a>
-                            <ul class="webStandart">
+                            <ul class="webStandard">
                                 <li><a href="#">웹 표준이란?</a></li>
                                 <li><a href="#">W3C</a></li>
                                 <li><a href="#">HTML5의 현재와 미래</a></li>
@@ -105,7 +107,7 @@
                 </nav>
             </header>
             <!--헤더 영역 종료-->
-        </div>
+        
         <!--비주얼 영역-->
         <div id="visual">
             <p>Web Standart &amp; webAccessibility</p>
@@ -252,19 +254,93 @@
                 </section>
              </div>
              <!--검색 폼, 공지사항과 자료실 및 새로운 콘텐츠 컬럼 종료-->
-             
+
+             <!--신규 이벤트, 관련 사이트, 인기사이트 콘텐츠 컬럼 시작-->
+             <!--신규 이벤트-->
+             <section class="event">
+                <h2>신규<span>이벤트</span></h2>
+                <div id="eventDetail">
+                    <a href="#">
+                        <img src="images/free_gift.gif" alt="이벤트경품 : 웹표준 핵심 가이드북 II" width="163" height="77">
+                        <p><em>웹표준 핵심 가이드 II 출시</em> 선착순 500명 한정!</p>
+                    </a>
+                </div>
+                <div class="btnEventArea">
+                    <a href="#" class="btnEventPrev">이전 이벤트 보기</a>
+                    <a href="#" class="btnEventNext">다음 이벤트 보기</a>
+                </div>
+             </section>
+             <!--관련사이트-->
+             <section class="relatedLink">
+                <h2>관련<span>사이트</span></h2>
+                <ul>
+                    <li><a href="http://www.jeumedia.com">제우미디어</a></li>
+                    <li><a href="http://www.w3.org">W3C</a></li>
+                    <li><a href="http://www.csszengarden.com">CSS ZEN GARDEN</a></li>
+                    <li><a href="http://www.webstandards.org">WEB STANDARDS</a></li>
+                    <li><a href="http://www.wah.or.kr">웹 접근성 연구소</a></li>
+                </ul>
+             </section>
+             <!--인기사이트 콘텐츠-->
+             <section class="hotlink">
+                <h2>인기<span>사이트</span></h2>
+                <ol> <!--ol : 순서를 나타내는 목록-->
+                    <li class="no1"><a href="#">W3C</a><em class="up">상승</em></li>
+                    <li class="no2"><a href="#">CSS Zen garden</a><em class="up">하락</li>
+                    <li class="no3"><a href="#">Webstandartds</a><em class="up">유지</li>
+                    <li class="no4"><a href="#">웹 접근성 연구소</a><em class="up">상승</li>
+                </ol>
+                <a href="#" class="more" title="인기 사이트 더보기"></a>
+             </section>
+             <!--신규 이벤트, 관련 사이트, 인기사이트 콘텐츠 컬럼 종료-->
         </div>
         <!--메인 콘텐츠 영역 종료-->
         <!--슬로건 영역 시작-->
         <section id="slogan">
-            
+            <h2>Web Cafe 슬로건</h2>
+            <p>
+                <q cite="http://www.w3.org/WAI/">The power of the Web is in its universality, Access by everyone regardless of idsability is an essentail aspect.
+                </q>
+                Tim Berners_Lee. W3C director and inventor of the World Wide Web.
+            </p>
+            <footer class="hidden">
+                출처 : World Wide Web Consortium - http://www.w3.org/WAI/
+            </footer>
         </section>
         <!--슬로건 영역 종료-->
+
         <!--푸터 영역 시작-->
-        <footer>
-            
+        <footer id="footer">
+            <!--이미지 부분-->
+            <div id="footerInner">
+                <a class="footerLogo">
+                    <img src="images/footer_logo.png" alt="WebCafe">
+                </a>
+                <section class="guidde">
+                    <h2 class="hidden">사이트 이용안내</h2>
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">개인정보 보호정책</a></li>
+                        <li><a href="#">이메일 주소 무단 수집거부</a></li>
+                        <li><a href="#">contact us</a></li>
+                        <li><a href="#">site map</a></li>
+                    </ul>
+                </section>
+                <address>
+                    <span>서울시 마포구 상수동 123-12 한주빌딩 5층</span>
+                    <span>· 전화 : 02-234-5678</span>
+                    <span>· E-Mail : <a href="mailto:webmaster@webcafe.com">webmaster@webcafe.com</a></span>
+                </address>
+                <p class="copyright">CopyRight since #copy; 2010 by Web WebCafe COPRORATION ALL RIGHTS RESERVED.
+                </p>
+                <div class="techLoghArea">
+                    <img src="images/html5_logo.png" alt="HTML5">
+                    <img src="images/css3_logo.png" alt="CSS3">
+                </div>
+            </div>
         </footer>
         <!--푸터 영역 종료-->
+    </div>
     <!--wrapper 종료-->
 </body>
 </html>
