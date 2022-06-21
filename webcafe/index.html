@@ -14,23 +14,7 @@
     <link rel="stylesheet" href="css/common.css"> <!--공통으로 쓸 부분의 스타일-->
     <link rel="stylesheet" href="css/index.css">
     <style>
-        /*
-        .hidden {
-            display: none;
-        }
-        */
-        /*
-        * {
-            list-style: none;
-            text-decoration: none;
-        }
-        *//*
-        header ul {
-            background: gray;
-        }
-        header ul li {
-            background-color: yellow;
-        }*/
+        
     </style>
 </head>
 <body>
@@ -129,7 +113,7 @@
                             </p>
                             <p>
                                 <label for="userPw">비밀번호</label>
-                                <input type="password" id="userPw" name="userPw" placeholder="4자 이상 8자 이하" required>
+                                <input type="password" id="userPw" name="userPw" placeholder="4자이상 8자이하" required>
                             </p>
                             <button type="submit">로그인</button>
                         </fieldset>
@@ -140,12 +124,12 @@
                     </div>
                 </section>
                 <!--로그인 영역 종료-->
-                <section class="valdation">
+                <section class="validation">
                     <h2 class="hidden">유효성 검사</h2>
                     <ul>
                         <li>
                             <a href="https://validator.w3.org" title="마크업 유효성 검사 사이트로 이동" target="_blank">
-                                W3c Markup valdation</a>
+                                W3C Markup valdation</a>
                         </li>
                         <li>
                             <a href="https://jigsaw.w3.org/css-validator/" title="CSS 유효성 검사 사이트로 이동" target="_blank">
@@ -256,43 +240,45 @@
              <!--검색 폼, 공지사항과 자료실 및 새로운 콘텐츠 컬럼 종료-->
 
              <!--신규 이벤트, 관련 사이트, 인기사이트 콘텐츠 컬럼 시작-->
-             <!--신규 이벤트-->
-             <section class="event">
-                <h2>신규<span>이벤트</span></h2>
-                <div id="eventDetail">
-                    <a href="#">
-                        <img src="images/free_gift.gif" alt="이벤트경품 : 웹표준 핵심 가이드북 II" width="163" height="77">
-                        <p><em>웹표준 핵심 가이드 II 출시</em> 선착순 500명 한정!</p>
-                    </a>
-                </div>
-                <div class="btnEventArea">
-                    <a href="#" class="btnEventPrev">이전 이벤트 보기</a>
-                    <a href="#" class="btnEventNext">다음 이벤트 보기</a>
-                </div>
-             </section>
-             <!--관련사이트-->
-             <section class="relatedLink">
-                <h2>관련<span>사이트</span></h2>
-                <ul>
-                    <li><a href="http://www.jeumedia.com">제우미디어</a></li>
-                    <li><a href="http://www.w3.org">W3C</a></li>
-                    <li><a href="http://www.csszengarden.com">CSS ZEN GARDEN</a></li>
-                    <li><a href="http://www.webstandards.org">WEB STANDARDS</a></li>
-                    <li><a href="http://www.wah.or.kr">웹 접근성 연구소</a></li>
-                </ul>
-             </section>
-             <!--인기사이트 콘텐츠-->
-             <section class="hotlink">
-                <h2>인기<span>사이트</span></h2>
-                <ol> <!--ol : 순서를 나타내는 목록-->
-                    <li class="no1"><a href="#">W3C</a><em class="up">상승</em></li>
-                    <li class="no2"><a href="#">CSS Zen garden</a><em class="up">하락</li>
-                    <li class="no3"><a href="#">Webstandartds</a><em class="up">유지</li>
-                    <li class="no4"><a href="#">웹 접근성 연구소</a><em class="up">상승</li>
-                </ol>
-                <a href="#" class="more" title="인기 사이트 더보기"></a>
-             </section>
-             <!--신규 이벤트, 관련 사이트, 인기사이트 콘텐츠 컬럼 종료-->
+             <div id="linkArea">
+                <!--신규 이벤트-->
+                <section class="event">
+                    <h2>신규<span>이벤트</span></h2>
+                    <div id="eventDetail">
+                        <a href="#">
+                            <img src="images/free_gift.gif" alt="이벤트경품 : 웹표준 핵심 가이드북 II" width="163" height="77">
+                            <p><em>웹표준 핵심 가이드 II 출시</em> 선착순 500명 한정!</p>
+                        </a>
+                    </div>
+                    <div class="btnEventArea">
+                        <a href="#" class="btnEventPrev">이전 이벤트 보기</a>
+                        <a href="#" class="btnEventNext">다음 이벤트 보기</a>
+                    </div>
+                </section>
+                <!--관련사이트-->
+                <section class="relatedLink">
+                    <h2>관련<span>사이트</span></h2>
+                    <ul>
+                        <li><a href="http://www.jeumedia.com">제우미디어</a></li>
+                        <li><a href="http://www.w3.org">W3C</a></li>
+                        <li><a href="http://www.csszengarden.com">CSS ZEN GARDEN</a></li>
+                        <li><a href="http://www.webstandards.org">WEB STANDARDS</a></li>
+                        <li><a href="http://www.wah.or.kr">웹 접근성 연구소</a></li>
+                    </ul>
+                </section>
+                <!--인기사이트 콘텐츠-->
+                <section class="hotlink">
+                    <h2>인기<span>사이트</span></h2>
+                    <ol> <!--ol : 순서를 나타내는 목록-->
+                        <li class="no1"><a href="#">W3C</a><em class="up">상승</em></li>
+                        <li class="no2"><a href="#">CSS Zen garden</a><em class="up">하락</em></li>
+                        <li class="no3"><a href="#">Webstandartds</a><em class="up">유지</em></li>
+                        <li class="no4"><a href="#">웹 접근성 연구소</a><em class="up">상승</em></li>
+                    </ol>
+                    <a href="#" class="more" title="인기 사이트 더보기"></a>
+                </section>
+                <!--신규 이벤트, 관련 사이트, 인기사이트 콘텐츠 컬럼 종료-->
+            </div>
         </div>
         <!--메인 콘텐츠 영역 종료-->
         <!--슬로건 영역 시작-->
@@ -316,7 +302,7 @@
                 <a class="footerLogo">
                     <img src="images/footer_logo.png" alt="WebCafe">
                 </a>
-                <section class="guidde">
+                <section class="guide">
                     <h2 class="hidden">사이트 이용안내</h2>
                     <ul>
                         <li><a href="#">회사소개</a></li>
@@ -333,7 +319,7 @@
                 </address>
                 <p class="copyright">CopyRight since #copy; 2010 by Web WebCafe COPRORATION ALL RIGHTS RESERVED.
                 </p>
-                <div class="techLoghArea">
+                <div class="techLogoArea">
                     <img src="images/html5_logo.png" alt="HTML5">
                     <img src="images/css3_logo.png" alt="CSS3">
                 </div>

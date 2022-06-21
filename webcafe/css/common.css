@@ -23,22 +23,22 @@ fieldset {
     font-family: "Nanum";
     font-weight: 400;
     src: url("font/NanumGothic.eot?#iefix") format("embedded-opentype"),
-        url("font/NanumGothic.woff;") format("woff"),
-        url("font/NanumGothic.ttf;") format("tryetype");
+        url("font/NanumGothic.woff")format("woff"),
+        url("font/NanumGothic.ttf;") format("truetype");
 }
 @font-face { /* 내 브라우저를 방문하면 폰트를 다운받고 보여지게끔 함*/
     font-family: "NanumBold"; /* 나눔 굵음*/
     font-weight: 600;
     src: url("font/NanumGothicBold.eot?#iefix") format("embedded-opentype"),
         url("font/NanumGothicBold.woff") format("woff"),
-        url("font/NanumGothicBold.ttf") format("tryetype");
+        url("font/NanumGothicBold.ttf") format("truetype");
 }
 @font-face { /* 내 브라우저를 방문하면 폰트를 다운받고 보여지게끔 함*/
     font-family: "NanumEX"; /* 나눔 굵음*/
     font-weight: 900;
     src: url("font/NanumGothicExtraBold.eot?#iefix") format("embedded-opentype"),
         url("font/NanumGothicExtraBold.woff") format("woff"),
-        url("font/NanumGothicExtraBold.ttf") format("tryetype");
+        url("font/NanumGothicExtraBold.ttf") format("truetype");
 }
 /* 아이콘 폰트 */
 @font-face {
@@ -188,7 +188,10 @@ header {
     position: relative;
     top: 2px;
 }
-
+.mainMenu ul a:hover::before, .mainMenu ul a:focus::before{
+    content: "c"; /* 도형 글자*/
+    color: #f00; /* red */
+}
 /*
 .mainMenu ul { display: none; }
 */
@@ -205,34 +208,185 @@ header {
 }
 .webAcessibility {
     display: none;
+    left: -130px;
 }
 .qna {
     display: none;
+    left: -170px;
 }
 .archive {
     display: none;
+    right: 0;
 }
 /* 헤더 영역 종료 */
 
 /* 비주얼 영역 시작 */
 #visual {
     height: 120px;
+    position: relative;
+}
+#visual p {
+    position: absolute;
+    font-family: Georgia, serif; /* 거의 모든 글꼴이 두 글꼴이 갖고 있다. 왼쪽 먼저, 없으면 serif*/
+    font-size: 2em;
+    font-weight: bold;
+    top: 75px;
+    left: 400px;
+    animation: textAni 1s;
+}
+#visual::before, #visual::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 140px;
+     /* 원래 visual의 높이가 120 이므로, top -20의 높이까지 합 */
+     
+    /*animation: flowerAni 2s alternate infinite;*/
+    animation: flowerAni 2s;
+    animation-direction: alternate; /* 역으로도 진행 */
+    animation-iteration-count: infinite; /* 무한 반복 */
+}
+#visual::before {
+    background-image: url(images/ani_flower_01.png),
+                      url(images/ani_flower_02.png);
+    background-repeat: no-repeat;
+    background-position: /*flower_01의 위치*/0 5px, /*flower_02의 이미지*/670px 0;
+}
+#visual::after {
+    background-image: url(images/ani_flower_03.png),
+                      url(images/ani_flower_04.png);
+    background-repeat: no-repeat;
+    background-position: /*flower_03의 위치*/300px 35px, /*flower_04의 위치*/800px 65px;
+    animation-delay: 1s; /* 01,02 이미지보다 1초 지연하기 위해.*/
+}
+@keyframes textAni {
+    /*from*/
+    0% {
+        font-size: 1em;
+        top: 0;
+        left: 0;
+        opacity: 0.2; /* 투명도 */
+    }
+    /*to*/
+    100% {
+        font-size: 2em;
+        top: 75px;
+        left: 400px;
+        opacity: 1;
+    }
+}
+@keyframes flowerAni {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 /* 비주얼 영역 종료 */
 /* 메인 콘텐츠 영역 시작 */
 #contentsArea {
     min-height: 400px;
     padding: 30px 0 30px 30px;
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+    display: flex;  /* 세로로 정렬된것 */
+    flex-flow: row wrap;
+            /*flex-direction: flex-wrap: ;*/
+    /* overflow: hidden; */
 }
 /* 메인 콘텐츠 영역 종료 */
 
 /* 슬로건 영역 시작 */
 #slogan { /*문구가 들어갈 만큼만 영역을 준다.*/
     padding: 15px 0;
+    position: relative;
+}
+#slogan > h2 { /* Web Cafe 슬로건*/
+    width: 110px;
+    height: 90px;
+    background: url(images/coffee.png)no-repeat;
+    background-size: 110px 90px; /* 영역 사이즈로 맞춘다.*/
+    text-indent: 110px; /* 들여쓰기 */
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    bottom: -25px; /* footer 영역에 걸치게 하기 위해*/
+    left: 30px;
+}
+#slogan > p {
+    margin: 0 100px 0 200px;
+    color: #a09784;
+    font-size: 1.1em;
+}
+#slogan q {
+    font-weight: bold;
+}
+#slogan q::before {
+    font-size: 3em; /* body 12픽셀의 3배*/
+    color: #765725;
+    position: relative;
+    top: 15px;
+    left: -5px;
+}
+#slogan q::after {
+    content: ""; /* 기본으로 */
 }
 /* 슬로건 영역 종료 */
 /* 푸터 영역 시작 */
 #footer {
     padding: 15px 0;
+    background-image: linear-gradient(to bottom, #c7c7c7 0%, #fff 70%, #fff 100%);
+    /* 나눠서 백그라운드 그라디언트 설정 */
+
+}
+#footerInner {
+    position: relative;
+}
+.footerLogo { /* WebCafe 글자 모양 이미지*/
+    position: absolute;
+    left: 35px;
+    top: 45px;
+}
+.guide, address, .copyright {
+    /* margin: 200px 100px */
+    margin-left: 200px;
+    margin-right: 100px;
+}
+.guide { /* footer menu 색션*/
+    background: #7b8385;
+    border-radius: 5px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* 영문자를 모두 대문자로 바꿔줌*/
+}
+.guide li {
+    display: inline-block;
+}
+.guide a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 15px 10px 0;
+}
+.guide a::before {
+    content: "|";
+    padding-right: 20px;
+}
+.guide li:first-child a::before {
+    content: "";
+}
+address {
+    font-style: normal; /* i 태그인 기울여져있는것을 normal로 세운다.*/
+    margin-bottom: 5px;
+}
+address > span {
+    margin-right: 10px;
+}
+.techLogoArea {
+    position: absolute;
+    top: 0px;
+    right: 0;
 }
 /* 푸터 영역 종료 */

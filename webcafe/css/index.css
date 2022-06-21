@@ -1,0 +1,156 @@
+@charset "utf-8";
+/* width 설정시
+   usefulArea+infoArea+linkArea = 960 */
+
+/* usefulArea 영역 시작 */
+#usefulArea {
+    width: 250px;
+    margin-right: 30px;
+    /* float: left */ /* 대신에 display: flex를 적용했다. */
+}
+/* usefulArea 영역 종료 */
+
+/* 로그인 영역 시작*/
+.login {
+    background-image: radial-gradient(circle at top right, #ffc848, #ff8208);
+    border-radius: 5px; /* 모서리 둥글게 */
+    padding: 10px; 
+    box-shadow: -1px -1px 5px rgba(0,0,0, 0.2);
+}
+.login > h2 {
+    color: #feff9a;
+    font-size: 1.2em;
+    padding: 0 0 10px 10px
+}
+.login label {
+    display: inline-block;
+    width: 48px;
+}
+.login input {
+    width: 93px;
+    height: 19px;
+    padding: 1px 1px 1px 4px; /* 글쓰기 너무 가까이 써지기 떄문에 padding을 설정해줌*/
+    border: 1px solid #ccc;
+}
+#userId { /* 아이디 아래 여백을 주어서 띄어줌 */
+    margin-bottom: 6px;
+}
+.login form { /* 아이디와 비밀번호 label */
+    position: relative;
+    background-color: #fff;
+    border-radius: 3px 3px 0 0; /* 상단 테두리만 부드럽게. 아래 회원가입과 같게 보이기 위해 */
+    padding: 10px 10px 0 10px;
+}
+.login button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ff4e00;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom, #fe5f18 0%, #fa4306 100%);
+    color: white; /* #fff */
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.login fieldset {
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 10px 0; /* 아래방향에만 padding 10px을 준다. */
+}
+.memberLink {
+    background-color: #fff;
+    border-radius: 0 0 3px 3px;
+    padding: 0 10px; /* 좌우에만 10px */
+    overflow: hidden; /* 밑에 애들이 안올라오게*/
+}
+.memberLink .join {
+    float: left;
+    padding: 10px 0;
+}
+.memberLink .find {
+    float: right;
+    padding: 10px 0;
+}
+.memberLink a::before {
+    font-family: "webcafeIcon";
+    content: "g";
+    color: #fa3d00;
+    position: relative; /* 현재 내 위치에서 옮김*/
+    top: 2px;
+    margin-right: 3px; /* > 와 회원가입 사이의 간격*/
+}
+/* 로그인 영역 종료*/
+
+/* 유효성 검사 링크 영역 시작*/
+.validation {
+    margin-top: 20px;
+}
+.validation li {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, #fff 0, #ebebeb 100%);
+}
+.validation a {
+    display: block; /* inline 요소이지만 block으로 설정해서 크기를 지정할 수 있다. */
+    height: 30px;
+    color: #9c9c9c;
+    font-weight: bold;
+    line-height: 30px;
+    background: url(images/validation_icon.png) no-repeat 20px 5px;
+    background-size: 20px 20px;
+    text-indent: 45px; /* padding-left: 45px;  써도 된다. */
+
+}
+/* 유효성 검사 링크 영역 종료*/
+
+/* 웹 관련 용어 영역 시작 */
+.term {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px 20px;
+    background-image: linear-gradient(to bottom, #fff 0%, #f4f4f4 100%);
+}
+.term > h2 {
+    font-size: 1.2em;
+}
+.term dl {
+    margin-top: 15px;
+    overflow: hidden;
+}
+.term dt {
+    color: #296897;
+    float: right;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 130px;
+    /* 크기를 주어서 기존 float 으른쪽으로 갔지만 왼쪽으로 올수 있게 된다.*/
+}
+.term dd:nth-of-type(1) {
+    float: left;
+}
+.term dd:nth-of-type(2) {
+    float: right;
+    width: 130px;
+    line-height: 1.45;
+    text-align: justify; /* 양쪽 정렬 */
+}
+/* 웹 관련 용어 영역 종료 */
+
+/* infoArea 영역 시작 */
+#infoArea {
+    width: 390px;
+    margin-right: 30px;
+    /* float: left */
+}
+/* infoArea 영역 종료 */
+
+/* linkArea 영역 시작*/
+#linkArea {
+    width: 200px;
+    margin-right: 30px;
+    /* float: left */
+}
+/* linkArea 영역 종료*/
