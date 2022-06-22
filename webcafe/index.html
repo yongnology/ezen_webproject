@@ -94,7 +94,7 @@
         
         <!--비주얼 영역-->
         <div id="visual">
-            <p>Web Standart &amp; webAccessibility</p>
+            <p>Web Standard &amp; webAccessibility</p>
         </div>
         <!--비주얼 영역 종료-->
         <!--메인 콘텐츠 영역 시작-->
@@ -221,10 +221,10 @@
                 </div>
                 <section class="news">
                     <h2>새소식</h2>
-                    <articel>
+                    <article>
                         <a href="#">
                             <h3>W3C 사이트가 리뉴얼 되었습니다.</h3>
-                            <time datetime="2013-10-04"></time>
+                            <time datetime="2013-10-04">2013.10.04</time>
                             <p>디자인 및 다양한 view 환경을 고려하여 구성되어 있으며
                                 기존보다 최신 정보 및 개발자를 위한 기술 가이드도
                                 찾기 쉽도록 구성되어 있습니다.
@@ -233,7 +233,7 @@
                                 <img src="images/news.gif" alt="news" width="112", height="66">
                             </figure>
                         </a>
-                    </articel>
+                    </article>
                     <a href="#" class="more" title="새소식 더보기">더보기</a>
                 </section>
              </div>
@@ -241,41 +241,44 @@
 
              <!--신규 이벤트, 관련 사이트, 인기사이트 콘텐츠 컬럼 시작-->
              <div id="linkArea">
-                <!--신규 이벤트-->
-                <section class="event">
-                    <h2>신규<span>이벤트</span></h2>
-                    <div id="eventDetail">
-                        <a href="#">
-                            <img src="images/free_gift.gif" alt="이벤트경품 : 웹표준 핵심 가이드북 II" width="163" height="77">
-                            <p><em>웹표준 핵심 가이드 II 출시</em> 선착순 500명 한정!</p>
-                        </a>
-                    </div>
-                    <div class="btnEventArea">
-                        <a href="#" class="btnEventPrev">이전 이벤트 보기</a>
-                        <a href="#" class="btnEventNext">다음 이벤트 보기</a>
-                    </div>
-                </section>
-                <!--관련사이트-->
-                <section class="relatedLink">
-                    <h2>관련<span>사이트</span></h2>
-                    <ul>
-                        <li><a href="http://www.jeumedia.com">제우미디어</a></li>
-                        <li><a href="http://www.w3.org">W3C</a></li>
-                        <li><a href="http://www.csszengarden.com">CSS ZEN GARDEN</a></li>
-                        <li><a href="http://www.webstandards.org">WEB STANDARDS</a></li>
-                        <li><a href="http://www.wah.or.kr">웹 접근성 연구소</a></li>
-                    </ul>
-                </section>
+                 <!--신규 이벤트, 관련 사이트-->
+                <div class="eventrelatedArea">
+                    <!--신규 이벤트-->
+                    <section class="event">
+                        <h2>신규<span>이벤트</span></h2>
+                        <div id="eventDetail">
+                            <a href="#">
+                                <img src="images/free_gift.gif" alt="이벤트경품 : 웹표준 핵심 가이드북 II" width="163" height="77">
+                                <p><em>웹표준 핵심 가이드 II 출시</em> 선착순 500명 한정!</p>
+                            </a>
+                        </div>
+                        <div class="btnEventArea">
+                            <a href="#" class="btnEventPrev">이전 이벤트 보기</a>
+                            <a href="#" class="btnEventNext">다음 이벤트 보기</a>
+                        </div>
+                    </section>
+                    <!--관련사이트-->
+                    <section class="relatedLink">
+                        <h2>관련<span>사이트</span></h2>
+                        <ul>
+                            <li><a href="http://www.jeumedia.com">제우미디어</a></li>
+                            <li><a href="http://www.w3.org">W3C</a></li>
+                            <li><a href="http://www.csszengarden.com">CSS ZEN GARDEN</a></li>
+                            <li><a href="http://www.webstandards.org">WEB STANDARDS</a></li>
+                            <li><a href="http://www.wah.or.kr">웹 접근성 연구소</a></li>
+                        </ul>
+                    </section>
+                </div>
                 <!--인기사이트 콘텐츠-->
                 <section class="hotlink">
                     <h2>인기<span>사이트</span></h2>
                     <ol> <!--ol : 순서를 나타내는 목록-->
                         <li class="no1"><a href="#">W3C</a><em class="up">상승</em></li>
-                        <li class="no2"><a href="#">CSS Zen garden</a><em class="up">하락</em></li>
-                        <li class="no3"><a href="#">Webstandartds</a><em class="up">유지</em></li>
+                        <li class="no2"><a href="#">CSS Zen garden</a><em class="down">하락</em></li>
+                        <li class="no3"><a href="#">Webstandartds</a><em class="stop">유지</em></li>
                         <li class="no4"><a href="#">웹 접근성 연구소</a><em class="up">상승</em></li>
                     </ol>
-                    <a href="#" class="more" title="인기 사이트 더보기"></a>
+                    <a href="#" class="more" title="인기 사이트 더보기">더보기</a>
                 </section>
                 <!--신규 이벤트, 관련 사이트, 인기사이트 콘텐츠 컬럼 종료-->
             </div>
