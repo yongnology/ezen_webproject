@@ -96,7 +96,7 @@
             <section id="memberArea" class="memberJoin">
                 <p class="location">Home &gt; 자료실 &gt; <strong>이미지 자료</strong></p>
                 <h2>회원가입</h2>
-                <p class="formSign"><strong class="requre">필수</strong>는 반드시 입력해야 하는 항목입니다.</p>
+                <p class="formSign"><strong class="require">필수</strong>는 반드시 입력해야 하는 항목입니다.</p>
                 <form action="join.jsp" method="post" id="joinForm" name="joinForm">
                     <fieldset>
                         <legend>회원가입 정보 입력 폼</legend>
@@ -127,12 +127,44 @@
                             <label for="tel">연락처</label>
                             <input type="tel" id="tel" name="tel" maxlength="11" size="20" title="하이픈(-) 없이 입력" placeholder="입력 예) 01077778888">
                         </p>
+                        <p>
+                            <label for="email">이메일<strong class="require">필수</strong></label>
+                            <input type="email" id="email" name="email" size="30" required placeholder="입력 예) abc@gmail.com">
+                        </p>
+                        <p class="mailing">
+                            <em>메일링 리스트 가입</em>
+                            <span>이메일 리스트에 가입하시면 WebCafe의 뉴스레더를 받아보실 수 있습니다.</span>
+                            <input type="radio" id="mailingOk" name="mailing" value="Yes" checked><label for="mailingOk"> 예</label>
+                            <input type="radio" id="mailingNo" name="mailing" value="No"><label for="mailingNo"> 아니오</label>
+                        </p>
+                        <div class="btnJoinArea">
+                            <button type="sumbit" class="btnOk">회원가입</button>
+                            <button type="reset" class="btnCancel">취소</button>
+                        </div>
                     </fieldset>
                 </form>
             </section>
             <!-- 회원가입 영역 종료-->
             <!-- 트위터 영역 시작 -->
-
+            <aside id="twitterArea" title="HTML5관련 글">
+                <h2>twiter</h2>
+                <article class="twitterArticle">
+                    <img src="images/seulbinim.jpg" alt="seulbinim">
+                    <a href="http://twitter.com/seulbinim" class="twitterUserName" title="seulbinim의 트위터로 연결됩니다.">seulbinim</a>
+                    <p>한국 정보화 진흥원에서 <mark>HTML5</mark>교육을 무료로 해 준답니다.
+                    <mark>HTML5</mark>에 관심이 있는 분들은 한국 정보화 진흥원으로 문의하시기 바랍니다.
+                    </p>
+                    <time datetime="2021-09-03" class="twitterDate">2021년 09월 03일</time>
+                </article>
+                <article class="twitterArticle">
+                    <img src="images/miheeya.jpg" alt="seulbinim">
+                    <a href="http://twitter.com/miheeya" class="twitterUserName" title="miheeya 트위터로 연결됩니다.">miheeya</a>
+                    <p><mark>HTML5</mark>도 XHTML1.0 이나 HTML4.01과 같은 마크업 언어입니다.
+                    <mark>HTML5</mark>를 사용한다고 해서 웹표준을 준수하지 않는다거나 웹접근성이 떨어지는 것은 아닙니다.
+                    </p>
+                    <time datetime="2021-09-03" class="twitterDate">2021년 09월 03일</time>
+                </article>
+            </aside>
             <!-- 트위터 영역 종료 -->
 
         <!--슬로건 영역 시작-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 스크립트(3)</title>
+    <script>
+        window.onload = function() {
+            var output = "";
+            var date = new Date(); /* Date 라는 객체를 가져온다.*/
+            var hour = date.getHours(); /* 현재 시간을 가져 올 수 있다.*/
+            if(hour>16) {
+
+                output += "<ul>";
+                output += "<li>후라이드 치킨</li>";
+                output += "<li>양념 치킨</li>";
+                output += "<li>골뱅이 무침</li>";
+                output += "<li>마른 안주</li>";
+                output += "</ul>";
+            } else {
+                output += "<ul>";
+                output += "<li>김치찌개</li>";
+                output += "<li>된장찌개</li>";
+                output += "<li>순두부찌개</li>";
+                output += "<li>비빔밥</li>";
+                output += "</ul>";
+            }
+            document.body.innerHTML += output;
+        }
+    </script>
+</head>
+<body>
+    <h2>오늘의 메뉴</h2>
+</body>
+</html>

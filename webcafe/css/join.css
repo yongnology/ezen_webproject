@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* memberArea 영역 시작 */
+#memberArea {
+    width: 630px;
+    margin-right: 30px;
+    position: relative;
+}
+.location {
+    position: absolute;
+    top: 18px;
+    right: 30px;
+}
+.location strong {
+    color: #51a41e;
+}
+#memberArea h2 {
+    font-size: 1.5em;
+    font-family: "NanumEx";
+    color: #ff3c00;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    /* 가로1픽셀, 세로1픽셀, 번짐 0 */
+    border-bottom: 2px solid #ff6738;
+
+    /* padding: 15px 0; 아래와 같은 의미 */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.formSign {
+    text-align: right;
+    margin: 30px 0 10px;
+}
+.require{
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+    text-indent: 10px; /* 들여쓰기를 너비만큼 하면 범위에서 없어진다. */
+    white-space: nowrap;
+    overflow: hidden;
+}
+.require::before {
+    font-family: "webcafeIcon";
+    content: "s";
+    color: "#f48002";
+    position: relative;
+    left: -10px;
+}
+#joinForm {
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+#joinForm p {
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    position: relative;
+}
+#joinForm label, .mailing em {
+    float: left; /* float left하면 부모의 높이가 없어진다.*/
+    width: 120px;
+    padding: 13px 20px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #666;
+    background-color: #fffcef;
+}
+#joinForm .mailing label {
+    float: none;
+    padding: 0;
+    width: auto; /* 예, 아니오의 각자 크기 auto*/
+    background: none;
+}
+#joinForm input {
+    margin: 10px 0; /* 가운데 맞추기 위해*/
+}
+#joinForm input:not([type="radio"]) {
+    border: 1px solid #aaa;
+    height: 18px;
+    padding-left: 5px;
+}
+#joinForm input[type="radio"] { /* not을 안붙일떄는 : 를 뺴야한다. */
+    margin: 0;
+}
+a.idCheck, a.findZipcode {
+    font-family: "NanumEx";
+    background-color: #fe8389;
+    color: #fff;
+    padding: 3px 15px;
+    margin-left: 5px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px #ed676c, 1px -1px 1px #ed676c;
+}
+a.findZipcode {
+    position: absolute;
+    left: 230px;
+    top: 10px;
+}
+input#adress {
+    display: block;
+    margin: 0;
+}
+.labelAddress{ /* 위에서 높이 30이여서 벗어났지만 높이를 키워주면 입력란이 맞춰진다.*/
+    height: 50px;
+    line-height: 50px;
+}
+.mailing em {
+    font-style: normal;
+    height: 35px;
+    line-height: 35px;  /* 높이와 같게 하면 세로 가운데 정렬 */
+}
+.mailing span {
+    display: block;
+    margin: 10px 0;
+}
+/*
+.mailing input[type="radio"] { /* 도전하는 스타일 *//*
+    color: red;
+    margin-top: 10px;
+}
+*/
+.btnJoinArea {
+    text-align: center;
+    margin: 15px 0;
+}
+.btnJoinArea button {
+    font-family: "NanumEx";
+    font-size: 1.2em;
+    color: #fff;
+    padding: 8px 20px;
+    margin: 0 5px;
+    border: 0;
+    border-radius: 3px;
+    letter-spacing: 1px; /* 자간(글자 간격)*/
+}
+.btnJoinArea .btnOk::before {
+    font-family: "webcafeIcon";
+    content: "h";
+    font-size: 2em;
+    line-height: 0;
+    position: relative;
+    top: 7px;
+    left: -5px;
+}
+.btnJoinArea .btnOk {
+    background: linear-gradient(to bottom, rgba(98,98,98,1) 0%, rgb(98,98,98) 50%, rgb(81,81,81) 100%);
+}
+.btnJoinArea .btnCancel {
+    background: linear-gradient(to bottom, rgba(145,145,145,0.8) 0%, rgb(145,145,145) 50%) rgb(81,81,81) 100%;
+}
+/* memberArea 영역 종료 */
+
+/* twitterArea 영역 시작 */
+#twitterArea {
+    width: 210px;
+    margin-left: 30px;
+    position: relative;
+    padding-top: 15px;
+}
+#twitterArea::before {
+    content: "";
+    width: 10px;
+    height: 90%;
+    position: absolute;
+    top: 20px;
+    left: -35px;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgba(251,251,251,0.8) 0%, rgba(229,229,229,0.9) 100%);
+}
+#twitterArea > h2 {
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+#twitterArea > h2::before{
+    font-family: "webcafeIcon";
+    content: "t"; /* 트위터 모양 아이콘 글자 */
+    color: #00acee;
+    font-size: 2em;
+    position: relative;
+    top: 10px;
+    margin-right: 5px;
+}
+.twitterArticle {
+    margin: 20px 0;
+}
+.twitterArticle img {
+    /* 이미지 크기 설정*/
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}
+.twitterArticle a {
+    font-weight: bold;
+}
+.twitterArticle p {
+    margin: 10px 0;
+    line-height: 1.4; /* 배수 단위로 주면 폰트크기 대비 늘어난다. */
+}
+.twitterArticle mark {
+    background-color: transparent;
+    font-weight: bold;
+}
+.twitterDate {
+    display: block;
+    text-align: right; /* inline요소이기 때문에 block 요소로 바꿔야 가능하다. */
+    color: #787878;
+}
+/* twitterArea 영역 종료 */
