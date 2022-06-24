@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열기본</title>
+</head>
+<body>
+    <h1 id="choice">자바 스크립트</h1>
+    <p>위의 텍스트를 클릭해 보세요</p>
+    <script>
+        /*
+        var food = ["김치찌개","된장찌개","순대국"];
+        var num = [10, 20, 30, 40, 50 ]; 
+        document.write(food[0]);
+        */
+        var color=["red", "green", "blue", "yellow"];
+        var index = 0;
+        var head=document.querySelector("#choice");
+        head.onclick=function() {
+            head.style.color=color[index];
+            index++;
+            if(index==4) { /* 처음으로 돌아가게끔 함*/
+                index=0;
+            }
+        }
+    </script>
+</body>
+</html>
