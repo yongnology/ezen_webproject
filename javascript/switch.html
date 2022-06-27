@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문</title>
+    <style>
+        body {
+            background-color: #666;
+            color: #fff;
+        }
+        p {
+            margin-top: 80px;
+            font-size: 2em;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 1px 2px 1px #000;
+        }
+        p strong {
+            font-size: 2.3em;
+            color: #ff0;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        var choice = prompt("여행지를 선택해주세요(1.미주 2.유럽 3.동남아");
+        switch(choice) {
+            case "1":
+                document.write("<p>미주 여행은<br> <strong>1층 안내 데스크</strong>에서 <br>발권하세요.</p>");
+            break;
+            case "2":
+                document.write("<p>유럽 여행은<br> <strong>2층 안내 데스크</strong>에서 <br>발권하세요.</p>");
+            break;
+            case "3":
+                document.write("<p>동남아 여행은<br> <strong>별관 안내 데스크</strong>에서 <br>발권하세요.</p>");
+            break;
+            default:
+                alert("여행지 선택이 잘못 되었습니다.")
+        }
+    </script>
+</body>
+</html>

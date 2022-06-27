@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문(4)</title>
+    <script>
+        /* 중첩 반복문 */
+        /*
+        for(var i = 1; i<= 5; i++) {
+            for(var j=1; j<=5; j++) {
+                document.write(i + "====" + j + "<br>")
+            }
+        }
+        */
+        /* 중첩 반복문*/
+        /*
+        for(var i = 1; i<= 5; i++) {
+            document.write("우리 모두 ");
+            for(var j=1; j<=3; j++) {
+                document.write("아자 ")
+            }
+            document.write("파이팅!!<br>")
+        }
+        */
+        var na = ["서울방송", "한국방송", "문화방송", "교육방송"];
+        var url = ["www.sbs.co.kr", "www.kbs.co.kr", "www.imbc.co.kr", "www.ebs.co.kr"]
+        for(var i = 0; i<na.length; i++) {
+            document.write("<h2><a href='http://"+url[i] + "'>" + na[i] + "</a></h2>");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
