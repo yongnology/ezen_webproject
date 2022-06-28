@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체(2)</title>
+    <script>
+        var book= {
+            title: "어린왕자",
+            page: 65,
+            price: 15000,
+            authour: "생택쥐페리"
+        };
+        //alert(book.title);
+        
+        var person= {
+            name: '이용민',
+            age: 27,
+            adress: '경기도 고양시',
+
+            // eat 자체를 변수로 만듬.
+            eat: function(food) {
+                document.write(this.name+"가 "+food +"을(를) 먹습니다.");
+            },
+        };
+        /* prompt로 입력받아 글씨 쓰기.
+        var fd = prompt("음식 입력");
+        person.eat(fd);
+        */
+        person.eat("순대국");
+        document.write("<br>");
+        //document.write(person.name + "(이)가 "+person.eat+"를 먹습니다.")
+        document.write("<h2>신간 도서 정보</h2>");
+        for(var key in book) {
+            document.write("● "+ key+ " : "+ book[key]+"<br>")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

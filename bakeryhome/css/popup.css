@@ -1,0 +1,11 @@
+@charset "utf-8";
+#close {
+    height: 40px;
+    position: relative;
+}
+#close > .btn_close {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer; /* 잡기모양 손잡이로 만들어줌 */
+}

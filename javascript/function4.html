@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 구현</title>
+    <style>
+        #pet {
+            width: 500px;
+            border: 1px solid #ccc;
+            margin: auto;
+            padding: 15px;
+            height: auto;
+            position: relative;
+
+        }
+        button {
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+        button:hover {
+            font-weight: bold;
+            background-color: #ccc;
+        }
+        .over {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+        }
+        .detail {
+            width: 400px;
+            line-height: 1.8;
+            display: none;
+        }
+        
+    </style>
+    <script>
+        /* window.onload : 윈도우가 모두 읽고 함수를 실행*/
+        window.onload=function() {
+            var desc= document.querySelector("#desc");
+            var op= document.querySelector("#op");
+            var sp= document.querySelector("#shep");
+
+            /*  */
+            sp.onmouseover=function() {
+                sp.style.border="5px solid black";
+                sp.style.transition="0.2s";
+            }
+            sp.onmouseout=function() {
+                sp.style.border="none"
+            }
+        }
+        /* 선언적 함수 */
+        function showDetail() {
+            desc.style.display="block";
+            op.style.display="none";
+        }
+        function hideDetail() {
+            desc.style.display="none";
+            op.style.display="block";
+        }
+    </script>
+</head>
+<body>
+    <div id="pet">
+        <img src="images/shepherd.jpg" alt="" id="shep">
+        <button class="over" id="op" onclick="showDetail()">상세설명보기</button>
+        <div id="desc" class="detail">
+            <h3>shepherd</h3>
+            <p>원산지는 독일이며, 독일의 군견으로 알려져 있다. 자국 내에서는...</p>
+            <button class="close" onclick="hideDetail()">상세 설명 닫기</button>
+        </div>
+    </div>
+</body>
+</html>
