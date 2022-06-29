@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체</title>
+    <script>
+        // 객체 생성
+        var student = {
+            이름 : '홍길동',
+            국어 : 90, 수학: 80,
+            영어 : 70, 과학:79
+        };
+        // 나열 및 총점, 평균 구하기
+
+        // 첫번째 방법
+        /*
+        document.write("***"+ student.이름+" 성적표 ***<br>");
+        document.write("국어 : "+student.국어+ "<br>");
+        document.write("수학 : "+student.수학+ "<br>");
+        document.write("영어 : "+student.영어+ "<br>");
+        document.write("과학 : "+student.과학+ "<br>");
+        var sum = student.국어+student.수학+student.영어+student.과학;
+        var avg = sum/4;
+        document.write("총점 : " + sum + "<br>");
+        document.write("평균 : " + avg + "<br>");
+        */
+
+        // 두번쨰 방법
+        with (student) {
+            document.write("*** " + 이름+ " 성적표 ***<br>");
+            document.write("국어 : "+국어+ "<br>");
+            document.write("수학 : "+수학+ "<br>");
+            document.write("영어 : "+영어+ "<br>");
+            document.write("과학 : "+과학+ "<br>");
+            var sum = 국어+수학+영어+과학;
+            var avg = sum/4;
+            document.write("총점 : " + sum + "<br>");
+            document.write("평균 : " + avg + "<br>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

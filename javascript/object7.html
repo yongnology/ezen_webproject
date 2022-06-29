@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>내장객체와 함수</title>
+    <script>
+        /*
+        for(var i = 1; i<=6; i++) {
+            // Math.floor : 소수아래는 없애는 메소드
+            // Math.random() : 랜덤 숫자를 산출하는 메소드
+            document.write("<h1>"+ (Math.floor(Math.random()*45)+1)+"</h1>")
+
+        }*/
+        var game=["바위", "가위", "보"];
+        var my=prompt("■가위 바위 보 게임■\n(1.바위 2.가위 3.보) \n숫자로 입력해주세요");
+        var com = Math.floor(Math.random()*3)+1; // 경우의 수 : 1,2,3
+
+        // 배열은 0번부터 시작하므로 my-1
+        document.write("<h1>나는 "+ game[my-1]+ "를 선택했고 <br>컴퓨터는 " + game[com-1]+"를 선택했습니다.</h1>")
+        document.write("<img src='images/my_img_" + my + ".JPG'>"+"===========");
+        document.write("<img src='images/my_img_" + com + ".JPG'>");
+        if(my==com) { // 만약 "="이 3개, === 이면 자료형이 다르기 떄문에 안된다. prompt는 문자.
+                      // "="2개, "=="는 값 비교.
+            document.write("<h2>비겼습니다.</h2>");
+        } else if((my==1 && com == 2) || (my==2 && com ==3) || (my==3 && com==1)) {
+                // 바위 && 가위 || 가위 && 보 ||  보 && 바위
+            document.write("<h2>내가 이겼습니다.</h2>")
+        } else {
+            document.write("<h2>컴퓨터한테 지다니...</h2> ")
+        }
+    </script>
+    <style>
+        h2 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        <img src='images/my_img_1.jpg'> 바위
+        <img src='images/my_img_2.jpg'> 가위
+        <img src='images/my_img_3.jpg'> 보
+    -->
+    </body>
+</html>

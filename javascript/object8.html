@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>내장객체(D-day)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 450px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #333;
+        }
+        .day1 {
+            padding-top: 20px;
+            text-align: center;
+        }
+        .day1 > h3 {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .count {
+            font-family: '맑은 고딕', sans-serif;
+            font-weight: bold;
+            font-size: 3.5em;
+            margin: 10px 10px 0 10px;
+            
+        }
+        .day2 {
+            width: 420px;
+            margin: 20 auto;
+        }
+        .day2 > ul {
+            list-style: none;
+            border-bottom: 1px dashed #333;
+            height: 60px;
+        }
+        .day2 > ul:last-child {
+            border-bottom: none;
+        }
+        .day2 .item_title {
+            float: left;
+            width: 160px;
+            font-weight: bold;
+            font-size: 1.5em;
+            line-height: 60px;
+        }
+        .day2 .item_date {
+            float: right;
+            margin-left: 60px;
+            font-size: 1.2em;
+            text-align: center;
+            line-height: 60px;
+        }
+        .bar {
+            width: 100%;
+            margin-top: 60px;
+            padding-left: 20px;
+            height: 40px;
+            background-color: #747474;
+            color: #fff;
+            font-size: 1.2em;
+            line-height: 40px;
+        }
+        #count{
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <script>
+        var now = new Date();  //Date() 괄호안에 아무것도 안쓰면 오늘 날짜에 대해 가져온다.
+        var firstDay = new Date("2021-02-22");
+        var toNow = now.getTime();
+        var toFirst=firstDay.getTime();
+        var passedTime = toNow-toFirst;
+        var passedDay = Math.round(passedTime/(24*60*60*1000));
+        // 24시간 60분 60초 1000분의 1초 값을 곱해줌
+
+        // body 끝까지 읽고 익명함수를 실행.
+        window.onload = function () {
+            document.querySelector("#count").innerHTML=passedDay+"일";
+            calcDate(100);
+            calcDate(200);
+            calcDate(365);
+            calcDate(1000);
+        }
+        function calcDate(days) {
+            var future=toFirst+days*(24*60*60*1000);
+            var someday=new Date(future);
+            var year = someday.getFullYear(); // 날짜 연도가져옴
+            var month = someday.getMonth()+1;
+            var date = someday.getDate();
+            document.querySelector("#date"+days).innerHTML=year + "년" + month + "월" + date + "일";
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="day1">
+            <h3>우리 만난지</h3>
+            <p class="count" id="count">며칠</p>
+        </div>
+        <div class="bar">기념일 계산</div>
+
+        <div class="day2">
+            <ul>
+                <li class="item_title">100일</li>
+                <li class="item_date" id="date100"></li>
+            </ul>
+            <ul>
+                <li class="item_title">200일</li>
+                <li class="item_date" id="date200"></li>
+            </ul>
+            <ul>
+                <li class="item_title">1년</li>
+                <li class="item_date" id="date365"></li>
+            </ul>
+            <ul>
+                <li class="item_title">1000일</li>
+                <li class="item_date" id="date1000"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

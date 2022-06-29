@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체</title>
+    <script>
+        var student={}; // 빈 객체 생성
+        // 동적으로 속성 추가
+        student.이름 = "홍길동";
+        student.취미 = "악기";
+        student.특기 = "프로그래밍";
+        student.장래희망 = "풀스택개발자";
+        // 객체의 문자열을 반환하는 대표적인 메소드 toString()
+        // 모든 자바스크립트 객체는 toString 메소드를 상속받아 사용가능하다.
+
+        student.toString = function () {
+            var output = "";
+            for(var key in this) {
+                if(key != 'toString') { 
+                // 위의 if 문이 없으면
+                // tosring=function 부터 document.write의 텍스트까지 출력된다.
+                    output += key + " : " + this[key]+ "<br>";
+                }
+            }
+            return output;
+        };
+        document.write(student.toString());
+        delete(student.장래희망); // 속성제거
+        document.write(student);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
