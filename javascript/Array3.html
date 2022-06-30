@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>배열 객체, 함수</title>
+<script>
+    var fruit1=['바나나', '사과', '자두', '수박'];
+    var fruit2=['메론', '포도', '감귤'];
+    // 배열을 연결하는 concat() 함수
+    var fruits = fruit1.concat(fruit2);
+    alert("fruit1.concat(fruit2)\n"+fruits); // 바나나,사과,자두,수박,메론,포도,감귤
+
+    // 배열을 하나의 문자열로 만들어주는 함수
+    var result = fruit1.join( " - ");
+    document.write(result); // 바나나 - 사과 - 자두 - 수박
+
+    // 배열의 요소를 맨 뒤에 추가하는 함수
+    fruit1.push("복숭아","망고");
+    alert(fruit1[0]); // 바나나
+
+    // 배열의 요소를 맨 처음에 추가하는 함수
+    fruit2.unshift("배");
+    alert(fruit2[0]); // 배
+</script>
+</head>
+<body>
+    
+</body>
+</html>

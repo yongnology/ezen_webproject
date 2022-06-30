@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>생성자 함수, 메소드</title>
+    <script>
+        function Student(name, kor, mat, eng, sci) {
+            // 속성
+            this.name=name;
+            this.kor=kor;
+            this.mat=mat;
+            this.eng=eng;
+            this.sci=sci;
+
+            // 메소드
+            this.getSum = function() {
+                return this.kor + this.mat + this.eng + this.sci;
+            };
+            this.getAvg = function() {
+                return this.getSum() / 4;
+            }
+            this.toString = function() {
+                return this.name + " " + this.getSum() + " " + this.getAvg();
+            }
+        }
+        // 인스턴스 객체 생성
+        /*
+        var student1 = new Student('홍길동',90,85,96,70);
+        var student2 = new Student('김철수',80,50,90,60);
+        */
+        var students=[];
+        students.push(new Student('홍길동',90,85,96,70)); 
+        students.push(new Student('김철수',80,50,90,60)); 
+        students.push(new Student('이영희',70,55,60,90)); 
+        document.write("이름 총점 평균<br>");
+        for(var i in students) {
+            document.write(students[i].toString() + "<br>")
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

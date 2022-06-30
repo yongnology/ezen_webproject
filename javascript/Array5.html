@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>여행 준비물 점검 프로그램</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    
+    <style>
+        #contents {
+            padding-top: 50px;
+            width: 620px;
+            margin: 0 auto;
+        }
+        #contents h3 {
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 1.5em;
+            text-align: center;
+            color: #f12574;
+        }
+        #contents h2 {
+            text-align: center;
+        }
+        #form {
+            background-color: #007acc;
+            padding: 30px 40px;
+            color: white;
+            text-align: center;
+        }
+        #form input {
+            border: 1px solid #ccc;
+            width: 440px;
+            padding: 10px;
+            float: left;
+        }
+        #form .addBtn {
+            padding: 10px;
+            width: 60px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 1px 2px 4px #167dae;
+            color: #555;
+            text-align: center;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        #form::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #itemList ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #itemList li {
+            position: relative; /* 추가할 때마다 자기자리 찾아 갈 수 있도록 */
+            cursor: pointer; /* pointer : 손모양*/
+            padding: 12px 8px 12px 40px;
+            background-color: #eee;
+            font-size: 18px;
+            transition: all 0.2s;
+        }
+        #itemList ul li:nth-child(odd){
+            background-color: #f9f9f9;
+        }
+        #itemList ul li:hover {
+            background-color: #ccc;
+            font-weight: bold; /* 내가 임의로 추가 */
+        }
+        #itemList .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px;
+            border: none;
+            background-color: rgba(255,255,255,0.2);
+        }
+        #itemList .close:hover {
+            background-color: #f12574;
+            color: #fff;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var rText = [
+                "언제나 당신이 꺼려 하는 것을 행하라",
+                "인내를 하룻밤 새에 얻을 수는 없다.",
+                "용기란 실패에서 실패로 열정을 잃지 않으면서 나아가는 것이다.",
+                "실패는 우회로이지 막다른 길이 아니다.",
+                "나쁜 습관은 눈에 안 보일 정도로 점차 증가한다.",
+                "습관은 당신을 계속 나아가도록 한다.",
+                "행운이란 성공에 대한 게으른 사람의 평가이다."
+            ];
+            var text=document.querySelector("#randomText"); // var 변수명 = #쿼리셀럭터로 id가 randomText 공간을 선택
+            text.innerHTML=rText[Math.floor(Math.random()*7)];
+            // text변수에 innerHTML로 표시하겠다. = (표시내용은) rText배열에서[랜덤으로.소수점없앰(랜덤으로*7개)]
+
+            var itemList=[];
+            var addButton=document.querySelector("#add");
+            var input=document.querySelector("#item");
+            input.addEventListener("keydown", function(e) {
+                if(e.keyCode==13) {
+                    addList();
+                }
+            });
+            addButton.addEventListener("click", addList);
+
+            function addList() {
+                var item = document.querySelector("#item").value;
+                if(item !== "") {
+                    itemList.push(item);                            // itemList에 배열 요소를 추가
+                    document.querySelector("#item").value="";       // 입력 후 내용 삭제
+                    document.querySelector("#item").focus();        // 검색창으로 포커스.
+                    showList();
+                } else {
+                    alert("준비물을 입력한 후 버튼을 눌러주세요");
+                }
+            }
+            function wise_saying() {
+                var wise_saying = [
+                    "언제나 당신이 꺼려 하는 것을 행하라",
+                    "인내를 하룻밤 새에 얻을 수는 없다.",
+                    "용기란 실패에서 실패로 열정을 잃지 않으면서 나아가는 것이다.",
+                    "실패는 우회로이지 막다른 길이 아니다.",
+                    "나쁜 습관은 눈에 안 보일 정도로 점차 증가한다.",
+                    "습관은 당신을 계속 나아가도록 한다.",
+                    "행운이란 성공에 대한 게으른 사람의 평가이다."
+            ]
+            document.write(wise_saying);
+            }
+
+            function showList() {
+                var list="<ul>";
+                    for(var i =0; i<itemList.length; i++) {
+                        list += "<li>" + itemList[i] + 
+                            "<span class='close' id="+i+">X</spna></li>";
+                    }
+                    list += "</ul>";
+                    document.querySelector("#itemList").innerHTML=list;
+                    var remove = document.querySelectorAll(".close");
+                    for(var i=0; i<remove.length; i++) {
+                        remove[i].addEventListener("click", removeList);
+                    }
+            }       
+            function removeList() {
+                var id=this.getAttribute("id");
+                itemList.splice(id,1);
+                showList(); // 변경된 itemList 배열을 다시 화면에 표시
+                document.querySelector("#item").focus();        // 검색창으로 포커스.
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="contents">
+        <h3 id="randomText">여기에 좋은 글귀가 보인다.</h3>
+        <!--
+            언제나 당신이 꺼려 하는 것을 행하라.
+            인내를 하룻밤 새에 얻을 수는 없다.
+            용기란 실패에서 실패로 열정을 잃지 않으면서 나아가는 것이다.
+            실패는 우회로이지 막다른 길이 아니다.
+            나쁜 습관은 눈에 안 보일 정도로 점차 증가한다.
+            습관은 당신을 계속 나아가도록 한다.
+            행운이란 성공에 대한 게으른 사람의 평가이다.
+        -->
+        <h2>여행 준비물 점검 목록</h2>
+        <div id="form">
+            <input type="text" id="item" autofocus="true" placeholder="입력해주세요">
+            <button type="button" id="add" class="addBtn">추가</button>
+        </div>
+        <div id="itemList">
+
+        </div>
+    </div>
+
+</body>
+</html>
