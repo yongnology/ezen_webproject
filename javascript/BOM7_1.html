@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>브라우저 객체모델</title>
+<script>
+    setInterval(displayNow, 1000);
+    function displayNow() {
+        var now = new Date();
+        document.querySelector("#current").innerHTML=now.toLocaleTimeString();
+    }
+</script>
+</head>
+<body>
+    <h1>길동이의 홈페이지(메인)</h1>
+    <div id="current" class="display"></div>
+</body>
+</html>

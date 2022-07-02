@@ -12,10 +12,10 @@
             this.sci = sci;
         }
         Student.prototype.getSum = function () {
-            
+            return this.kor + this.mat + this.eng + this.sci;
         };
         Student.prototype.getAvg = function () {
-
+            return this.getSum() / 4;
         };
     </script>
     <Style>

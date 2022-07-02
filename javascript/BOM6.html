@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>브라우저 객체 모델</title>
+    <!-- 클릭할 때마다 브라우저 배경 바꾸기-->
+    <style>
+        #container {
+            width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 40px;
+            border: 1px solid #ccc;
+            background: rgba(253,234,234,0.6);
+        }
+        </style>
+        <script>
+            window.onload = function ( ) {
+                    var r = Math.floor(Math.random()*256);  // 0~256
+                    var g = Math.floor(Math.random()*256);  // 0~256
+                    var b = Math.floor(Math.random()*256);  // 0~256
+                    var bg = "rgb("+ r + ","+g+","+b+")";
+                    document.body.style.background = bg;
+            }
+        </script>
+</head>
+<body>
+    <div id="container">
+        <p>현재 문서는 랜덤 배경색을 사용하고 있습니다.</p>
+        <p>'새로고침(F5)' 버튼을 클릭할 때마다 배경색이 달라질 것입니다.</p>
+        <button onclick="location.reload();">새로고침</button>
+    </div>
+</body>
+</html>

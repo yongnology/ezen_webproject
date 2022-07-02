@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String 객체 이용</title>
+<script>
+    /*
+    var tel=prompt("당신의 연락처는?");
+    // var result=tel.slice(0,9)+"****";
+   
+    var result = tel.substring(0,tel.length-4)+ "****";
+    document.write(result);
+*/
+    var email=prompt("이메일 주소는?");
+    var check=false;
+    if(email.indexOf("@")>0) { // 없으면 음수를 출력
+        check=true;
+    }
+    if(check) {
+        alert("당신의 이메일 주소는 " + email + "이군요");
+    } else {
+        alert("이메일 형식이 잘못되었습니다.");
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>

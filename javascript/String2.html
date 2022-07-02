@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String 객체</title>
+    <script>
+        var str1 = "hello javascript";
+        /*
+        var str2 = str1.slice(3, 7); // index 3번째부터 7번쨰까지 잘라서 문자를 반환
+        var str3 = str1.slice(3, -4); // 3개의 글자를 지우고, 뒤 4글자 지우고 문자 반환
+            alert("str1 : \n"+ str2);    // lo j
+            alert("str2 : \n"+ str3);    // lo javasc
+        var str4 = str1.substring(3, 7);    // 3인덱스부터 7인덱스 구간의 문자를 반환
+        var str5 = str1.substring(3, -3);
+        var str5_1 = str1.substring(5);   // 5번쨰부터 끝까지
+            alert("str4 : \n"+str4);   // lo j
+            alert("str5 : \n"+str5);   // hel
+            alert("str5_1 : \n"+str5_1);   // javascript
+        var str6 = str1.substr(3,2); //3인덱스 부터 2개 문자 개수만큼
+            alert("str6 : \n" + str6); //lo
+            */
+        var str7 = "htmlkcsskjavascript";
+        var arr = str7.split("k");   // 배열을 "k"기준으로 배열을 만듬
+         // [html , css, javascript]
+            alert("arr[0] : \n"+arr);
+        var alpha1 = "HTML";
+            alert("alpha1.toLowerCase() : \n"+alpha1.toLowerCase());  // html
+             // 출력(소문자로 변환)
+        var alpha2 = "css";
+            alert("alpha2.toUpperCase() : \n"+alpha2.toUpperCase());  // CSS
+            // 출력(대문자로 변환)
+        var na= "김철수";
+        var na2 = na.concat(" 안녕 !"); // 두 개의 문자열을 결합
+            alert(na2); // 김철수 안녕 !
+        var asc = "ABC";
+        var t = asc.charCodeAt(1);  // 괄호 안의 인덱스의 아스키코드값 반환
+            alert("asc.charCodeAt(1) : \n"+t);
+            alert(String.fromCharCode(65)); // A
+            // 괄호안 숫자값(아스키코드값)를 문자로 반환
+        var h = " hello ";
+        alert(h.trim()+"\n"+h); // 좌우 공백을 제거하고 반환
+         // hello
+         //  hello -> 공간의 차이가 있다.
+
+    </script>
+<script>
+    
+</script>
+</head>
+<body>
+    
+</body>
+</html>

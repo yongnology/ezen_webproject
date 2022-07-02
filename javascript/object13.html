@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체</title>
+    <script>
+        /*
+        // toString() 메소드는 객체를 문자열로 변환하여 자동호출
+        var obj = new Object();
+        alert(obj);             // [object Object]
+        alert(obj.toString());  // [object Object]
+        */
+       var student = {
+            name: '홍길동',
+            age:26,
+            toString: function() {
+                return this.name + "은 나이가 " + this.age + "입니다.";
+            }
+       };
+       alert(student); // 홍길동의 나이가 26입니다.
+       // alert(student.toString()) 와 같은 의미
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

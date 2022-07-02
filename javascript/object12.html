@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기본 자료형 객체의 차이점</title>
+    <script>
+        var num = 200;  // 기본 자료형
+        var objNum = new Number(200);
+        /*
+        alert(typeof(num));     // number
+        alert(typeof(objNum));  // object
+        alert(num);             // 200
+        alert(objNum);          // 200
+        */
+        // 메소드 추가
+        objNum.corona = function() {
+            return '코로나 박멸!!';
+        }
+        alert(objNum.corona());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

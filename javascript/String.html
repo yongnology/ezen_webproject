@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String 내장객체</title>
+<script>
+    // var str="대한민국";
+    var str = new String("대한민국");   // 기본형
+    var str = "computer";               // 문자열 객체 생성
+    var ch = str.charAt(2); // str배열의 괄호의 숫자번째 = "computer"의 배열 2번째. 즉 m
+    //alert(ch);  // m
+
+               01234,5,678910,11,12
+    var str1 = "hello thank you good luck";
+    var pos1 = str1.indexOf("you"); // 처음 발견한 번째를 저장.
+    var pos2 = str1.indexOf("you",6); // 6번쨰 부터 문자를 검색
+    var pos3 = str1.indexOf("thank",16); // 처음 발견한 번째를 저장, 16번쨰부터
+    alert("pos1 : "+ pos1);  // 12
+    alert("pos2 : "+ pos2);  // 12
+    alert("pos3 : "+ pos3);  // -1 : 찾을 수 없어서 -1 출력
+    var pos4 = str1.lastIndexOf("you") // 오른쪽부터 문자를 찾음
+    var pos5 = str1.lastIndexOf("you", 25);
+    alert("pos4 : "+ pos4);  // 12
+    alert("pos5 : "+ pos4);  // 12
+    var ma = str1.match("you"); // 문자열을 반환
+    alert("ma : "+ ma); // you
+    var str2 = "지금은 html 공부중";
+    var str3 = str2.replace("html", "javascript");  // 앞의 문자를 뒤의 문자로 바꿔줌
+    alert("str3 : "+ str3); // 지금은 javascript 공부중
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
