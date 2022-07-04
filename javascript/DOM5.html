@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델-연습</title>
+    <style>
+        
+    </style>
+    <script>
+        var onoff=false;
+        function show() {
+            onoff=!onoff;
+            if(onoff) {
+                document.querySelector("#content .ex").style.visibility='hidden';
+            } else {
+                document.querySelector("#content .ex").style.visibility='visible';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h2>상품정보</h2>
+        <ul>
+            <li>원산지 : 에디오피아</li>
+            <li>지역 : 이르가체프 코체레</li>
+            <li>농장 : 게뎀</li>
+            <li>품종 : 지역 토착종</li>
+            <li>가공법 : 워시드</li>
+        </ul>
+        <h3 onclick="show();">상세설명</h3>
+        <p class="ex">2차 세계대전 이후 설립된 게됨 농장은 유기농 인증 농장으로 여성의 고용창출과
+            지역사회 발전에 기여 3대째 이어져 내려오는 오랜 역사를 가진 농장입니다.
+        </p>
+        <h3>커피의 풍미</h3>
+        <p>은은하고 다채로운 꽃향, 망고, 다크처레, 달달함이 가득</p>
+    </div>
+</body>
+</html>

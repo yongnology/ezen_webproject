@@ -4,9 +4,10 @@
     <title>브라우저 객체모델</title>
 <script>
     var t = window.open("time.html","","width=300 height=150");
-    t.moveTo(0.0);
     if(!t) {
         alert("팝업 차단을 해주세요.");
+    } else {
+        t.moveTo(0.0);
     }
 </script>
 </head>

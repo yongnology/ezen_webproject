@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM을 이벤트로 처리하기</title>
+    <script>
+    window.onload = function() {
+        var head = document.querySelector("#header");
+        var pic = document.querySelector("#pic");
+
+        head.onclick=function () {
+            alert("안녕하세요");
+        }
+    }
+    function changePic() {
+        pic.src="images/boy.png";
+    }
+    </script>
+</head>
+<body>
+    <h1 id="header">나를 클릭해보세요</h1>
+    <img src="images/girl.png" alt="girl" onclick="changePic()" id="pic">
+</body>
+</html>

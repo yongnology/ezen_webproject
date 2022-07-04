@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM) - 수정</title>
+    <script>
+        window.onload = function() {
+            /*
+            var head1=document.getElementById('head1');
+            var head2=document.getElementById('head2');
+            */
+
+            var head1=document.querySelector('#head1');
+            var head2=document.querySelector('#head2');
+
+
+            head1.onclick=function() {
+                head1.innerHTML="반갑습니다.";
+            }
+            setTimeout(function() { // 시간이 지나면 아래 기능을 수행하라.
+                head2.innerHTML="문서객체모델";
+            }, 2000) // 2초(2000/1000)가 되면
+        }
+    </script>
+</head>
+<body>
+    <h1 id="head1">안녕하세요</h1>
+    <h1 id="head2">브라우저객체모델</h1>
+</body>
+</html>

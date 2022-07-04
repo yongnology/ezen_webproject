@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)- 스타일</title>
+    <script>
+        window.onload = function() {
+            // var head = document.getElementById('header');
+            var head = document.querySelector('#header');
+            head.style.border="2px solid red";
+            head.style.color="orange";
+            head.style.backgroundColor="yellow";    // css와는 다르게 background"C"olor이다.
+            head.style.boxShadow= "0 8px 16px red";
+
+            var del = document.getElementById('willRemove'); // del 변수에 willRemove 저장
+            document.body.removeChild(del); // del 삭제
+        }
+    </script>
+</head>
+<body>
+    <h1 id="header">나는 제목</h1>
+    <h1 id="willRemove">나는 곧 지워짐</h1>
+</body>
+</html>

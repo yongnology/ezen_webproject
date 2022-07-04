@@ -6,13 +6,15 @@
     var child=window.open("","","width=600, height=300");
     var width = screen.width;   // var 변수 = 사용자의 화면.높이
     var height = screen.height; // var 변수 = 사용자의 화면.높이
-    child.moveTo(0,0);  // 윈도우 창의 위치를 절대적으로 바꿔줌.
-    child.resizeTo(width-100,height-100);   // resizeTo 절대적인 위치
+
     setInterval (function() {
         child.moveBy(10,10);    // 브라우저 위치를 이동시킨다.
         child.resizeBy(-30, -30);   // 지정한 width,height로 설정한다.
     }, 500); // 1000밀리 초분의 500초
+    
     if(child) {
+        child.moveTo(0,0);  // 윈도우 창의 위치를 절대적으로 바꿔줌.
+        child.resizeTo(width-100,height-100);   // resizeTo 절대적인 위치
         child.document.write("<h2>공지사항</h2>");
         child.document.write("<p>주말 잘 보내세요</p>");
         child.document.write("<p>월요일부터 <strong>문서객체모델(DOM)</strong>을 시작</p>");
