@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>이벤트 응용</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            font-size: 1.5em;
+            line-height: 35px;
+        }
+        .check {
+            color: #ccc;
+            font-size: 1.5em;
+            margin-right: 25px;
+        }
+        .check:hover {
+            color: #222;
+            cursor: pointer;
+        }
+    </style>
+<script>
+    window.onload = function() {
+        var check=document.querySelectorAll('.check');
+        for(var i=0; i<check.length; i++) {
+            //check[i].onclick=gray;
+            check[i].addEventListener("click", function() {
+                this.parentNode.style.color="#ccc";
+                this.style.color="#ccc";
+                this.style.cursor="default";
+            });
+        }
+        // 색이 그레이로 변환하게 하는 함수
+        /*
+        function gray() {
+            this.parentNode.style.color="#ccc";
+            this.style.color="#ccc";
+            this.style.cursor="default";
+        }
+        */
+    }
+
+
+</script>
+</head>
+<body>
+    <h1>할일 목록</h1>
+    <ul>
+        <!--
+        <li><span class="check">&check;</span>와이어프레임 제작</li>
+        <li><span class="check">&check;</span>html 문서 제작</li>
+        <li><span class="check">&check;</span>css 스타일 꾸미기</li>
+        <li><span class="check">&check;</span>javascript로 동적 제어</li>
+        <li><span class="check">&check;</span>최종 프론트페이지 작성</li>
+        -->
+        <li><span class="check">&check;</span>집안 청소하기</li>
+        <li><span class="check">&check;</span>홈페이지 작성</li>
+        <li><span class="check">&check;</span>밀린 빨래하기</li>
+        <li><span class="check">&check;</span>반찬 만들기</li>
+        <li><span class="check">&check;</span>운동하기</li>
+
+    </ul>
+</body>
+</html>

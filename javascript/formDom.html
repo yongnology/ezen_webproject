@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>폼(form)과 관련된 문서객체모델</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style: none;
+        }
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        form {
+            width: 520px;
+            height: auto;
+            padding-left: 10px;
+            margin: 50px auto;
+        }
+        fieldset {
+            border: 1px solid #c0c0c0;
+            padding: 30px 20px 30px 30px;
+            margin-bottom: 35px;
+        }
+        .field {
+            float: left;
+            width: 60px;
+            font-weight: bold;
+            font-size: 0.9em;
+            line-height: 55px;
+            text-align: right;
+            margin-right: 15px;
+        }
+        .input-box {
+            width: 350px;
+            height: 35px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px auto;
+            float: left;
+        }
+        .order {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #aaaa;
+            background: #e9e9e9;
+            font-weight: bold;
+        }
+
+    </style>
+<script>
+    window.onload = function () {
+        var check = document.querySelector("#shippingInfo");
+        check.addEventListener("click", function () {
+            if(this.checked == true) {
+                /*
+                document.querySelector("#shippingName").value=document.querySelector("#billingName").value;
+                document.querySelector("#shippingTell").value=document.querySelector("#billingTell").value;
+                document.querySelector("#shippingAddr").value=document.querySelector("#billingAddr").value;
+                */
+               document.ship.shippingName.value=document.order.billingName.value;
+               document.ship.shippingTell.value=document.order.billingTell.value;
+               document.ship.shippingAddr.value=document.order.billingAddr.value;
+
+            } else {
+                /*
+                document.querySelector("#shippingName").value="";
+                document.querySelector("#shippingTell").value="";
+                document.querySelector("#shippingAddr").value="";
+                */
+                document.ship.shippingName.value="";
+               document.ship.shippingTell.value="";
+               document.ship.shippingAddr.value="";
+            }
+        });
+    }
+</script>
+</head>
+<body>
+    <div id="container">
+        <form name="order">
+            <fieldset>
+                <legend>주문 정보</legend>
+                <ul>
+                    <li>
+                        <label class="field" for="billingName">이름</label>
+                        <input type="text" class="input-box" id="billingName" name="billingName">
+                    </li>
+                    <li>
+                        <label class="field" for="billingTell">연락처</label>
+                        <input type="text" class="input-box" id="billingTell" name="billingTell">
+                    </li>
+                    <li>
+                        <label class="field" for="billingAddr">주소</label>
+                        <input type="text" class="input-box" id="billingAddr" name="billingAddr">
+                    </li>
+                </ul>
+            </fieldset>
+            
+        </form>
+        <form name="ship">
+            <fieldset>
+                <legend>배송 정보</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="shippingInfo" name="shippingInfo">
+                        <label for="shippingInfo" class="check">주문 정보와 배송 정보가 같습니다.</label>
+                    </li>
+                    <li>
+                        <label class="field" for="shippingName">이름</label>
+                        <input type="text" class="input-box" id="shippingName" name="shippingName">
+                    </li>
+                    <li>
+                        <label class="field" for="shippingTell">연락처</label>
+                        <input type="text" class="input-box" id="shippingTell" name="shippingTell">
+                    </li>
+                    <li>
+                        <label class="field" for="shippingAddr">주소</label>
+                        <input type="text" class="input-box" id="shippingAddr" name="shippingAddr">
+                    </li>
+                </ul>
+            </fieldset>
+            <button type="submit" class="order">결제하기</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>DOM 이벤트 처리</title>
+    <style>
+        /* 용민 추가 */
+        #buttonA, #buttonB, #buttonC{
+            padding: 10px;
+            margin-right: 10px;
+        }
+    </style>
+<script>
+    window.onload = function () {
+        var btnA = document.getElementById('buttonA');
+        var btnB = document.getElementById('buttonB');
+        var btnC = document.getElementById('buttonC');// 용민 추가
+        var cntA = document.getElementById('countA');
+        var cntB = document.getElementById('countB');
+        var cntC = document.getElementById('countC'); // 용민 추가
+        btnA.onclick = function () {
+            // 김철수 1 추가
+            cntA.innerHTML=Number(cntA.innerHTML)+1;
+        }
+        btnB.onclick = function () {
+            // 홍길동 1 추가
+            cntB.innerHTML=Number(cntB.innerHTML)+1;
+        }
+
+        // 용민 추가
+        btnC.onclick = function () {
+            cntA.innerHTML=Number("0");
+            cntB.innerHTML=Number("0");
+        }
+    }
+</script>
+</head>
+<body>
+    <button id="buttonA">김철수 투표</button>
+    <button id="buttonB">홍길동 투표</button>
+    <button id="buttonC">투표 다시하기</button>
+    <h1>김철수 - <span id="countA">0</span></h1>
+    <h1>홍길동 - <span id="countB">0</span></h1>
+</body>
+</html>

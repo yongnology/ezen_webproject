@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>디폴트 이벤트 제거</title>
+    <style>
+        body fieldset form p label {
+            display: inline-block;
+            width: 110px;
+        }
+        legend {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var myform = document.getElementById('myForm');
+            
+            myform.onsubmit = function() { /* submit 을 누르면 실행*/
+                var pass = document.getElementById('pass').value;
+                var passCheck = document.getElementById('passCheck').value;
+                if(pass == passCheck) {
+                    alert("성공");
+                } else {
+                    alert("비밀번호 값이 같지 않습니다. \n다시 입력해주세요");
+                    return false;   // submit으로 못가게 함
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>회원가입</legend>
+        <form action="member.jsp" method="post" id="myForm">
+            <p>
+                <label for="id">아이디</label>
+                <input type="text" id="id" name="id" required>
+                <!-- name은 서버에서 활용-->
+            </p>
+            <p>
+                <label for="pass">비밀번호</label>
+                <input type="password" id="pass" name="pass">
+                <!-- name은 서버에서 활용-->
+            </p>
+            <p>
+                <label for="passCheck">비밀번호 확인</label>
+                <input type="password" id="passCheck" name="passCheck">
+                <!-- name은 서버에서 활용-->
+            </p>
+            <input type="submit" value="로그인">
+        </form>
+    </fieldset>
+</body>
+</html>
