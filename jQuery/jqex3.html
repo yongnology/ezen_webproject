@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리 선택자(자식, 후손)</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+    $(function() {
+        $('#box2 p').css('border','1px solid red');
+        setTimeout(function() {
+            var choice = $('select>option:selected').val();
+            alert("오늘 점심은 " + choice +"을(를) 선택하셨군요");
+        }, 3000);
+    });
+    </script>
+<script>
+    
+</script>
+</head>
+<body>
+    <div id="box1">
+        <h2>나는 제목</h2>
+        <p>자식 선택자 공부</p>
+    </div>
+    <div id="box2">
+        <h2>나는 제목2</h2>
+        <p>후손 선택자 공부</p>
+        <ul>
+            <li>김치찌개</li>
+            <li>칼국수</li>
+            <li>콩국수</li>
+        </ul>
+        <div>
+            <p>나는 손자</p>
+        </div>
+    </div>
+    <select>
+        <option>김치찌개</option>
+        <option>부대찌개</option>
+        <option>비빔밥</option>
+        <option>칼국수</option>
+        <option>냉면</option>
+    </select>
+</body>
+</html>

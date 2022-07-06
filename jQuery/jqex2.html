@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(function() {
+        // 태그
+        //$('*').css('color','red');
+        $('p').hover(function() {
+            $(this).css('color','red').css('background', 'yellow').css('border', '2px solid blue');
+        }, function() {
+            $(this).css('color','black').css('background', 'white').css('border', 'none');
+        });
+    });
+</script>
+</head>
+<body>
+    <h1>제이쿼리 시작</h1>
+    <p>자바스크립트로 만들어진 라이브러리</p>
+    <ul>
+        <li>선택자</li>
+        <li>메소드</li>
+        <li>이벤트</li>
+        <li>응용기술</li>
+    </ul>
+    <p>홈페이지 제작중...</p>
+    <p>html, css, javascript(jQuery)</p>
+</body>
+</html>

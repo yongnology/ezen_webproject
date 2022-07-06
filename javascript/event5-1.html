@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>디폴트 이벤트 제거</title>
+    <style>
+        body fieldset form p label {
+            display: inline-block;
+            width: 110px;
+        }
+        legend {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var userId = document.querySelector("#id");
+            var pw1 = document.querySelector("#pass");
+            var pw2 = document.querySelector("#passCheck");
+            userId.onchange = checkId;  // 아래있는 function checkId()를 실행한다.
+            pw1.onchange = checkPw;
+            pw2.onchange = comparePw;
+
+            // 아이디 자리수 체크
+            function checkId() {
+                if(userId.value.length < 4 || userId.valse.length > 15) {
+                    alert("4~15자리 영문과 숫자를 입력해주세요");
+                    userId.focus();
+                }
+            }
+            // 비밀번호 자리수 확인
+            function checkPw() {
+                if(pw1.value.length < 8) {
+                    alert("비밀번호는 8자리 이상 입력해주세요");
+                    pw1.value="";
+                    pw1.focus();
+                }
+            }
+            // 비밀번호, 비밀번호 확인 같은지 
+            function comparePw() {
+                if(pw1.value != pw2.value) {
+                    alert("비밀번호가 다릅니다. 다시 입력 하세요");
+                    pw2.value="";
+                    pw2.focus();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>회원가입</legend>
+        <form action="member.jsp" method="post" id="myForm">
+            <p>
+                <label for="id">아이디</label>
+                <input type="text" id="id" name="id" required placeholder="4~15자리의 영문과 숫자로 입력">
+                <!-- name은 서버에서 활용-->
+            </p>
+            <p>
+                <label for="pass">비밀번호</label>
+                <input type="password" id="pass" name="pass" placeholder="8자리 이상">
+                <!-- name은 서버에서 활용-->
+            </p>
+            <p>
+                <label for="passCheck">비밀번호 확인</label>
+                <input type="password" id="passCheck" name="passCheck">
+                <!-- name은 서버에서 활용-->
+            </p>
+            <input type="submit" value="로그인">
+        </form>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>위치 필터 선택자</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('li:gt(3)').css('color','red');   // 3보다 큰 것
+        $('li:lt(3)').css('color','blue');   // 3보다 큰 것
+        $('li:eq(1)').css('color','green'); // 1번째 것
+    });
+</script>
+<style>
+
+</style>
+</head>
+<body>
+    <h2>동물의 세계</h2>
+    <ul>
+        <li>사자 $('li:lt(3)')적용</li>
+        <li>코끼리 $('li:eq(1)') 적용</li>
+        <li>표범 $('li:lt(3)')적용</li>
+        <li>거북이</li>
+        <li>기린 $('li:gt(3)')적용</li>
+        <li>사슴  $('li:gt(3)')적용</li>
+        <li>악어  $('li:gt(3)')적용</li>
+    </ul>
+    <h2>혈액형 조사</h2>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>혈액형</th>
+            <th>지역</th>
+        </tr>
+        <tr>
+            <th>김철수</th>
+            <td>O형</td>
+            <td>서울시 용산구</td>
+        </tr>
+        <tr>
+            <th>이영희</th>
+            <td>A형</td>
+            <td>서울시 중구</td>
+        </tr>
+        <tr>
+            <th>홍길동</th>
+            <td>AB형</td>
+            <td>서울시 종로구</td>
+        </tr>
+        <tr>
+            <th>박찬호</th>
+            <td>B형</td>
+            <td>서울시 강남구</td>
+        </tr>
+        <tr>
+            <th>이영표</th>
+            <td>A형</td>
+            <td>서울시 영등포구</td>
+        </tr>
+        <tr>
+            <th>손흥민</th>
+            <td>O형</td>
+            <td>서울시 노원구</td>
+        </tr>
+    </table>
+</body>
+</html>
