@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(function() {
+        /* $('h1:even').css({  // even 배열 0 시작 기준. 짝수번째 것만.
+            color:'white',
+            backgroundColor: 'orange',
+            border: '3px solid green'
+        }); */
+        /* $('h1').filter(':even').css({
+            color:'white',
+            backgroundColor: 'orange',
+            border: '3px solid green'
+        }) */
+        $('h1').filter(function (index) {
+            return index % 3 == 0;  // 자신의 규칙을 만듬
+        }).css ({
+            color:'white',
+            backgroundColor: 'orange',
+            border: '3px solid green'
+        });
+    });
+</script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <h1>제이쿼리 애니메이션</h1>
+    <h1>제이쿼리 플러그인</h1>
+    <h1>제이쿼리 실무응용</h1>
+</body>
+</html>

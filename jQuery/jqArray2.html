@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        /*$(document).ready(function() {
+        });*/
+        $(function () {
+            var brsite= [
+                {name :'서울방식', link:'http://www.sbs.co.kr'},
+                {name :'한국방송', link:'http://www.kbs.co.kr'},
+                {name :'문화방송', link: 'http://www.imbc.com'}
+        ];
+        $.each(brsite, function(index, item) {  // 반복문(배열명, 객체(인덱스:얼마나 반복할지, 아이템:객체를 받음) {내용} )
+            var output="";
+            output+="<a href='" + item.link +"''>";
+            output+="<h2>" + item.name + "</h2>";
+            output+="</a>";
+            document.body.innerHTML += output;
+        });
+    });
+    </script>
+</head>
+    <h1>방송 사이트</h1>
+</body>
+</html>

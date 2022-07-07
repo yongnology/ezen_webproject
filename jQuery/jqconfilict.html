@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <style>
+        .high {
+            color: red;
+            background-color: yellow;
+            border: 1px solid red;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $.noConflict(); // $를 사용하지 않겠다.
+    var J = jQuery;
+    jQuery(function() {
+        jQuery('h1').click(function() {
+            jQuery(this).removeClass('high');
+        });
+    });
+</script>
+</head>
+<body>
+    <h1 class="high">자바 스크립트</h1>
+</body>
+</html>

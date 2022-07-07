@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <style>
+        .high_light_0 {background-color: yellow;}
+        .high_light_1 {background-color: orange;}
+        .high_light_2 {background-color: blue;}
+        .high_light_3 {background-color: green;}
+        .high_light_4 {background-color: red;}
+    </style>
+        <script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(function() {
+        /* 방법1------------------------------------------------------------
+        for(var i =0; i<5; i++) {
+            $('h1:eq('+ i +')').addClass('hight_lihgt_'+ i);
+        }
+        */
+
+        /* 방법2------------------------------------------------------------
+        $('h1:eq(0)').addClass('high_light_0');
+        $('h1:eq(1)').addClass('high_light_1');
+        $('h1:eq(2)').addClass('high_light_2');
+        $('h1:eq(3)').addClass('high_light_3');
+        $('h1:eq(4)').addClass('high_light_4');
+        */
+        /* 
+        var head = document.getElementsByTagName('h1');
+        head[1].style.color="red";b
+         */
+
+        /* 방법3------------------------------------------------------------
+         var color=['yellow','orange','blue','green','red']
+         $('h1').css('color',function(index) {
+            return color[index];
+         })
+        */
+
+        /* 방법4------------------------------------------------------------
+         $('h1').addClass(function (index) {
+            return 'high_light_' + index;
+        }); 
+        */
+
+        $('h1').each(function (index) {
+            $(this).addClass('high_light_'+ index);
+        });
+    });
+</script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <h1>제이쿼리 애니메이션</h1>
+    <h1>제이쿼리 플러그인</h1>
+</body>
+</html>

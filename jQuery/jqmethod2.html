@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(function() {
+       /*  $('h1').css('background','orange'); // h1 전체 배경 orange
+        $('h1:even').css('color','white');  // even 짝수번째 글자 흰색
+        $('h1:odd').css('color','red');     // odd 홀수번째 글자 빨강 */
+        $('h1').css('background','orange').filter(':even').css('color','white').end().
+        filter(':odd').css('color','red');
+        // 필터는 바로 직전 대상 기준으로 적용한다.
+    });
+</script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <h1>제이쿼리 애니메이션</h1>
+    <h1>제이쿼리 플러그인</h1>
+    <h1>제이쿼리 실무응용</h1>
+</body>
+</html>
