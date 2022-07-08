@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>스위치</title>
+    <style>
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        var sw=false;
+        // img 태그를 클릭하면
+        $('img').click(function(){
+            sw =! sw;
+            if(sw) {
+                // width 속성을 제거
+                $(this).removeAttr('width');
+                //$('img').removeAttr('width');
+
+            } else {
+                $(this).attr('width',200);
+            }
+        })
+    });
+</script>
+</head>
+<body>
+    <img class="sw" src="images/Koala.jpg" alt="" width="200">
+</body>
+</html>

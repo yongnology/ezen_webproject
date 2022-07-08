@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+<script>
+    $(function () {
+
+        for(var i=0; i<3; i++) {
+           var color = ['red','green','blue'];
+           //$('h1').eq(i).css('color',color[i]);
+            $('h1').css('color',function (index){
+                return color[index];
+            }).css('backgroundColor','yellow');
+        }
+
+        // 클릭하면 내용을 바꿈
+        $('h1').click(function() {
+            $(this).html("배우는중...");
+        });
+
+        // 텍스트의 태그까지 인식한다.
+        $('#box1').html("<h1>오늘은 금요일</h1>");
+        // 태그 상관없이 텍스트의 모든 글자를 반환한다.
+        $('#box2').text("<h1>오늘은 금요일</h1>");
+    });
+</script>
+</head>
+<body>
+    <h1 class>제이쿼리 선택자</h1>
+    <h1 class>제이쿼리 메소드</h1>
+    <h1 class>제이쿼리 이벤트</h1>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

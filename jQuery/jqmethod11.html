@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        #carColor {
+            width: 375px;
+            text-align: center;
+        }
+        #carColor > p {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #carColor > p:nth-child(1) {
+            background-color: greenyellow;
+            border: 3px solid black;
+        }
+        #carColor > p:nth-child(2) {
+            background-color: purple;
+        }
+        #carColor > p:nth-child(3) {
+            background-color: red;
+        }
+    </style>
+<script>
+    $(function() {
+        var cars = ['green', 'purple', 'red'];
+        //var cars = ['green.jpg', 'purple.jpg', 'red.jpg'];
+        $('#carColor > p').click(function() {
+            car_index=$(this).index();  // 아래 p태그들로부터 0,1,2 중 선택한 값을 받는다.
+
+            $('#carColor > p').css('border','none');
+                // 모든 div의 border를 제거한다.(제거하지 않으면 클릭한 모두 중복을 저장된다.)
+            $(this).css('border','3px solid black');    // 클릭한 애만 border를 둔다.
+            $('.mycar').attr('src','images/car_' + cars[car_index] + '.jpg');
+            //$('.mycar').attr('src','images/car_' + cars[car_index]);
+        });
+    });
+
+</script>
+</head>
+<body>
+    <img class="mycar" src="images/car_green.jpg" alt="">
+    <div id="carColor">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</body>
+</html>

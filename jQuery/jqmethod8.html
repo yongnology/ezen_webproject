@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>스위치</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        div {
+            width: 600px;
+            height: 700px;
+            border: 1px solid black;
+            text-align: center;
+            display: inline-block;
+            background-color: #000;
+        }
+        div img {
+            opacity: 0;
+        }
+        .sw {
+            vertical-align: bottom;
+        }
+    </style>
+<script>
+    $(function () {
+        var sw = false;
+        $('img').click(function () {
+            sw =! sw;
+            if(sw) {
+                // 스위치 켜져있을 때
+                $(this).attr('src','images/light-switch.png');
+                $('div').css('backgroundColor', '#fff');
+                $('div img').css('opacity',1);
+            } else {
+                // 스위치가 꺼져있을 때
+                $(this).attr('src','images/light-switch1.png');
+                $('div').css('backgroundColor', '#000');
+                $('div img').css('opacity',0);
+            }
+        })
+    })
+</script>
+</head>
+<body>
+    <div>
+        <img src="images/귀신.jpg" alt="">
+    </div>
+    <img class="sw" src="images/light-switch.png" alt="">
+</body>
+</html>

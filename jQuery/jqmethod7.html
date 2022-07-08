@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+<script>
+    $(function() {
+        var oldimage;
+        var newimage=['box2.png','lightbulb.png','웃는사람.png'];
+        var index;
+        $('img').hover(function() {
+            index=$(this).index();
+            oldimg=$(this).attr('src');
+            $(this).attr('src','images/' + newimage[index]);
+        }, function () {
+            //$(this).attr('src','images/' + oldimage[index]);
+            $(this).attr('src',oldimg);
+        });
+        /* 방법2--------------------------------------
+        var oldimage=['box1.png','lightbulb1.png','우는사람.png'];
+        var newimage=['box2.png','lightbulb.png','웃는사람.png'];
+        var index;
+        $('img').hover(function() {
+            index=$(this).index();
+            $(this).attr('src','images/' + newimage[index]);
+        }, function () {
+            $(this).attr('src','images/' + oldimage[index]);
+        });
+        */
+        /* 방법1----------------------
+        $('img:nth-child(1)').hover(function() {
+            $(this).attr('src','images/box2.png');
+        }, function() {
+            $(this).attr('src','images/box1.png');
+        })
+        $('img:nth-child(2)').hover(function() {
+            $(this).attr('src','images/lightbulb.png');
+        }, function() {
+            $(this).attr('src','images/lightbulb1.png');
+        })
+        $('img:nth-child(3)').hover(function() {
+            $(this).attr('src','images/웃는사람.png');
+        }, function() {
+            $(this).attr('src','images/우는사람.png');
+        })
+        */
+    });
+</script>
+</head>
+<body>
+    <img src="images/box1.png" alt="">
+    <img src="images/lightbulb1.png" alt="">
+    <img src="images/우는사람.png" alt="">
+</body>
+</html>

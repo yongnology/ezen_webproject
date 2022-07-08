@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        .item {
+            background-color: yellow;
+        }
+        .select {
+            border: 1px solid red;
+        }
+    </style>
+<script>
+    $(function() {
+        $(function() {
+            $('h1').removeClass('select');  // class 이름을 삭제
+        })
+        /* 
+        // 서로 다른 클래스를 줄 수 있다. class0, class1 ...
+        $('h1').addClass(function (index){
+            return 'class' + index;
+        }) ; */
+    });
+</script>
+</head>
+<body>
+    <h1 class="item">제이쿼리 선택자</h1>
+    <h1 class="item select">제이쿼리 메소드</h1>
+    <h1 class="item">제이쿼리 이벤트</h1>
+    <h1>제이쿼리 애니메이션</h1>
+    <h1>제이쿼리 플러그인</h1>
+    <h1>제이쿼리 실무응용</h1>
+</body>
+</html>
