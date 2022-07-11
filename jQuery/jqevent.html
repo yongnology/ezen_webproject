@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트</title>
+    <style>
+        .reverse {
+            background-color: black;
+            color: white;
+        }
+        .test {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            /* 클릭 할 떄마다 변화 ----------------------------------------------- */
+            /*
+            $('h1').on('click', function () {
+                $(this).html('가나다라');
+            });
+             */
+            // 클릴 할 때마다 기존 문서에 ★ 추가하기
+            $('h1').click(function () {
+                $(this).html(function (index, html) {
+                    return html + '★';
+                });
+            });
+
+
+            /* 마우스 위치에 따라 변화-------------------------------------------*/
+            /* 방법 1
+             .on mouseenter: function() {}, moseleave: function() {}
+             */
+            $('h1').on({
+                // 외부에서 내부로 마우스 진입
+                mouseenter: function() {
+                    $(this).addClass('reverse');
+                },  
+                // 내부에서 외부로 마우스 나가면
+                mouseleave: function() {
+                    $(this).removeClass('reverse');
+                }
+            });
+            /* 방법 2
+            .hover( function() {} , function() {})
+            */
+            
+            $('h1').hover( function () {
+                $(this).addClass('test');
+            }, function () {
+                $(this).removeClass('test');
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h1>김철수-</h1>
+    <h1>홍길동-</h1>
+</body>
+</html>

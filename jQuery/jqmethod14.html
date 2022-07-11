@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+<script>
+    $(function () {
+        // 방법1
+        // $('h1').eq(0).click(function(){
+        //     $(this).html("장마비가 내립니다.")
+        // })
+        // $('h1').eq(1).click(function(){
+        //     $(this).html("오늘은 월요일입니다.")
+        // })
+        // $('h1').eq(2).click(function(){
+        //     $(this).html("12369명입니다.")
+        // })
+
+        // 방법2
+        var contents = ['장마비가 내립니다.', '월요일입니다.', '12369명 입니다.'];
+        var index;
+            $('h1').click(function() {
+                index = $(this).index();
+                $(this).html($(this).html() + contents[index]);
+                // $(this).html() 원래의 값
+                $(this).css('cursor', 'default');
+                // .off() : 이벤트를 제거한다. <-> .on()
+                $(this).off();
+            });
+            $('h2').html(function(index, html) {    // 인덱스, 원래의 값
+                return '★' + html + '★';
+            });
+    });
+</script>
+</head>
+<body>
+    <h1>오늘의 날씨는? </h1>
+    <h1>오늘은 무슨 요일? </h1>
+    <h1>오늘의 코로나 확진자 수는? </h1>
+    <h2>우리반 모두 화이팅 </h2>
+    <h2>풀스택반 파이팅</h2>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>문서객체 생성</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(function () {
+            var title = "<h2>여름 축제</h2>";
+            var sub = "<p>이번 축제에는 코로나로 인하여 인원제한이 있습니다.</p>";
+            $('#festival').append(title, sub);
+            var content = [
+                {name: '김철수', adress: '서울시 종로구'},
+                {name: '이영희', adress: '서울시 영등포구'},
+                {name: '홍길동', adress: '서울시 강남구'}
+            ];
+            $('#addr > div').css({
+                'border': '1px solid blue',
+                'margin-bottom': '10px'
+            });
+
+            $('#addr > div').append(function (index) {
+                var item = content[index];
+                var output = '';
+                output += '<h2>' + item.name + '</h2>';
+                output += '<p>' + item.adress + '</p>';
+                return output;
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>문서객체 생성</h1>
+    <hr>
+    <div id="festival">
+
+    </div>
+    <div id="addr">
+        <h1>주소록 관리</h1>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>문서객체 복제</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+    </style>
+    <script>
+        $(function () {
+            $('div').append('h1');              // h1 글자 입력
+            $('div').append($('h1'));           // h1 태그를 선택  
+            $('div').append($('h1').clone());   // 복사
+        });
+    </script>
+</head>
+<body>
+    <h1>문서 객체 복사</h1>
+    <hr>
+    <div></div>
+    <hr>
+</body>
+</html>

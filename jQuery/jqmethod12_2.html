@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 10px 10px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+<script>
+    $(function () {
+
+        $('#box1 > section').css({
+            /* 작은 따옴표 사이에 넣으면 기존처럼사용 가능하다. */
+            'background-color': 'yellow',
+            backgroundColor : 'yellow', 
+            border: '2px solid #f00'
+        });
+    });
+</script>
+</head>
+<body>
+    <div id="box1">
+        <h1 class>메소드 형태 선택자</h1>
+        <ul>
+            <li>리스트1</li>
+            <li class="list2"><strong>리스트2 (기준)</strong></li>
+            <li>리스트3</li>
+            <li>리스트4</li>
+        </ul>
+        <p>나는 단락</p>
+        <section>
+            <h2>나는 섹션 제목</h2>
+            <p>나는 섹션 내용</p>
+        </section>
+    </div>
+</body>
+</html>

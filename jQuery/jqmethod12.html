@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 10px 10px;
+        }             
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+<script>
+    $(function () {
+        // $('.list2').parents().css('border', '2px solid #f00') /*부모를 선택한다.*/
+
+
+        /*$('#box1 > section').css({
+            'background-color': 'yellow',/* 작은 따옴표 사이에 넣으면 기존처럼사용 가능하다. */
+        /*    backgroundColor : 'yellow', 
+            border: '2px solid #f00'
+        });
+        */
+/*        
+        $('#box1 > section').children().css({
+            backgroundColor : 'yellow', 
+            border: '2px solid #f00'
+        });
+ */
+        $('.list2').next().css('border-radius','50px')    // 리스트 3 해당
+        $('.list2').nextAll().css('backgroundColor','yellow') // 리스트 3, 리스트 4 해당
+        $('.list2').prev().css('backgroundColor','skyblue')    // 리스트1 해당
+        $('.list2').siblings().css('border','3px solid #f00')   //  리스트 1, 리스트3, 리스트4 해당
+    });
+</script>
+</head>
+<body>
+    <div id="box1">
+        <h1 class>메소드 형태 선택자</h1>
+        <ul>
+            <li>리스트1</li>
+            <li class="list2"><strong>리스트2 (기준)</strong></li>
+            <li>리스트3</li>
+            <li>리스트4</li>
+        </ul>
+        <p>나는 단락</p>
+        <section>
+            <h2>나는 섹션 제목</h2>
+            <p>나는 섹션 내용</p>
+        </section>
+    </div>
+</body>
+</html>

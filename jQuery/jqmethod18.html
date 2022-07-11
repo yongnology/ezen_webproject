@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>문서객체 이동</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        img:nth-of-type(5){
+            border: 10px solid pink;
+            margin-right: 5px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#imgs > img').css('width', 250);
+            /* 이미지가 이동하는 애니메이션 같은 기능 */
+            /* 아래는 2초마다 첫번쨰 이미지가 맨 뒤에 추가*/
+            setInterval(function() {
+                $('#imgs > img').first().appendTo('#imgs'); // 첫번째 이미지를 맨 뒤에 추가.
+            }, 1000); // 1초가 될 떄마다
+        });
+    </script>
+</head>
+<body>
+    <h1>문서 객체 이동</h1>
+    <div id="imgs">
+        <img src="images/Koala.jpg" w alt="">
+        <img src="images/Tulips.jpg" alt="">
+        <img src="images/Desert.jpg" alt="">
+        <img src="images/Penguins.jpg" alt="">
+        <img src="images/Jellyfish.jpg" alt="">
+    </div>
+</body>
+</html>

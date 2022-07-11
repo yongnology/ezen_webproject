@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+<script>
+    $(function () {
+        // 방법1
+        /* 
+        $('div').eq(0).html('<h1>오늘은 월요일</h1>');
+        $('div').eq(1).html('<h1>내일은 화요일</h1>');
+        $('div').eq(2).html('<h1>모레는 수요일</h1>');
+         */
+
+        // 방법2
+        /*
+        var content = ['오늘은 월요일', '내일은 화요일', '모레는 수요일'];
+        for(var i=0; i<content.length; i++){
+            $('div').eq(i).html(content[i])
+        };
+        */
+
+        // 방법3
+        var content = ['오늘은 월요일', '내일은 화요일', '모레는 수요일'];
+        $('div').html(function (index) {
+            return "<h1>" + content[index] +"</h1>";
+        });
+
+    });
+</script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

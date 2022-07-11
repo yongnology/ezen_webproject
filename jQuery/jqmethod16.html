@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>문서객체 생성</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(function () {
+            $('<h2></h2>').html('남극펭귄1 (.appendTo("#festival")) ').appendTo('#festival');
+            $('<h2>남극펭귄2 (appendTo("#festival"))</h2>').appendTo('#festival');  // 영역중 마지막에
+            $('<h2>남극펭귄3 (.prependTo("#festival"))</h2>').prependTo('#festival'); // 영역중 제일 앞에
+            $('<img>').attr({
+                src: 'images/Penguins.jpg',
+                width: 500,
+                height: 300,
+                title: ".appendTo"
+            }).appendTo('#festival');
+            $('<h2>문서객체 추가 (.insertBefore("#festival"))</h2>').insertBefore('#festival');  // 영역의 상위
+        });
+    </script>
+</head>
+<body>
+    <h1>문서객체 생성</h1>
+    <hr>
+    <div id="festival">
+        <!--남극펭귄3 (prependTo) : 영역의 앞에 출력-->
+        <h1>가을 축제 (id=festival 즉. 기준)</h1>
+        <!--남극펭귄1 (appendTo) : 영역의 뒤에 출력 -->
+        <!--남극펭귄2 (appendTo) : 영역의 뒤에 출력 -->
+
+    </div>
+</body>
+</html>
