@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>이벤트</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+    </style>
+    <script>
+        $(function() {
+            var stop, stop2;
+
+            $('h1').click(function() {
+                $(this).html(function(index, html) {
+                    return html + '★';
+                });
+            });
+            // stop 변수에 setInterval을 저장
+            stop2 = setInterval(function() { // 정해진 시간마다 "계속"
+                $('h1').last().trigger('click');
+            },1000);    // 1초
+
+            // 정해진 시간에 "한번"만
+            setTimeout(function() {
+                alert('(3초후 안내 메세지)안녕');
+            }, 3000);   // 3초
+
+            $('button').click(function() {
+                clearInterval(stop);    // stop 변수의 Interval을 clear(중지) 하겠다.
+                clearTimeout(stop2);
+            });
+
+            /* 
+            $('h1').click(function() {
+                alert('안녕하세요');
+            });
+            setTimeout(function() {
+                $('h1').trigger('click');
+            },5000)
+             */
+        });
+    </script>
+</head>
+<body>
+    <button>중지</button>
+    <h1>홍길동-</h1>
+    <h1>김철수-</h1>
+</body>
+</html>

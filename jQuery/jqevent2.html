@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>이벤트</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $(function() {
+        // one 메소드 : 이벤트를 한번만 연결
+        var count = 0;
+        $('h1').on('click',function() {
+            count++;
+            alert(count+'번 째 이벤트 발생!!');
+            $(this).html('이벤트 '+count);
+            if(count ==3) {
+                $(this).html('이벤트 발생 완료');
+                $(this).off();
+            }
+        })
+    });
+</script>
+</head>
+<body>
+    <h1>이벤트</h1>
+</body>
+</html>

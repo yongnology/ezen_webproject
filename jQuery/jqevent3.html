@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>이벤트</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        h1 {
+            cursor: pointer;
+        }
+    </style>
+<script>
+    $(function() {
+        var count= [3, 5, 2];
+        var name = ['냉장고', '청소기', '에어컨'];
+        var index;
+        $('h1').on('click', function() {
+            index=$(this).index();
+            alert("구입해주셔서 고맙습니다.");
+            count[index] --;
+            $(this).html(name[index]+" 판매중 ("+count[index]+"개 남음)")
+            if(count[index] == 0){
+                alert("완판되었습니다.");
+                $(this).css({
+                    cursor : 'default',
+                    color : '#ccc'
+                });
+                $(this).html(name[index]+" 완판 !!");
+                $(this).off();
+                // $(this).html(name[index]+" 완판 !!").off();
+            } else {
+                alert("서둘러주세요\n이제 남은 수량 : "+count[index]+"대 입니다.");
+            }
+        });
+/*        $('h1').on('click',function() {
+            alert(count[1]);
+             count[$(this)] --;
+            alert($(this).html+'구매해 주셔서 감사합니다.')
+            if(count[$(this)] ==1) {
+                $(this).html($(this) + '완판');
+                $(this).off();
+            } 
+        })*/
+    });
+</script>
+</head>
+<body>
+    <h1>냉장고 판매중</h1>
+    <h1>청소기 판매중</h1>
+    <h1>에어컨 판매중</h1>
+</body>
+</html>

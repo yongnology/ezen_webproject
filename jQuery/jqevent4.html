@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>그림장 만들기</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        span {
+            font-weight: bold;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        #canvas {
+            border: 3px solid black;
+            margin-top: 10px;
+            cursor: crosshair;
+        }
+        .clear {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+<script>
+    $(function() {
+        var can = document.getElementById('canvas');
+        var context = can.getContext('2d'); // 2d로 작업할 수 있는 정보를 넘김
+        var position, x, y;
+        var sw = false; // 클릭에 따른반응을 윟나 변수
+        var color='#000', oldColor;  // 색상 변수
+        var clearSw = false;    // 새도화지를 위한 변수
+        var lineWidth=1, oldlineWidth;  // 원래 그리던 굵기
+        $('.colorChange').on('change',function() {
+            color = $(this).val();
+        });
+        $('select').change(function() {
+            lineWidth = $('select>option:selected').val();
+        });
+        $('button').click(function() {
+            can.width=can.width;    // 너비를 다시 주면, 새로고침처럼 된다.
+        });
+        $('.clear').click(function () {
+            clearSw =! clearSw; // clearSw 에게 반대값을 저장
+            if(clearSw) {
+                $(this).css('border','3px solid black');
+                $(this).html('&check;'); // 체크모양(✓) 작성
+
+                // color가 흰색, 두께 20, canvas(도화지)마우스 모양을 (pointer)
+                oldColor = color;   // 방금전까지 그리던 색깔을 저장
+                color = "#fff";
+                oldlineWidth = context.lineWidth;
+                lineWidth = 20;         // 두께를 20으로 설정
+                $(can).css('cursor','grab'); // 마우스 커서 모양을 바꿈
+            } else {
+                $(this).css('border','1px solid #ccc');
+                $(this).html('');
+                // 컬러는 원래색, 두께 원래대로, 도화지마우스(default)
+                color = oldColor;
+                lineWidth = oldlineWidth;
+                //context.lineWidth = lineWidth;
+                $(can).css('cursor','crosshair');
+            }
+        });
+
+        // $('#canvas'로 불러오면 안된다. getContext를 실행 할 수 없다.)
+        $(can).on({ // #canvas를 연결한 변수에게 메소드를 연결한다. = .on
+            mousedown : function (event) {
+                // console.log('캔버스 위에서 마우스를 눌렀습니다.');
+                sw=true;
+                position = $(this).offset();    // offset() 위치 정보를 알려줌
+                x = event.pageX-position.left;  // canvas가 속한 넓이의 영역 차이로 위치를 설정
+                y = event.pageY-position.top;
+                context.beginPath();
+                context.moveTo(x, y);
+            },  // 마우스를 누르면
+
+            mousemove : function (event) {  // 마우스를 움직이면
+                console.log('도화지 위에서 돌아다니고 있습니다.');
+                if(sw==true){
+                    position = $(this).offset();    // offset() 위치 정보를 알려줌
+                    x = event.pageX-position.left;  // canvas가 속한 넓이의 영역 차이로 위치를 설정
+                    y = event.pageY-position.top;
+                    context.lineWidth = lineWidth;
+                    context.strokeStyle = color;
+                    // 그리는 명령어
+                    context.lineTo(x,y);
+                    context.stroke();
+                }
+            },  
+            mouseup : function (event) { // 마우스를 때면
+                // console.log('도화지 위에서 마우스를 뗐습니다.');
+                sw = false;
+            }
+        });
+    });
+</script>
+</head>
+<body>
+    <div>
+        <span>붓의 두께</span>
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+        <span>색상</span>
+        <input type="color" class="colorChange">
+        <button>새도화지</button>
+        <div class="clear" title="지우개"></div>
+    </div>
+    <canvas id="canvas" width="800" height="500" ></canvas>
+</body>
+</html>
