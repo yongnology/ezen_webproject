@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>마우스 이벤트</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            background: orange;
+            padding: 50px;
+            margin: 10px;
+            /* box-sizing: border-box; */
+        }
+        .inner {
+            width: 100%;
+            height: 100%;
+            background: red;
+        }
+        h1 {
+            border: 1px solid blue;
+            padding: 10px;
+            width: 400px;
+        }
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+    <script>
+        $(function() {
+
+            $('h1').on('dblclick',function() {  //double click
+                alert('(dblclick) 안녕하세요');
+            });
+            $('#mouse').mouseover( function() {
+                $('body').append('<h3>mouse<span class="red">over</span> 실행</h3>');
+            }).mouseout(function () {
+                $('body').append('<h3>mouse<span class="blue">out</span> 실행</h3>')
+            });
+
+            });
+    </script>
+</head>
+<body>
+    <h1>이벤트(더블클릭)</h1>
+    <h1 id="mouse">mouse over / out 이벤트</h1>
+</body>
+</html>

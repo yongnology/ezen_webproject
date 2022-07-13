@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>이벤트</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            padding: 50px;
+        }
+        * {
+            margin: 5px;
+            padding: 5px;
+            border: 3px solid black;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('h1 a').click(function() {
+                $(this).css('background-color','blue');
+                /* 
+                event.preventDefault(); // 기본 이벤트 제거
+                event.stopPropagation();  // 이벤트 전달을 제거(h1까지 선택되는것을방지)
+                */ // 위 두줄은 return false;와 같다. (두가지 역할을 함)
+                return false;
+            });
+            $('h1,div').click(function() {
+                $(this).css('background-color','red')
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        <a href="http://www.kbs.co.kr">한국방송(return false)</a>
+    </h1>
+    <div>
+        <a href="https:/www.naver.com">네이버</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션(.hide)</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        .img {
+            position: relative;
+            opacity: 0;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('button').click(function() {
+                /*
+                $('.news').show(2000, function () { // 'fast' 약0.2s, 'normal' 약0.4, 'slow' 약0.6s,
+                    $('.news').hide(2000);
+                });*/    
+                $('.news').hide('slow', function() {
+                    $('image > img ').animate ({
+                        opacity:1
+                    }, 3000, function () {
+                        $('image > img').animate({
+                            left:1000
+                        });
+                    });
+                });
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <button>뉴스 감추기</button>
+    <p>.hide('slow', callback 함수 )</p>
+    <div class="news">
+        <h1>오늘 밤 '손·케듀오 직관</h1>
+        <p>Ipsum non anim adipisicing labore aliquip amet sint aliquip officia ut.</p>
+        <p>Esse fugiat reprehenderit consectetur eiusmod fugiat amet excepteur irure consectetur mollit ea.</p>
+        <p>Ipsum non anim adipisicing labore aliquip amet sint aliquip officia ut.</p>
+    </div>
+</body>
+</html>

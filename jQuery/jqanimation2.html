@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        .image {
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('button').click(function() {
+                $('.image').show('normal',function() {
+                });    // 'fast' 약0.2s, 'normal' 약0.4, 'slow' 약0.6s,
+                                // 숫자 1000 이 1초
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <button>이미지 보기</button>
+    <div class="image">
+        <img src="images/car_green.jpg" alt="">
+    </div>
+</body>
+</html>

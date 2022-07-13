@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        .news {
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('button').click(function() {
+                $('.news').toggle(1000);    // show와 hide를 번갈아 가며 실행
+                });
+            });
+        
+    </script>
+</head>
+<body>
+    <button>뉴스 토글</button>
+    <p>.toggle(밀리초)</p>
+    <div class="news">
+        <h1>오늘 밤 '손·케듀오 직관</h1>
+        <p>Ipsum non anim adipisicing labore aliquip amet sint aliquip officia ut.</p>
+        <p>Esse fugiat reprehenderit consectetur eiusmod fugiat amet excepteur irure consectetur mollit ea.</p>
+        <p>Ipsum non anim adipisicing labore aliquip amet sint aliquip officia ut.</p>
+    </div>
+</body>
+</html>

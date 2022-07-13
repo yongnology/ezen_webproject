@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>스크롤 이벤트</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        h2:nth-of-type(25n){
+            color: red;
+            background-color: yellow;
+        }
+        h2:nth-of-type(25n)::after {
+            content: " (기준점)";
+        }
+        h2 {
+            width: 300px;
+        }
+    </style>
+    <script>
+        $(function () {
+            /* 
+            $(window).resize(function () {  // 크기 변경에 따라 달라짐
+                alert('창의 크기 변경했니?')
+            });
+             */
+            // 무한스크롤
+            for(var i=0; i<=25; i++){
+                $('<h2>무한 스크롤 체험</h2>').appendTo('body');
+            }
+            $(window).scroll(function () {
+                // scrollTop() 기본값 0,
+                var scrollHeight = $(window).scrollTop()+$(window).height();
+                var documentHeight=$(document).height();    // 문서의 높이
+                if(scrollHeight >= documentHeight-200) {
+                    for(var i=0; i<=25; i++){
+                        $('<h2>무한 스크롤 체험</h2>').appendTo('body');
+                    }
+                }
+            })
+        });
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

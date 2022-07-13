@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>마우스 이벤트</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(function() {
+            /*
+             $('h1').on('click',function() {
+                var len = $('h1').length;   // 1 : h1 태그가 1개 있다는 것을 저장
+                var targetHTML = $(this).html();
+                $('#wrap').append('<h1>'+len+'-'+targetHTML+'</h1>');
+            });
+             */
+
+            $('#wrap').on('click','h1',function() {
+                var len = $('h1').length;   // 1 : h1 태그가 1개 있다는 것을 저장
+                var targetHTML = $(this).html();
+                $('#wrap').append('<h1>'+len+'-'+targetHTML+'</h1>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>메르스</h1>
+    </div>
+</body>
+</html>

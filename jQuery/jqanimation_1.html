@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션(.show)</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        .news {
+            display: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('button').click(function() {
+                $('.news').show(2000, function () { // 'fast' 약0.2s, 'normal' 약0.4, 'slow' 약0.6s,
+                           // 숫자 1000 이 1초
+                    alert('이상 손흥민 소식이었습니다.');
+                });    
+                                
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <button>뉴스보기</button>
+    <p>.show(밀리초, callback 함수)</p>
+    <div class="news">
+        <h1>오늘 밤 '손·케듀오 직관</h1>
+        <p>Ipsum non anim adipisicing labore aliquip amet sint aliquip officia ut.</p>
+        <p>Esse fugiat reprehenderit consectetur eiusmod fugiat amet excepteur irure consectetur mollit ea.</p>
+        <p>Ipsum non anim adipisicing labore aliquip amet sint aliquip officia ut.</p>
+    </div>
+</body>
+</html>

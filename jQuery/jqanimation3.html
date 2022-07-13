@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        .news {
+           /*  display: none; */
+        }
+    </style>
+    <script>
+        $(function () {
+/*             $('button').click(function() {
+                    $('.news').slideDown(1000);
+                        $('.news').slideUp(1000);
+}); */
+            $('button').click(function() {
+                $('.news>div').slideUp(2000, function() {
+                    $('.news').append("<h2>다음 뉴스는 9시에..</h2>")
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>뉴스 신청 완료</button>
+    <div class="news">
+        <div>
+            <h1>오늘 밤 '손·케듀오 직관</h1>
+            <p>Esse fugiat reprehenderit consectetur eiusmod fugiat amet excepteur irure consectetur mollit ea.</p>
+            <p>Ipsum non anim adipisicing labore aliquip amet sint aliquip officia ut.</p>
+            <p>Ipsum non anim adipisicing labore aliquip amet sint aliquip officia ut.</p>
+        </div>
+    </div>
+</body>
+</html>

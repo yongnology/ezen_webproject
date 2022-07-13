@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>키보드 이벤트</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        textarea {
+            resize: none;   /* 사이즈 조절을 막음 */
+        }
+    </style>
+    <script>
+        $(function() {
+            $('textarea').keyup(function() {
+                var inputlength = $(this).val().length;
+                var remain = 80-inputlength;
+                if(remain>=0) { // 0보다 크면
+                    $('h2').html(remain);   // 80글자 중 남은 글자 수 표시
+                    $('h2').css('color','black')
+                } else {
+                    $('h2').html(inputlength+" (MMS 전환) ");   // MMS 전환 알려줌
+                    $('h2').css('color','red')
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>메모</h1>
+        <h2>80</h2>
+
+        <textarea cols="20" rows="5"></textarea>
+    </div>
+</body>
+</html>
