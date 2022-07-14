@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <style>
+        #inner_fade > img {
+            width: 500px;
+            height: 350px;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script> <!-- 라이브러리 -->
+    <script src="js/jquery.innerfade.js"></script> <!-- 플러그인-->
+    <script>
+        $(function () {
+            // 플러그인 사용
+            $('#inner_fade').innerfade();
+        });
+    </script>
+</head>
+<body>
+    <div id="inner_fade">
+        <img src="images/Chrysanthemum.jpg" alt="">
+        <img src="images/Desert.jpg" alt="">
+        <img src="images/Hydrangeas.jpg" alt="">
+        <img src="images/Jellyfish.jpg" alt="">
+        <img src="images/Koala.jpg" alt="">
+        <img src="images/Lighthouse.jpg" alt="">
+        <img src="images/Penguins.jpg" alt="">
+
+    </div>
+</body>
+</html>

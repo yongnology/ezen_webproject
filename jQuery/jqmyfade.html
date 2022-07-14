@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <style>
+        #inner_fade {
+            position: relative;
+        }
+        #inner_fade > img {
+            width: 500px;
+            height: 350px;
+            position: absolute;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script> <!-- 라이브러리 -->
+    <script>
+
+        $(function () {
+            setInterval(function() {
+                $('#inner_fade>img').last().fadeOut(1000, function () {
+                    $(this).prependTo('#inner_fade').css('display','inline-block');   // 앞에다 둔다.
+                });
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <div id="inner_fade">
+        <img src="images/Chrysanthemum.jpg" alt="">
+        <img src="images/Desert.jpg" alt="">
+        <img src="images/Hydrangeas.jpg" alt="">
+        <img src="images/Jellyfish.jpg" alt="">
+        <img src="images/Koala.jpg" alt="">
+        <img src="images/Lighthouse.jpg" alt="">
+        <img src="images/Penguins.jpg" alt="">
+
+    </div>
+</body>
+</html>

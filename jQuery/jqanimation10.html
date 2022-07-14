@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        img {
+            width: 37px;
+            height: 21px;
+            cursor: pointer;
+            position: relative;
+            /* 크기만 이동하는것은 위치가 상관 없지만 이동하려면 position을 갖고 있어야 한다. */
+        }
+    </style>
+    <script>
+        $(function () {
+            $('img').click(function (event) {
+                // 메소드 체이닝(여러개의 메소드를 연결)
+                $(this).animate({
+                    left : '+=200'
+                }, 1000).animate({
+                    width: '+=37'
+                }, 1000).animate({
+                    height: '+=21'
+                }, 1000);
+            });
+            $('button').click(function () {
+               $('img').clearQueue(); 
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>큐비우기</button><br><br>
+    <img src="images/car_green.jpg" alt="">
+</body>
+</html>

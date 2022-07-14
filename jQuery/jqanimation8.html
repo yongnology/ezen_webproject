@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        img {
+            width: 55px;
+            height: 40px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('img').on('mouseenter', function () {
+                $(this).animate({
+                    width: 300,
+                    height : 400
+                }, 'normal', function () {  // 속도, callback 
+                    $(this).delay(2000).animate({
+                        width: 55,
+                        height: 40
+                    },'fast');
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="images/귀신.jpg" alt="">
+</body>
+</html>

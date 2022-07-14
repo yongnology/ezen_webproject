@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        img {
+            width: 37px;
+            height: 21px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('img').click(function () {
+                /* 확대하는 방법 1 */
+                var w=$(this).css('width');
+                var h=$(this).css('height');
+                $(this).animate({
+                    // width:parseInt(w)+37,
+                    width:parseInt(w)*2,
+                    //height:parseInt(h)+21,
+                    height:parseInt(h)*2,
+                },500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="images/car_green.jpg" alt="">
+</body>
+</html>

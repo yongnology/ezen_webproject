@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        button {
+            padding: 20px;
+        }
+        img {
+            width: 74px;
+            height: 42px;
+            cursor: pointer;
+            position: relative;
+            /* 크기만 이동하는것은 위치가 상관 없지만 이동하려면 position을 갖고 있어야 한다. */
+        }
+    </style>
+    <script>
+        $(function () {
+            $('img').click(function() {
+                $(this).animate({
+                    left:1000
+                }, 5000).animate({
+                    //left: 0
+                    opacity: 0
+                }, 5000);
+            });
+            $('button').click(function () {
+                $('img').stop(false, true);
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>중지</button><br><br>
+    <img src="images/car_green.jpg" alt="">
+</body>
+</html>

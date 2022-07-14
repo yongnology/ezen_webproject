@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+    <title>애니메이션 (animate)</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        img, h2 {
+            position: relative;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('img').click(function() {
+                $(this).animate({
+                    left: 600
+                },2000);
+            });
+
+            $('h2').click(function () {
+                $(this).animate({
+                    left: 600
+                },2000,function () {
+                    $(this).html('공부하러 갑니다. O_O');
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <img src="images/car_green.jpg" alt="green"><br>
+    <img src="images/car_red.jpg" alt="red"><br>
+    <img src="images/car_purple.jpg" alt="purple"><br>
+    <h2>무엇을 하러 갈까요?</h2>
+</body>
+</html>
