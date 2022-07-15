@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8">
+<title>jQuery Navigation</title>
+<style>
+body {
+	font-family: "맑은 고딕";
+}
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+#box ul li {
+	position: relative;
+	padding: 10px;
+	left: 100px;
+	top: 100px;
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	background: #eaeaea;
+	cursor: pointer;
+	color: #fff;
+}
+.pagecurl {
+	position: absolute;
+	padding: 10px;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	width: 80px;
+	height: 80px;
+	background: #ccc;
+	color: #fff;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+</head>
+
+<body>
+<div id="box">
+	<ul>
+		<li id="menu1">
+			메롱!
+			<div class="pagecurl">넌누구냐?</div>
+		</li>
+		<li id="menu2">
+			over
+			<div class="pagecurl">previous over</div>
+		</li>
+		<li id="menu3">
+			over
+			<div class="pagecurl">previous over</div>
+		</li>
+		<li id="menu4">
+			over
+			<div class="pagecurl">previous over</div>
+		</li>
+		<li id="menu5">
+			over
+			<div class="pagecurl">previous over</div>
+		</li>
+	</ul>
+</div>
+<script>
+	</script>
+</body>
+</html>

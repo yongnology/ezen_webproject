@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<style>
+		    body {
+		    	background: #282828;
+		    }
+			#wrap {
+				width:300px; height:300px; 
+				position:relative; overflow:hidden; 
+				margin:3em auto;}
+		     #blocks {
+	       	width:300px; height:300px; 
+	       	 position:absolute; top:0; left:0;
+	         overflow:hidden;}
+	        .mask {position:absolute; top:118px; left:0;
+	         z-index:500;}	
+	        .col {width:72px;height:144px;
+	      	position:absolute;	top:10px; }
+	       	.col1 {background: url(images/aslider.png);
+	      	 top:22px; left:26px;}
+	        .col2 {background:url(images/bslider.png);
+	         top:4px; left: 100px;}
+	        .col3 {background:url(images/cslider.png);
+	         top:30px; left:174px;}
+	       .col_ani {top:95px;}
+		</style>
+		<title>jex1</title>
+		<script src="jquery-1.11.3.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				
+			});
+		</script>
+	</head>
+	<body>
+	 <div id="wrap">
+		<img src="images/abcmask.png" class="mask">
+		<div id="blocks">
+			<div class="col col1" ></div>
+			<div class="col col2"></div>
+			<div class="col col3"></div>
+		</div>
+	</div>
+		
+	</body>
+</html>

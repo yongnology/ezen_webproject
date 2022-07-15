@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>애니메이션</title>
+    <link referrerpolicy="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+        div{
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            left: 200px;
+
+        }
+        img {
+            top: 400px;
+            position: relative;
+            width: 300px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('img').click(function () {
+                $(this).animate({
+                    left: 500,
+                    top: 30
+                }, 2000,'easeOutElastic').animate({
+                    left:0
+                },2000,'easeOutElastic');
+                });
+
+            $('div').click(function () {
+                $(this).animate({
+                    top: 300
+                },2000,'easeOutElastic')
+            })
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <img src="images/car_red.jpg" alt="">
+</body>
+</html>

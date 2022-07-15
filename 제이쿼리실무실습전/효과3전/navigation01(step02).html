@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Navigation</title>
+<link rel="stylesheet" href="mystyle.css">
+<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<style>
+body {
+	margin: 20px auto;
+	padding: 0;
+	font-size: 13px;
+}
+ul#navi {
+	width: 200px;
+	text-indent: 10px;
+}
+ul#navi, ul#navi ul {
+	margin: 0; padding: 0;
+	list-style: none;
+}
+li.group {
+	margin-bottom: 3px;
+}
+div.title {
+	height: 35px;
+	line-height: 3em;
+	background: #9ab92e;
+	cursor: pointer;
+}
+ul.sub li {
+	margin-bottom: 2px;
+	height: 35px;
+	line-height: 3em;
+	background: #fdf6dd;
+	cursor: pointer;
+}
+ul.sub li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color:#000;
+}
+ul.sub li:hover {
+	background:#cf0;
+}
+</style>
+
+
+</head>
+
+<body onload="init(1)">	<!--바디가 모두 읽혀지면, init 함수를 호출-->
+<ul id="navi">
+	<li class="group">
+		<div class="title">회사소개</div>
+		<ul class="sub">
+			<li><a href="#">CEO인사말</a></li>
+			<li><a href="#">회사연혁</a></li>
+			<li><a href="#">찾아오는 길</a></li>
+		</ul>
+	</li>
+	<li class="group">
+		<div class="title">제품정보</div>
+		<ul class="sub">
+			<li><a href="#">에어컨</a></li>
+		</ul>
+	</li>
+	<li class="group">
+		<div class="title">커뮤니티</div>
+		<ul class="sub">
+			<li><a href="#">자료실</a></li>
+			<li><a href="#">게시판</a></li>
+		</ul>
+	</li>
+</ul>
+
+<script>
+	// $('.sub').css( 'display', 'none');
+	// 처음에 사이드메뉴가 닫쳐있음
+	$('.sub').hide();
+	$('.title').click(function() {
+		$('.sub').slideUp();
+		$(this).next().slideDown();
+	});
+	// 싸이트 방문 후 3초 후 사이드메뉴가 내려옴
+	function init(pos) {
+		setTimeout(function() {
+			$('#navi >li').eq(pos).find('.sub').slideDown();
+		}, 3000);
+	}	 
+</script>
+</body>
+</html>

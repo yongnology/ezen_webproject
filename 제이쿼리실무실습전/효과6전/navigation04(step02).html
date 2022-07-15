@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8">
+<title>jQuery Navigation</title>
+<style>
+body {
+	font-family: "맑은 고딕";
+}
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+#box ul li {
+	position: relative;
+	left: 100px;
+	top: 100px;
+	width: 115px;
+	height: 94px;
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+.pagecurl {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	width: 115px;
+	height: 94px;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+</head>
+
+<body>
+<div id="box">
+	<ul>
+		<li id="menu1">
+			<img src="images/menu1_over.jpg" alt="menu1 over">
+			<div class="pagecurl"><img src="images/menu1.jpg" alt="menu1"></div>
+		</li>
+		<li id="menu2">
+			<img src="images/menu2_over.jpg" alt="menu2 over">
+			<div class="pagecurl"><img src="images/menu2.jpg" alt="menu2"></div>
+		</li>
+		<li id="menu3">
+			<img src="images/menu3_over.jpg" alt="menu3 over">
+			<div class="pagecurl"><img src="images/menu3.jpg" alt="menu3"></div>
+		</li>
+		<li id="menu4">
+			<img src="images/menu4_over.jpg" alt="menu4 over">
+			<div class="pagecurl"><img src="images/menu4.jpg" alt="menu4"></div>
+		</li>
+		<li id="menu5">
+			<img src="images/menu5_over.jpg" alt="menu5 over">
+			<div class="pagecurl"><img src="images/menu5.jpg" alt="menu5"></div>
+		</li>
+	</ul>
+</div>
+
+<script>
+		
+</script>
+</body>
+</html>

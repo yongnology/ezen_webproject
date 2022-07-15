@@ -1,0 +1,43 @@
+body {
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	font-size: 0.85em;
+}
+#menuArea {
+	width: 495px;
+	height: 50px;
+	background: #fff;
+}
+#navi, #navi ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	line-height: 1.5em;
+}
+#navi a {
+	display: block;
+	padding: 6px 20px;
+	text-decoration: none;
+	background: #333;
+	color: #fff;
+}
+#navi a:hover, #navi a.on {
+	background: #999;
+}
+#navi li {
+	position: relative;
+	float: left;
+}
+#navi ul {
+	position: absolute;
+	top: 32px;
+	width: 500px;
+}
+#navi ul li {
+	display: block;
+	float: left;
+}
+.sub a:hover, .sub a.on {
+	background: #ccc !important;
+	color: #000 !important;
+}

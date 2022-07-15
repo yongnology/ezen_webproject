@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Furry Friends Campaign</title>
+		<link rel="stylesheet" type="text/css" href="styles/my_style.css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#clickMe').click(function () {
+					$('#picframe').slideToggle('slow');
+					// $('#picframe').css("display","block");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="clickMe">Show me the the Furry Friend of the Day</div>
+		<div id="picframe">
+			<img src="images/furry_friend.jpg">
+		</div>
+		</body>
+</html>

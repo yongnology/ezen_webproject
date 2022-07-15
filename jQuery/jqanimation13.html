@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        img {
+            position: relative;
+        }
+        h1 {
+            position: relative;
+        }
+    </style>
+    <script>
+        $(function () {
+            var posleft, postop;
+            var sw = false; // 마우스 클릭시 위한 변수
+
+            $('img').on({
+                // 마우스 버튼을 누를 때
+                mousedown : function (event) {
+                    sw = true;
+                    posleft=event.offsetX;
+                    postop=event.offsetY;
+                    event.preventDefault();
+                },
+                // 마우스를 움직일 때
+                mousemove : function (event) {
+                    if(sw == true) {
+                        var x = event.clientX-posleft;
+                        var y = event.clientY-postop;
+                        $(this).css({
+                            left: x,
+                            top: y
+                        });
+                    }
+                    event.preventDefault();
+                },
+                // 마우스 버튼을 땔 때
+                mouseup : function (event) {
+                    sw = false;
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="images/car_green.jpg" alt="">
+    <h1>나도 움직여줘라</h1>
+</body>
+</html>

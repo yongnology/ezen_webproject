@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>애니메이션</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            position: relative;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        $(function () {
+            // 시간차에 맞게끔 이동함
+            $('div').each(function (index) {
+                $(this).delay(index*500).animate({
+                    left: 1000
+                },'slow');
+            })
+        });
+    </script>
+</head>
+    <body>
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+        <div></div><div></div>
+    </body>
+</html>

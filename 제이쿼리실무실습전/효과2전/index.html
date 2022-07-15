@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>사이드 메뉴바</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8"/>
+        <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+        <script>
+		$(document).ready(function() {
+			$('#navigation>li').animate({
+                marginLeft:-80
+            },500);
+            $('#navigation>li').hover(function () {
+                $(this).stop().animate({
+                    marginLeft: -2
+                },'fast');
+            }, function () {
+                $(this).stop().animate({
+                marginLeft: -80
+            },'fast');
+		    });
+		});
+		</script>
+    </head>
+    <style>
+        body{
+            background:#fff url(desc.png) no-repeat 50px 100px;
+            font-family:Arial;
+            height:2000px;
+        }
+        .header
+        {
+            width:600px;
+            height:56px;
+            position:absolute;
+            top:0px;
+            left:25%;
+            background:#fff url(title.png) no-repeat top left;
+        }
+        a.back{
+            width:256px;
+            height:73px;
+            position:fixed;
+            bottom:15px;
+            right:15px;
+            background:#fff url(codrops_back.png) no-repeat top left;
+        }
+        .scroll{
+            width:133px;
+            height:61px;
+            position:fixed;
+            bottom:15px;
+            left:150px;
+            background:#fff url(scroll.png) no-repeat top left;
+        }
+        .info{
+            text-align:right;
+
+        }
+    </style>
+    <body>
+        <div class="header"></div>
+        <div class="scroll"></div>
+        <ul id="navigation">
+            <li class="home"><a href="" title="Home"></a></li>
+            <li class="about"><a href="" title="About"></a></li>
+            <li class="search"><a href="" title="Search"></a></li>
+            <li class="photos"><a href="" title="Photos"></a></li>
+            <li class="rssfeed"><a href="" title="Rss Feed"></a></li>
+            <li class="podcasts"><a href="" title="Podcasts"></a></li>
+            <li class="contact"><a href="" title="Contact"></a></li>
+        </ul>
+     
+    </body>
+</html>

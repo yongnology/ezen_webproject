@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>애니메이션</title>
+    <link referrerpolicy="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+    </style>
+    <script>
+        $(function () {
+            $('img').draggable({
+                scroll:false,   // 화면 밖 무한 넘어가는것 방지
+                revert: 'invalid'   // 다시 돌아오게 효과
+            });
+            $('h1').draggable();
+        });
+    </script>
+</head>
+<body>
+    <img src="images/car_green.jpg" alt="">
+    <h1>나도 움직여줘라</h1>
+</body>
+</html>
