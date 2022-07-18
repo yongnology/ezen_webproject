@@ -30,22 +30,52 @@
 		<script src="js/jquery-3.6.0.min.js"></script>
 		<script>
 			$(document).ready(function () {
-				var sw = [false, false, false]
-				var pos=[22, 4, 30];	/* 기존 높이 */
-				var index;
+                $(document).ready(function () {
+                var card = [
+                    {position:'up', height:22},
+                    {position:'up', height:4},
+                    {position:'up', height:30},
+                ];
+                var index;
 				$('.col').click(function() {
 					index=$(this).index();
-					sw[index] =! sw[index];
-					if(sw[index]) {
+					if(card[index].position=='up') {
 						$(this).animate({
 							top: 95,
 						},'fast');
+                        card[index].position='down';
+                        console.log(card);
 					} else {
 						$(this).animate({
-							top: pos[index]
+							top: card[index].height
 						},'fast');
+                        card[index].position='up';
 					}
 				});
+			});
+                /* 
+                var card = [
+                    {위치:'up', 높이:22},
+                    {위치:'up', 높이:4},
+                    {위치:'up', 높이:30},
+                ];
+                var index;
+				$('.col').click(function() {
+					index=$(this).index();
+					if(card[index].위치=='up') {
+						$(this).animate({
+							top: 95,
+						},'fast');
+                        card[index].위치='down';
+                        console.log(card);
+					} else {
+						$(this).animate({
+							top: card[index].높이
+						},'fast');
+                        card[index].위치='up';
+					}
+				});
+                 */
 			});
 		</script>
 	</head>

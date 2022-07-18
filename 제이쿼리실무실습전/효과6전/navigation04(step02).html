@@ -63,7 +63,19 @@ li {
 </div>
 
 <script>
-		
+	$('#box li').hover(function() {
+		//$(this).find('div').hide();
+		$(this).find('.pagecurl').stop().animate({
+			left:-100,
+			top: 100
+		},500);
+	}, function(){
+		//$(this).find('div').css('display','block')
+		$(this).find('.pagecurl').stop().animate({
+			left: 0,
+			top: 0
+		},500,'easeOutElastic'); // easeOutElasitic 가속도 효과 중 하나
+	});		
 </script>
 </body>
 </html>

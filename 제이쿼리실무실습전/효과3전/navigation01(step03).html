@@ -52,17 +52,18 @@ ul.sub li:hover {
 <body onload="init(2)">
 <ul id="navi">
 	<li class="group">
-		<div class="title">Title 1</div>
+		<div class="title">회사소개</div>
 		<ul class="sub">
-			<li><a href="#">sub1</a></li>
-			<li><a href="#">sub1</a></li>
-			<li><a href="#">sub1</a></li>
+			<li><a href="#">CEO인사말</a></li>
+			<li><a href="#">회사연역</a></li>
+			<li><a href="#">찾아오는길</a></li>
 		</ul>
 	</li>
 	<li class="group">
-		<div class="title">Title 2</div>
+		<div class="title">제품소개</div>
 		<ul class="sub">
-			<li><a href="#">sub2</a></li>
+			<li><a href="#">에어컨</a></li>
+			<li><a href="#">냉장고</a></li>
 		</ul>
 	</li>
 	<li class="group">
@@ -73,7 +74,15 @@ ul.sub li:hover {
 		</ul>
 	</li>
 </ul>
-
+<script>
+	$('.sub').hide();
+	$('.group').hover(function () {
+		$(this).find('.sub').slideDown();
+	}, function() {
+		$(this).find('.sub').slideUp();
+		// $(this).next().slideUp();	// 하위 메뉴를 누를 수 없다.
+	});
+</script>
 
 </body>
 </html>

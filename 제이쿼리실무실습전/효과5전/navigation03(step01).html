@@ -11,15 +11,15 @@
 <div id="menuArea">
 	<ul id="navi">
 		<li id="menu1">
-			<a href="#">navigation01</a>
+			<a href="#">회사소개</a>
 			<ul class="sub">
-				<li><a href="#">submenu0101</a></li>
-				<li><a href="#">submenu0102</a></li>
-				<li><a href="#">submenu0103</a></li>
+				<li><a href="#">CEO인사말</a></li>
+				<li><a href="#">회사연혁</a></li>
+				<li><a href="#">찾아오시는 길</a></li>
 			</ul>
 		</li>
 		<li id="menu2">
-			<a href="#">navigation02</a>
+			<a href="#">제품소개</a>
 			<ul class="sub">
 				<li><a href="#">submenu0201</a></li>
 				<li><a href="#">submenu0202</a></li>
@@ -27,7 +27,7 @@
 			</ul>
 		</li>
 		<li id="menu3">
-			<a href="#">navigation03</a>
+			<a href="#">커뮤니티</a>
 			<ul class="sub">
 				<li><a href="#">submenu0301</a></li>
 				<li><a href="#">submenu0302</a></li>
@@ -37,6 +37,14 @@
 	</ul>
 </div>
 <script>
-	</script>
+	$('.sub').hide();
+	$('#navi>li').hover(function() {
+		$(this).find('.sub').stop(true, true).slideDown();
+		$(this).find('a:first').addClass('on');
+	}, function() {
+		$(this).find('.sub').slideUp();
+		$(this).find('a:first').removeClass('on');
+	});
+</script>
 </body>
 </html>

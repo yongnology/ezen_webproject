@@ -79,14 +79,21 @@ ul.sub li:hover {
 	// $('.sub').css( 'display', 'none');
 	// 처음에 사이드메뉴가 닫쳐있음
 	$('.sub').hide();
+	var oldindex=-1, index; // 만약 열려 있다면 다시 닫고열기 안하기 위한 변수
+
 	$('.title').click(function() {
-		$('.sub').slideUp();
-		$(this).next().slideDown();
+		index= $(this).parent().index();
+		if(oldindex != index) {	// 클릭한 대상이 -1과 다를 경우. 즉 클릭한 경우가 아니면
+			$('.sub').slideUp();	// 모든 객체의 슬라이드를 up
+			$(this).next().slideDown();	// 선택한 객체를 슬라이드 다운
+			oldindex=index;
+		}
 	});
 	// 싸이트 방문 후 3초 후 사이드메뉴가 내려옴
 	function init(pos) {
 		setTimeout(function() {
 			$('#navi >li').eq(pos).find('.sub').slideDown();
+			oldindex=pos;
 		}, 3000);
 	}	 
 </script>

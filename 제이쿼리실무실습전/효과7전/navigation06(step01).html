@@ -55,7 +55,18 @@
 	</div>
 </div>
 <script>
-	
+	$('.depth2').hide();
+	$('.lnb').click(function() {
+		$('.depth2').slideUp('fast');
+		$(this).next().slideDown('fast');
+		$('.lnb').removeClass('on');
+		$(this).addClass('on'); /* 클릭한 애의 class 이름을 추가해서 뒷배경 색칠을 함*/
+	});
+	/*
+	$('li').hover(function() {
+		$(this).find('li').css('display', 'block')
+	})
+	*/
 </script>
 </body>
 </html>

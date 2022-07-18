@@ -4,11 +4,33 @@
 <meta charset="utf-8">
 <title>jQuery Navigation</title>
 <link href="mystyle.css" rel="stylesheet" />
-<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 	$(document).ready(function() {
-		
-	});
+		var sw=false;
+		$('#home').click(function() {
+			sw=! sw;
+				if(sw) {
+					$('#menu').animate({
+						left:50
+					}, 500);
+				}else {
+					$('#menu').animate({
+						left:-600
+					},500);
+				}
+			});
+
+			$('#menu>li').hover(function() {
+				$(this).animate({
+					opacity:1
+				},300);
+			},function() {
+				$(this).animate({
+					opacity:0.2
+				},300);
+			})
+		});
 </script>
 <style>
 * {
@@ -63,7 +85,6 @@ ul li {
 		<li><img src="images/th_bg3.jpg"></li>
 	</ul>
 </div>
-
 
 </body>
 </html>

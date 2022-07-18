@@ -67,6 +67,18 @@ li {
 	</ul>
 </div>
 <script>
-	</script>
+	$('#box li').hover(function() {
+		$(this).find('.pagecurl').stop(true, true).animate({
+				// stop(true, true)를 통해서 hover의 연속된 반복동작을 제거할 수 있다.
+			left:-100,
+			top: 100
+		},300);
+	}, function(){
+		$(this).find('.pagecurl').animate({
+			left: 0,
+			top: 0
+		},300);
+	});
+</script>
 </body>
 </html>
