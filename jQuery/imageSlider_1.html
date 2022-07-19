@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이더</title>
+    <style>
+        body { /* 임의로 추가*/
+            margin-left: 50px;
+        }
+        .animation_canvas {
+            position: relative;
+            width: 600px;
+            overflow: hidden;
+        }
+        .slider_panel {
+            width: 3000px;
+            position: relative;
+            height: 400px;
+        }
+        .slider_image {
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+        .slider_text_panel {    /* 선택 */
+            position: absolute;
+            top: 200px;
+            left: 50px;
+        }
+        .slider_text {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            color: #ff0;
+        }
+        .control_panel {
+            position: absolute;
+            top: 380px;
+            left: 270px;
+            height: 13px;
+            overflow: hidden;
+        }
+        .control_button {
+            position: relative;
+            cursor: pointer;
+            background: url(images/point_button.png);
+            width: 12px;
+            height: 46px;
+            float: left;
+            margin-right: 10px; /* 임의 추가 */
+        }
+        .control_button:hover {
+            top: -16px;
+        }
+        .control_button.active {
+            top: -31px;
+        }
+/* 
+        .left_right_control_panel {
+            position: absolute;
+            top: 160px;
+            height: 20px;
+            width: 100%;
+            margin: 0;
+        }
+         */
+        .left_control {
+            position: absolute;
+            top: 160px;
+            left: 10px;
+            cursor: pointer;
+        }
+        .right_control {
+            position: absolute;
+            top: 160px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            var index=0;
+            moveSlider(index);
+            // 컨트롤 버튼 이벤트
+            $('.control_button').click(function() {
+                index=$(this).index();  /* 클릭한 애가 0부터 몇번쨰 인지 index 값을 저장*/
+                moveSlider(index);
+            });
+            // 좌측 버튼 이벤트
+            $('.left_control').click(function() {
+                if(index == 0) {
+                    alert("처음 이미지 입니다.")
+                } else {
+                    index--;
+                    moveSlider(index);
+                }
+            });
+            // 우측 버튼 이벤트
+            $('.right_control').click(function() {
+                if(index == 4) {
+                    alert("마지막 이미지 입니다.")
+                } else {
+                    index++;
+                    moveSlider(index);
+                }
+            });
+            // 이미지 슬라이더 구현 함수
+            function moveSlider(index) {
+                $('.slider_panel').animate({ 
+                    left: -(index * 600)  /* 인덱스 번째 를 곱해서 왼쪽으로(-) 이동 */
+                },'slow')
+                $('.control_button').removeClass('active'); /* 활성화를 지우기 위해 class 명 삭제*/
+                $('.control_button').eq(index).addClass('active'); /* 버튼 칠을 위해 class 명을 추가 */
+    
+                // 설명 부분
+                $('.slider_text').hide();
+                $('.slider_text').eq(index).fadeIn('slow');
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>이미지 슬라이더</h1>
+    <!-- 슬라이더 영역 -->
+    <div class="animation_canvas">
+        <!-- 슬라이더에 보이는 이미지 영역 -->
+        <div class="slider_panel">
+            <img class="slider_image" src="images/Koala.jpg" alt="">
+            <img class="slider_image" src="images/Desert.jpg" alt="">
+            <img class="slider_image" src="images/Lighthouse.jpg" alt="">
+            <img class="slider_image" src="images/Jellyfish.jpg" alt="">
+            <img class="slider_image" src="images/Penguins.jpg" alt="">
+        </div>
+        <!-- 각 이미지에 대한 설명글을 담는 패널 영역(선택) -->
+        <div class="slider_text_panel">
+            <div class="slider_text">
+                <h2>Koala</h2>
+                <p>유대목 코알라과에 속하는 포유류. 현지에서는 네이티브베어(native bear)라고 한다</p>
+            </div>
+            <div class="slider_text">
+                <h2>Desert</h2>
+                <p>Desert. 사막이라는 의미이다. 동사로 "데절트"라고 읽으면 버리고 떠나다. Abandon과 같은 의미이다.</p>
+            </div>
+            <div class="slider_text">
+                <h2>Lighthouse</h2>
+                <p>대표적인 항로 표지. 항해용 일반 등대와 항공기용 항공 등대가 있다</p>
+            </div>
+            <div class="slider_text">
+                <h2>Jellyfish</h2>
+                <p>강장동물 히드로충류와 해파리류의 부유시기와 유즐동물의 총칭. 한자어로 수모(水母)라 한다.</p>
+            </div>
+            <div class="slider_text">
+                <h2>Penguins</h2>
+                <p>조류 펭귄목 팽귄과 동물을 통틀어 이르는 말.</p>
+            </div>
+        </div>
+        <!-- 컨트롤 버튼 패널-->
+        <div class="control_panel">
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+        </div>
+        <!-- 좌우 버튼 패널 -->
+        <div class="left_right_control_panel">
+            <img class="left_control" src="images/arrow_pre.png" alt="">
+            <img class="right_control" src="images/arrow_next.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

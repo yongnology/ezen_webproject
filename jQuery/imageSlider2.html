@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이더</title>
+    <style>
+        body { /* 임의로 추가*/
+            margin-left: 50px;
+        }
+        .animation_canvas {
+            position: relative;
+            width: 600px;
+            overflow: hidden;
+        }
+        .slider_panel {
+            width: 4200px;  /* 수정 사항*/
+            position: relative;
+            height: 400px;
+        }
+        .slider_image {
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+        .control_panel {
+            position: absolute;
+            top: 380px;
+            left: 270px;
+            height: 13px;
+            overflow: hidden;
+        }
+        .control_button {
+            position: relative;
+            cursor: pointer;
+            background: url(images/point_button.png);
+            width: 12px;
+            height: 46px;
+            float: left;
+            margin-right: 10px; /* 임의 추가 */
+        }
+        .control_button:hover {
+            top: -16px;
+        }
+        .control_button.active {
+            top: -31px;
+        }
+        .left_control {
+            position: absolute;
+            top: 160px;
+            left: 10px;
+            cursor: pointer;
+        }
+        .right_control {
+            position: absolute;
+            top: 160px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $('.slider_panel').append($('.slider_image').first().clone());
+            $('.slider_panel').prepend($('.slider_image').eq(-2).clone());
+
+            var index=1;    // 0번째에 추가한 이미지가 있기 떄문에
+            moveSlider(index);
+            $('.control_button').click(function() {
+                index = $(this).index();
+                moveSlider(index+1);
+            });
+
+            /* 좌우 패널 */
+            /* 왼쪽 화살표 버튼 */
+            $('.left_control').click(function() {
+                if(index > 1) {
+                    index--;
+                    moveSlider(index);
+                } else {
+                    $('.slider_panel').css('left',-3600);
+                    index = 5;
+                    moveSlider(index);
+                }
+            });
+            /* 오른쪽 화살표 버튼 */
+            $('.right_control').click(function() {
+                if(index < 5) {
+                    index++;
+                    moveSlider(index);
+                } else {
+                    $('.slider_panel').css('left',0);
+                    index=1;
+                    moveSlider(index);
+                }
+            });
+
+            // 이미지 슬라이드 구현
+            function moveSlider(index) {
+                $('.slider_panel').animate({
+                    left:-(index*600)
+                }, 'slow');
+                $('.control_button').removeClass('active');
+                $('.control_button').eq(index-1).addClass('active');
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>이미지 슬라이더</h1>
+    <!-- 슬라이더 영역 -->
+    <div class="animation_canvas">
+        <!-- 이미지 패널 : 움직이는 이미지가 전환되는 효과 -->
+        <div class="slider_panel">
+            <img class="slider_image" src="images/Koala.jpg" alt="">
+            <img class="slider_image" src="images/Desert.jpg" alt="">
+            <img class="slider_image" src="images/Lighthouse.jpg" alt="">
+            <img class="slider_image" src="images/Jellyfish.jpg" alt="">
+            <img class="slider_image" src="images/Penguins.jpg" alt="">
+        </div>
+        <!-- 컨트롤 버튼 패널-->
+        <div class="control_panel">
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+        </div>
+        <!-- 좌우 버튼 패널 -->
+        <div class="left_right_control_panel">
+            <img class="left_control" src="images/arrow_pre.png" alt="">
+            <img class="right_control" src="images/arrow_next.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
