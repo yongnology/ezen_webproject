@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI 플러그인4</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+        #box {
+            padding: 5px;
+        }
+        #box h1 {
+            text-align: center;
+            font-size: 1.5em;
+            padding: 5px;
+            margin: 0;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('#box').hover(function() {
+                $(this).addClass('ui-state-hover');
+            }, function() {
+                $(this).removeClass('ui-state-hover')
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box" class="ui-weight-content ui-corner-all">
+                <!--여기서 class 이름은 jqueryui.com 에서 제공하는 css 를 위해 설정-->
+        <h1 class="ui-widget-header"><span class="ui-icon ui-icon-tag"></span>
+            Adipisicing officia tempor Lorem incididunt laboris.</h1>
+        <p>Aliqua in anim ipsum et cupidatat sunt enim exercitation deserunt esse est velit labore. Officia sint excepteur occaecat nisi quis et. Et eu ullamco qui eu consequat tempor laboris irure dolore. Est laborum tempor ex tempor et minim dolore exercitation duis enim est dolore cillum nulla. Ad sint excepteur sunt aliquip.</p>
+    </div>
+</body>
+</html>

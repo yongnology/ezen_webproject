@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI 플러그인2</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+/* 
+        img {
+            display: none;
+        }
+         */
+    </style>
+    <script>
+        $(function() {
+            $('.hide').click(function() {   // 이미지 사라지기
+                $('img').hide('explode',2000);
+            });
+            $('.show').click(function() {   // 이미지 나타내기
+                $('img').show('explode',2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="hide">이미지 사라지기</button>
+    <button class="show">이미지 보이기</button>
+    <br>
+    <img src="images/car_red.jpg">
+</body>
+</html>

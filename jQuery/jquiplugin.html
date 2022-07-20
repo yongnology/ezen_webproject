@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI 플러그인</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+        .dialogTitle {
+            font-size: 1.3em;
+            text-align: center;
+            color: #00f;
+        }
+        input, label {
+            width: 95%;
+            margin-bottom: 12px;
+            padding: 0.4em;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('#dialog').dialog({
+                autoOpen:false,
+                buttons : {
+                    저장: function() {
+                        var eName= $('#event-name').val();
+                        var eDate= $('#event-date').val();
+                        $('<h2></h2>').html(eName + '▶' + eDate).appendTo('#output');
+                        $('#event-name').val('');
+                        $('#event-date').val('');
+                        $('#dialog').dialog('close');
+                    },
+                    초기화: function() {
+                        $('#event-name').val('');
+                        $('#event-date').val('');
+                        $('#event-name').focus();   // 임의 추가
+                    },
+                    취소: function() {
+                        $('#event-name').val('');
+                        $('#event-date').val('');
+                        $('#dialog').dialog('close');
+                    }
+                },
+                modal: true // 작업이 끝나기 전에는 다른 곳에 입력 불가
+            });
+            $('#event-date').datepicker({
+                dateFormat: 'yy년 mm월 dd일',
+                numberOfMonths:3
+            })
+            $('#event-date').datepicker();  // 날짜를 선택해서 고를 수 있게 함
+
+            $('.dialogOpen').click(function() {
+                $('#dialog').dialog('open');
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <!--메인 페이지 내용-->
+    <h1>일정관리하기</h1>
+    <button class="dialogOpen">일정생성</button>
+    <hr>
+    <!-- 저장되는 장소-->
+    <div id="output"></div>
+
+    <!-- 일정관리 창-->
+    <div id="dialog" title="일정관리">
+        <h2 class="dialogTitle">일정 입력하기</h2>
+        <label for="event-name">일정이름</label>
+        <input id="event-name" type="text">
+        <label for="event-date">날짜</label>
+        <input id="event-date" type="text">
+    </div>
+</body>
+</html>
