@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이트박스(칼라박스)2</title>
+    <link rel="stylesheet" href="css/colorbox.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.colorbox.js"></script>
+    <script>
+        $(function () {
+            $('#colorbox').colorbox({
+                inline: true,
+                width: 400
+            }).click(function() {
+                setTimeout(function () {
+                    $.colorbox.close(); // 제이쿼리식별자.함수(colorbox객체 안에 있는 close())실행
+                }, 3000);
+            }).trigger('click');
+        });
+    </script>
+</head>
+<body>
+    <h1>칼라박스 활용</h1>
+    <a id="colorbox" href="#popup">알림창보기</a>
+    <!-- 알림창 영역 -->
+    <div id="popup_area" style="display: none;">
+        <div id="popup">
+            <h2>공지사항</h2>
+            <p>내일 오전에는 1교시~2교시는 플러그인 소개하고 한글양식을 드리면
+                문제를 푸시고 한글문서와 만든 홈페이지는 압축해서 제출하시고 마지막 교시에는 nodejs와 react 수업을 위한 설치
+            </p>
+            <p>※ 이 공지사항은 3초 후에 자동으로 사라집니다.</p>
+        </div>
+    </div>
+</body>
+</html>

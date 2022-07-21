@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI 플러그인7</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+        #tabs {
+            width: 500px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('#tabs').tabs();
+        });
+    </script>
+</head>
+<body>
+    <div id="tabs">
+        <ul>
+            <li><a href="#news-1">경제뉴스</a></li>
+            <li><a href="#news-2">사회뉴스</a></li>
+            <li><a href="#news-3">스포츠뉴스</a></li>
+        </ul>
+        <div id="news-1">
+            <p>비트코인과 이더리움이 일주일 동안의 가파른 반등으로 각각 3000만원, 200만원에 재진입한 후 상승세를 멈추고 내림세를 보이고 있다. </p>
+            <p>알트코인(얼터너티브 코인·비트코인을 제외한 나머지 대체 가상화폐) 대장 이더리움은 내림세를 기록 중이다. 같은 시각 빗썸에서 이더리움은 0.84% 내린 20만9000원을 나타냈다</p>
+        </div>
+        <div id="news-2">
+            <p>'가상자산 루나(LUNC) 폭락 사태를 수사하고 있는 검찰이 20일 거래소 등을 전격 압수수색하며 발행사 테라폼랩스 권도형 최고경영자(CEO)를 향한 수사망을 좁혀가고 있다.</p>
+            <p>연합뉴스에 따르면 서울남부지검 금융증권범죄 합동수사단(단장 단성한 검사)은 20일 오후 5시 30분께부터 국내 가상자산거래소 7개 등 총 15곳에 대한 압수수색 영장을 집행해 관련 자료를 확보했다.</p>
+        </div>
+        <div id="news-3">
+            <p>김민재(페네르바체)가 나폴리와 급물살을 타고 있다. 숱한 굵직한 팀과 연결됐지만, 최종 행선지는 나폴리로 보인다.</p>
+            <p>이탈리아 기자 '니콜라스키라'도 2027년까지 계약을 말했지만, 김민재 소식을 팔로잉했던 '디 마르지오'에 따르면, 세부적인 협상 결과 옵션없이 3년 계약을 체결한 거로 밝혀졌다.</p>
+        </div>
+    </div>
+</body>
+</html>

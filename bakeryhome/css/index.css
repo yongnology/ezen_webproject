@@ -47,8 +47,9 @@ nav li.dropdown > a {
     text-align: center;
     transition: all 0.3s;
 }
-nav li.dropdown:hover ul.dropdown_content{
-    display: block;
+nav li.dropdown:hover ul.dropdown_content{ /* 호버시 */
+    /* display: block; */
+    /* height: 147px; */
 }
 
 nav li.dropdown > a:hover, nav li.dropdown:hover .dropbtn {
@@ -58,11 +59,14 @@ nav li.dropdown > a:hover, nav li.dropdown:hover .dropbtn {
 /*nav > ul > li.dropdown > ul.dropdown_content */
 nav ul.dropdown_content {
     display: none;
+/*     height: 0;
+    overflow: hidden; */
     width: 200px;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 10; /* 위로 오게끔 한다*/
+    /* transition: height 0.5s; */
 }
 nav ul.dropdown_content a {
     display: block; /*글자부분만 선택가능한것 방지하기 위해*/

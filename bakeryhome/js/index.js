@@ -1,3 +1,21 @@
+
+/* $(function () {
+    $('.dropdown').hover(function () {
+        $(this).find('.dropdown_content').stop().slideDown('slow');
+    }, function() {
+        $(this).find('.dropdown_content').slideUp('slow');
+    });
+}); */
+
+// 전체 하위 메뉴 보이기
+$(function () {
+    $('.dropdown').hover(function () {
+        $('.dropdown_content').stop().slideDown('fast');
+    }, function() {
+        $('.dropdown_content').slideUp('fast');
+    });
+});
+
 function partpopup() {
     window.open("popup.html","창의 이름","width=460, height=455");
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이트박스(칼라박스)</title>
+    <link rel="stylesheet" href="css/colorbox.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.colorbox.js"></script>
+    <script>
+        $(function () {
+            $('a[rel="colorbox"]').colorbox({
+                transition: 'fade',
+                opacity:0.5,
+                onOpen:function() { // 이미지가 나올 때 하고 싶은 기능
+                    alert("7월에 출시된 신제품입니다.");
+                },
+                onClosed: function() {
+                    alert("일시적으로 한정수량만 판매합니다.");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>칼라박스 플러그인</h1>
+    <a rel="colorbox" title="Koala" href="images/Koala.jpg">Koala</a>
+    <a rel="colorbox" title="Desert" href="images/Desert.jpg">Desert</a>
+    <a rel="colorbox" title="Hydrangeas" href="images/Hydrangeas.jpg">Hydrangeas</a>
+    <a rel="colorbox" title="Jellyfish" href="images/Jellyfish.jpg">Jellyfish</a>
+    <a rel="colorbox" title="Lighthouse" href="images/Lighthouse.jpg">Lighthouse</a>
+    <a rel="colorbox" title="Tulips" href="images/Tulips.jpg">Tulips</a>
+    <a rel="colorbox" title="Penguins" href="images/Penguins.jpg">Penguins.jpg</a>
+</body>
+</html>
