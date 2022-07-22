@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajacx3</title>
+    <style>
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $.ajax({
+                url:'product.xml',
+                success:function(data) {
+                    $(data).find('product').each(function () {
+                        var name = $(this).find('name').html();
+                        var price = $(this).find('price').html();
+                        $('<h2></h2>').html(name + "☞" + price).appendTo('#list');
+                    });
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <h1>편의점 물품리스트</h1>
+    <div id="list">
+
+    </div>
+</body>
+</html>

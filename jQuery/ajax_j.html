@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <script>
+        window.onload = function() {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function(event) {
+                if(request.readyState == 4) { 
+                    // 2 : 데이터를 전부받지 못한 상태
+                    // 3 : 데이터 일부만 받은상태
+                    // 4 : 데이터를 다 받은 상태 
+                    document.body.innerHTML += request.responseText;
+                }
+            }
+            request.open('GET', 'head.html', false);
+                // false : 동기식(아래 일처리를 모두 하면 가져온다.)
+                // true : 비동기식(아래 시간가져오는 것을 하지 않는다.)
+            var preDate = new Date();
+            request.send();
+            var nowDate = new Date();
+            console.log(nowDate-preDate);
+            // document.body.innerHTML += request.responseText;
+        }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h2>여기는 본문</h2>
+    </div>
+</body>
+</html>

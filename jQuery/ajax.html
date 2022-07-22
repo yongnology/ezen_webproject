@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajacx</title>
+    <style>
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $.ajax({
+                url: 'head.html',
+                success:function (data) {
+                    $('body').prepend(data);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h2>여기는 본문</h2>
+    </div>
+</body>
+</html>

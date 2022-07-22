@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajacx</title>
+    <style>
+
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $.getJSON('product.json', function(data) {
+                $.each(data, function(key, value) {
+                    $('#list').append('<h2>' + value.name + " ☞ "+value.price+'</h2>');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>편의점 물품리스트</h1>
+    <div id="list">
+
+    </div>
+</body>
+</html>
