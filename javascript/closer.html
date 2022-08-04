@@ -1,0 +1,79 @@
+<!-- 움직이는 문자 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저 응용 예제</title>
+    <script>
+        // 랜덤한 정수를 생성 함수
+        function intRandom(limit) {
+            return Math.round(Math.random()*limit);
+        }
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        // 랜덤한 알파벳을 리턴하는 함수
+        function randomAlpha() {
+            return alphabet.charAt(intRandom(25));
+        }
+        // 양수, 음수값으로 랜덤한 속도를 생성하는 함수
+        function randomSpeed(maxSpeed) {
+            return ( Math.random() * maxSpeed ) - (Math.random() * maxSpeed);
+        }
+
+        var canvasWidth = 700;   // 너비
+        var canvasHeight = 400;  // 높이
+
+        // 글자가 이동하는 생성자 함수
+        function MovingText() {
+            this.x = intRandom(canvasWidth);
+            this.y = intRandom(canvasHeight);
+            this.vx = randomSpeed(10);
+            this.vy = randomSpeed(10);
+            this.header = document.createElement('h1');
+            this.header.innerHTML = randomAlpha();
+            this.header.style.position = 'absolute';
+            document.body.appendChild(this.header);
+        }
+        MovingText.prototype.move = function() {
+            if(this.x < 0 || this.x > canvasWidth) {
+                this.vx *= -1;  // 영역 밖을 넘어가지 않기 위해
+            }
+            if(this.y < 0 || this.y > canvasWidth) {
+                this.vy *= -1;
+            }
+            this.x += this.vx;
+            this.y += this.vy;
+            this.header.style.left = this.x + 'px';
+            this.header.style.top = this.y + 'px';
+        }
+        window.onload = function() {
+            var moveTexts = [];
+            for(let i =0; i<100; i++) { // 100개를 생성
+                moveTexts.push(new MovingText());
+            }
+            setInterval(() => {
+                for(let i in moveTexts) {
+                    moveTexts[i].move();   
+                }
+            }, 1000/60); // 1초동안 60번 -> 프레임확인을 위해
+        }
+    </script>
+    <style>
+        /*
+        h1:nth-of-type(1n){
+            color: black;
+        }
+        h1:nth-of-type(2n){
+            color: blue;
+        }
+        h1:nth-of-type(3n){
+            color: red;
+        }
+        */
+    </style>
+</head>
+<body>
+</body>
+</html>

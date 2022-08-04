@@ -35,9 +35,13 @@
         for(var key in book) {
             document.write("● "+ key+ " : "+ book[key]+"<br>")
         }
+        var bookInfo = bookContent.bind(book);
+        function bookContent() {
+            alert(this.title);
+        }
     </script>
 </head>
 <body>
-    
+    <button onclick="bookInfo()">버튼</button>
 </body>
 </html>
