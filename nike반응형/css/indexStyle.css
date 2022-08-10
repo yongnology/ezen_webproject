@@ -1,1 +1,179 @@
 /* index.html 의 기본 스타일 */
+
+.h-top {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 0 3%;
+}
+.jordan-logo span, .customer, .top-menu-title {
+    display: none;
+}
+.top-menu {
+    display: flex;
+}
+.top-menu li {
+    margin-left: 24px;
+    height: 36px;
+    line-height: 36px;  /* 높이를 같게 하면 글씨가 세로 가운데로 온다.*/
+}
+.top-menu li a {
+    color: #c4c4c4;
+    font-size: 0.75em;
+    transition: all 0.2s;
+}
+.top-menu li a:hover {  /* 임의로 추가함 */
+    color: #999;
+}
+
+/* index-wrap 영역 */
+.index-wrap {
+    position: relative;
+    z-index: 1;
+    padding: 0 3%;
+}
+
+/* section 영역 */
+.main-visual, .content {
+    text-align: center;
+    margin-bottom: 100px;
+}
+.main-img > img {  /* 큰 이미지 */
+    width: 100%;
+}
+
+/* 메인 타이틀 */
+.title-01 {
+    font-size: 2.25em;  /* 기본 16 * 2.25 = 36px*/
+    font-weight: 700;
+    letter-spacing: -1px;
+    padding-top: 30px;
+}
+.title-01-text {
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: -0.5px;  /* 자간을 줄이면 살짝 집중력을 높일 수 있다. */
+    padding-top: 14px;
+}
+.btn-area {
+    display: flex;
+    justify-content: center;
+}
+.btn-01 {
+    display: block;
+    background-color: #111;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 18px;
+    padding: 6px 22px 7px 22px;
+    margin: 24px 4px 0 4px;
+}
+
+/* 이번주 스타일링 */
+.content-img {
+    display: flex;
+}
+.content-img > .main-img {
+    margin-right: 24px;
+    flex: 1;
+}
+/* 
+.content-img > .main-img:hover {
+    flex: 2;
+} */
+.content-img > .main-img:last-child {  /* 맨 오른쪽 마진을 삭제 */
+    margin-right: 0;
+}
+.content-title {
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+/* Trending Now */
+.trend-img {
+    position: relative;
+    flex: 1;
+}
+.trend-img:first-child {
+    margin-right: 24px;
+}
+.trend-img > img {
+    width: 100%;
+}
+.trend-text {
+    position: absolute;
+    left:40px;
+    bottom: 40px;
+}
+.c-white {
+    color: white;
+    margin-bottom: 18px;
+}
+.b-white {
+    background-color: #fff;
+    color: #111;
+    margin: 0;
+}
+.trend-img .btn-area {
+    justify-content: flex-start;
+}
+
+/* Featured Shoes */
+.swiper-slider {
+    position: relative;
+}
+.Featured-slide .swiper-slide > a {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+.Featured-slide .swiper-slide > a > img {
+    width: 100%;
+}
+.featured-title {
+    font-size: 1.25em;
+    color: #111;
+    font-weight: 400;
+    margin-top: 18px;
+    letter-spacing: -1px;
+}
+.featured-text { /* 이름, 가격 */
+    font-size: 1em;
+    color: #757575;
+    line-height: 19px;
+    margin-top: 8px;
+    letter-spacing: -0.5px;
+}
+/* 좌우버튼, 페이저 */
+.featured-control {
+    width: 78px;
+    height: 23px;
+    position: absolute;
+    top: 6px;
+    right: 0;
+}
+.f-next, .f-prev {
+    width: 23px;
+    height: 23px;
+    margin-top: 0;
+    top: 0;
+}
+.f-prev {
+    left: 0;
+}
+.f-next {
+    right: 0;
+}
+.f-next::after, .f-prev::after {
+    font-size: 1.125em;
+    color: #999;
+}
+.f-pager {
+    bottom: 1px;
+    font-size: 0.9375em;
+    color: #999;
+}
