@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>몬스터 만들기</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+        .lighting {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+        }
+        #top {
+            position: relative;
+            left: 0;
+            top: 0;
+            height: 80px;
+            z-index: 10;
+        }
+        .text_top {
+            position: absolute;
+            left: 200px;
+            top: 10px;
+        }
+        #top p {
+            position: absolute;
+            left: 140px;
+            top: 30px;
+            color: #33ff66;
+        }
+        #container {
+            position: relative;
+            left: 0;
+            top: 0;
+            height: 700px;
+        }
+        .fram {
+            position: absolute;
+            left: 100px;
+            top: 0;
+            width: 546px;
+            height: 629px;
+            background-image: url(images/frame.png);
+        }
+        .pic_box {
+            position: absolute;
+            left: 91px;
+            top: 84px;
+            width: 367px;
+            height: 460px;
+            overflow: hidden;
+        }
+        .face {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        .head {
+            height: 172px;
+        }
+        .eyes {
+            height: 79px;
+        }
+        .nose {
+            height: 86px;
+        }
+        .mouse {
+            height: 123px;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            let headclix=0, eyesclix=0, noseclix=0, mouthclix=0;
+            // 머리 이미지 슬라이드
+            $('.head').click(function() {
+                headclix++;
+                if(headclix < 10) {
+                    $(this).animate({
+                        left:-(headclix*367) /*pic_box의 width*/
+                    }, 500)
+                } else {
+                    $(this).animate({
+                        left: 0
+                    },100);
+                    headclix=0;
+                }
+            });
+            // 눈 이미지 슬라이드
+            $('.eyes').click(function() {
+                eyesclix++;
+                if(eyesclix < 10) {
+                    $(this).animate({
+                        left:-(eyesclix*367) /*pic_box의 width*/
+                    }, 500)
+                } else {
+                    $(this).animate({
+                        left: 0
+                    },100);
+                    eyesclix=0;
+                }
+            });
+            // 코 이미지 슬라이드
+            $('.nose').click(function() {
+                noseclix++;
+                if(noseclix < 10) {
+                    $(this).animate({
+                        left:-(noseclix*367) /*pic_box의 width*/
+                    }, 500)
+                } else {
+                    $(this).animate({
+                        left: 0
+                    },100);
+                    noseclix=0;
+                }
+            });
+            // 입 이미지 슬라이드
+            $('.mouth').click(function() {
+                mouthclix++;
+                if(mouthclix < 10) {
+                    $(this).animate({
+                        left:-(mouthclix*367) /*pic_box의 width*/
+                    }, 500)
+                } else {
+                    $(this).animate({
+                        left: 0
+                    },100);
+                    mouthclix=0;
+                }
+            });
+            
+            // 번개 구현
+            setInterval(function() {
+                $('.lignting1').fadeIn(250).fadeOut(250);
+            },4000);
+            setInterval(function() {
+                $('.lignting2').fadeIn(250).fadeOut(250);
+            },5000);
+            setInterval(function() {
+                $('.lignting3').fadeIn(250).fadeOut(250);
+            },7000);
+        });
+    </script>
+</head>
+<body>
+    <img class="lighting lignting1" src="images/lightning-01.jpg" alt="lighting">
+    <img class="lighting lignting2" src="images/lightning-02.jpg" alt="lighting">
+    <img class="lighting lignting3" src="images/lightning-03.jpg" alt="lighting">
+    <header id="top">
+        <img class="text_top" src="images/Monster_Mashup.png" alt="monster">
+        <p>Make your won monster face by the clicking on the picture.</p>
+    </header>
+    <div id="container">
+        <div class="fram">
+            <div class="pic_box">
+                <div class="head face">
+                    <img src="images/headsstrip.jpg" alt="head">
+                </div>
+                <div class="eyes face">
+                    <img src="images/eyesstrip.jpg" alt="eyes">
+                </div>
+                <div class="nose face">
+                    <img src="images/nosesstrip.jpg" alt="nose">
+                </div>
+                <div class="mouth face">
+                    <img src="images/mouthsstrip.jpg" alt="mouth">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
