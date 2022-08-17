@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 확장</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        let area = {
+            width: 500,
+            height: 700
+        };
+        let sarea = {
+            width: 300,
+            height: 200
+        };
+        $.extend(area, sarea);
+        console.log(area);
+        // alert(area.width);
+        $(function() {
+            $('.koala').wrap('<div></div>');
+        });
+    </script>
+</head>
+<body>
+    <img class="koala" src="images/Koala.jpg" alt="koala">
+</body>
+</html>

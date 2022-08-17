@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열과 객체</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        let product = {
+            name: '냉장고',
+            price: 195000,
+            type: '양문형'
+        };
+        let pcode = {
+            code: 'ss4512',
+            num: 524
+        }
+        $.extend(product, pcode);
+        console.log(product);
+        alert(product.code);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

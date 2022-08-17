@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pivot 플러그인 활용</title>
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/pivot.js"></script>
+    <script>
+        $(function() {
+            $('#pivot_slider').pivot({
+                width: 700,
+                height: 700
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="pivot_slider">
+        <div>
+            <h2>Koala</h2>
+            <img src="images/Koala.jpg" alt="Koala">
+            <p>유대목 코알라과에 속하는 포유류. 현지에서는 네이티브베어(native bear)라고 한다</p>
+        </div>
+        <div>
+            <h2>Desert</h2>
+            <img src="images/Desert.jpg" alt="Desert">
+            <p>Desert. 사막이라는 의미이다. 동사로 "데절트"라고 읽으면 버리고 떠나다. Abandon과 같은 의미이다.</p>
+        </div>
+        <div>
+            <h2>Lighthouse</h2>
+            <img src="images/Lighthouse.jpg" alt="Lighthouse">
+            <p>대표적인 항로 표지. 항해용 일반 등대와 항공기용 항공 등대가 있다</p>
+        </div>
+        <div>
+            <h2>Jellyfish</h2>
+            <img src="images/Jellyfish.jpg" alt="Jellyfish">
+            <p>강장동물 히드로충류와 해파리류의 부유시기와 유즐동물의 총칭. 한자어로 수모(水母)라 한다.</p>
+        </div>
+        <div>
+            <h2>Penguins</h2>
+            <img src="images/Penguins.jpg" alt="Penguins">
+            <p>조류 펭귄목 팽귄과 동물을 통틀어 이르는 말.</p>
+        </div>
+    </div>
+</body>
+</html>
